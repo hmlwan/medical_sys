@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #ffd21f;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			<h1 id="title" class="mui-title">新手解答</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell" style="color: #ffd21f;">
+						新手操作注意事项(必看)
+						<button type="button" class="mui-btn" style="background: #ffd21f;border: none;border-radius: 3px;">
+							查看答案
+						</button>
+					</li>
+					<li class="mui-table-view-cell" style="color: #ffd21f;">
+						问:如何交易？
+						<button type="button" class="mui-btn" style="background: #ffd21f;border: none;border-radius: 3px;">
+							查看答案
+						</button>
+					</li>
+					<li class="mui-table-view-cell" style="color: #ffd21f;">
+						问:哪些违规操作会导致封号？
+						<button type="button" class="mui-btn" style="background: #ffd21f;border: none;border-radius: 3px;">
+							查看答案
+						</button>
+					</li>
+					<li class="mui-table-view-cell" style="color: #ffd21f;">
+						问:什么魔石？
+						<button type="button" class="mui-btn" style="background: #ffd21f;border: none;border-radius: 3px;">
+							查看答案
+						</button>
+					</li>
+					<li class="mui-table-view-cell" style="color: #ffd21f;">
+						问:什么宝石？
+						<button type="button" class="mui-btn" style="background: #ffd21f;border: none;border-radius: 3px;">
+							查看答案
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+
+</html>

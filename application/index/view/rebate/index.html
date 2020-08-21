@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>我的订单</title>
+    {include file="layout/head" /}
+
+</head>
+<body style="background-color: #f6f6f6">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="{:url('welfare/index')}" class="header_fh"></a></div>
+        <div class="header_c">我的订单</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<div class="tbfl-page">
+    <input type="hidden" name="mui-tab-item" value="4">
+    <div class="tag_line">
+        <ul class="flexbox wrap spacearound">
+            <a href="javascript:;" >
+                <li  class="active">绑定订单</li>
+            </a>
+            <a href="{:url('deal')}">
+                <li>进行中</li>
+            </a>
+            <a href="{:url('no_receive')}">
+                <li>待领取</li>
+            </a>
+            <a href="{:url('alreadly_receive')}">
+                <li>已领取</li>
+            </a>
+            <a href="{:url('expired')}">
+                <li>已无效</li>
+            </a>
+        </ul>
+    </div>
+
+    <div class="mid"><img src="/static/img/newimg/banner23.png" alt=""></div>
+    <form id="rebate-form" action="{:url('do_index')}" method="post" onsubmit="return false">
+
+        <div class="ljbd flexbox column">
+            <h2>订单编号绑定</h2>
+            <p class="tips">tips:下单后请尽快提交淘宝订单编号绑定收益</p>
+            <p>
+                <input type="text" name="order_no" placeholder="输入订单编号" class="input_line">
+            </p>
+            <div class="ljbd_btn">
+                <button data-form="rebate-form" onclick="ajaxPost(this)">立即绑定</button>
+            </div>
+        </div>
+    </form>
+
+    <div class="zhjc">
+        <p class="title"><em></em>订单编号寻找教程<em></em></p>
+        <p class="img"><img src="/static/img/newimg/zh9.png" alt=""></p>
+    </div>
+</div>
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+
+</html>

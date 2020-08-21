@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>兑换详情</title>
+    {include file="layout/head" /}
+</head>
+<body style="background-color: #f3f4f6">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">兑换详情</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<div class="dhxq-page">
+    <p class="res title">
+        {if $info->status==1 }
+        已处理
+        {elseif $info->status == 2 /}
+        未处理
+        {else /}
+            等待处理
+        {/if}
+    </p>
+    <div class="detail_item">
+        <ul class="flexbox column">
+           <li>
+               <p>
+                   <span>下单时间</span>
+                   <span> {$info->add_time|date="Y-m-d H:i:s" }</span>
+               </p>
+               <p>
+                   <span>消耗糖果</span>
+                   <span>{$info->total_num}糖果</span>
+               </p>
+               <p>
+                   <span>实际到账</span>
+                   <span>{$info->cny_num} CNY</span>
+               </p>
+               <p>
+                   <span>手续费</span>
+                   <span>{$info->rate*100}%</span>
+               </p>
+           </li>
+        </ul>
+        <ul class="flexbox column">
+            <li>
+                <p>
+                    <span>收款姓名</span>
+                    <span>{$info->real_name}</span>
+                </p>
+                <p>
+                    <span>银行卡号</span>
+                    <span>{$info->card}</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+    <p class="res">
+        {if $info->status==1 }
+            请查看收款账号到账情况
+        {elseif $info->status==2 /}
+            请仔细检查收款信息真实性，我们已将糖果返还到您账号上请注意查收。
+        {else /}
+            我们将在24小时内处理，请留意下支付宝/银行卡
+        {/if}
+       </p>
+</div>
+
+</body>
+{include file="layout/nav" /}
+{include file="layout/footer" /}
+
+</html>
+

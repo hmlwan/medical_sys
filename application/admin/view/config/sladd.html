@@ -1,0 +1,59 @@
+{extend name="layout/main" /}
+
+{block name="header"}
+
+{/block}
+
+{block name="content"}
+<section class="panel">
+    <header class="panel-heading">
+        <h4>增加轮播</h4>
+    </header>
+    <div class="panel-body" style="padding-bottom: 50px" >
+        <form class="form-horizontal" method="post" action="/admin/Config/adds" role="form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">跳转链接</label>
+
+                <div class="col-sm-5">
+                    <input type="text" value="" name="url" class="form-control"
+                           placeholder="跳转链接加http://">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">轮播图</label>
+
+                <div class="col-sm-5">
+                     <input type="file" name="img" id="">
+                </div>
+            </div>
+        
+          
+            <div class="form-group">
+                <label class="col-sm-2 control-label">显示位置</label>
+
+                <div class="col-sm-2">
+                   <select name="types" class="form-control">
+                   	   <option value="1">首页</option>
+                   	   <option value="2">任务页</option>
+                   	   <option value="3">邀请页</option>
+                   </select>
+                </div>
+
+               
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" name="sub"  class="btn btn-primary">确定增加
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{/block}
+
+
+{block name="footer"}
+    <script src="/admin/vendor/fuelux/checkbox.js"></script>
+{/block}

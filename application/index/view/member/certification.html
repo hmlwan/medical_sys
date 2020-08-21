@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>身份认证</title>
+    {include file="layout/head" /}</head>
+</head>
+<body style="background-color: #f7f7f7">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">实名信息</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<input type="hidden" name="mui-tab-item" value="5">
+<form  action="{:url('member/updateUser')}" method="post" onsubmit="return false" id="submitForm">
+
+<div class="sfrz-page">
+    <ul class="flexbox column">
+        <!--<li  class="title"><span>身份认证</span><span></span></li>-->
+        <li>
+            <span>国籍</span>
+            <span>中国</span>
+        </li>
+        <li>
+            <span>姓名</span>
+            <span>{$list->real_name}</span>
+        </li>
+        <li>
+            <span>证件类型</span>
+            <span>身份证</span>
+        </li>
+        <li>
+            <span>证件号码</span>
+            <span>{$list->card_id}</span>
+        </li>
+        <li>
+            <span>银行卡号</span>
+            <span>{$list->card}</span>
+        </li>
+        <li>
+            <span>手机号</span>
+            <span>{$list->mobile}</span>
+        </li>
+    </ul>
+</div>
+    {if $list->is_certification != 1 }
+<div class="sfrz_btn">
+    <button class="button_btn" data-form="submitForm" onclick="ajaxPost(this)">确定提交</button>
+</div>
+    {/if}
+</form>
+
+{include file="layout/nav" /}
+{include file="layout/footer" /}
+</body>
+</html>

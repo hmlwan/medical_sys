@@ -1,0 +1,100 @@
+{extend name="layout/main" /}
+
+{block name="header"}
+
+{/block}
+
+{block name="content"}
+<section class="panel">
+    <header class="panel-heading">
+        <h4>编辑空间</h4>
+    </header>
+    <div class="panel-body" style="padding-bottom: 50px">
+        <form class="form-horizontal" method="post" action="/admin/Product/update" role="form" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{$info->id}">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">空间名称</label>
+
+                <div class="col-sm-5">
+                    <input type="text" value="{$info->product_name}" name="product_name" class="form-control"
+                           placeholder="请输入空间名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">空间logo</label>
+
+                <div class="col-sm-5">
+                    <input type="file" name="logo_url" id="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">消耗糖果数量</label>
+                <div class="col-sm-2">
+                    <input type="text" name="candy_num" class="form-control" placeholder="消耗糖果数量" value="{$info->candy_num}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">算力数</label>
+                <div class="col-sm-2">
+                    <input type="text" name="energy_num" class="form-control" placeholder="算力数" value="{$info->energy_num}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">最大可持有数量</label>
+                <div class="col-sm-2">
+                    <input type="text" name="hold_num" class="form-control" placeholder="最大可持有数量" value="{$info->hold_num}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">周期</label>
+                    <div class="col-sm-2">
+                        <input type="text" value="{$info->period}" name="period" class="form-control"
+                               placeholder="请输入周期">
+                    </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">退租返还糖果数量</label>
+                <div class="col-sm-2">
+                    <input type="text" name="return_candy_num" class="form-control" placeholder="退租返还糖果数量" value="{$info->return_candy_num}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">背景色</label>
+                <div class="col-sm-2">
+                    <input type="text" name="bg_color" class="form-control" placeholder="背景色" value="{$info->bg_color}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">一级下线租用返还糖果</label>
+                <div class="col-sm-2">
+                    <input type="text" name="level_one_return_candy" class="form-control" placeholder="一级下线租用返还糖果" value="{$info->level_one_return_candy}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">二级下线租用返还糖果</label>
+                <div class="col-sm-2">
+                    <input type="text" name="level_two_return_candy" class="form-control" placeholder="二级下线租用返还糖果" value="{$info->level_two_return_candy}">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">排序</label>
+                <div class="col-sm-2">
+                    <input type="text" name="sort" class="form-control" placeholder="排序" value="{$info->sort}">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit"  class="btn btn-primary">确定修改
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{/block}
+
+
+{block name="footer"}
+    <script src="/admin/vendor/fuelux/checkbox.js"></script>
+{/block}

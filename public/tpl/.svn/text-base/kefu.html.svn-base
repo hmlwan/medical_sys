@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style type="text/css">
+			.cont{
+				background: white;
+				height: auto;
+			}
+			.ter{
+				background: white;
+			    height: auto;
+			    margin-top: 25px;
+			}
+		</style>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #ffd21f;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			<h1 id="title" class="mui-title">客服</h1>
+		</header>
+		<p style="color: black;margin: 55px 20px;">问题留言</p>
+		<div class="mui-content cont" style="height: 170px;margin-top: -44px;">
+			<form action="" method="post">
+				<input type="text" name="" id="" placeholder="请您输入您的问题，我们将尽快回复您" style="color:grey;border: none;"/>
+				<button type="submit" style="width: 25%;height: 30px;border: none;background: #ffd21f;float: right;margin: 25px 30px;">提交</button>
+			</form>			
+		</div>
+		<div style="width: 100%;text-align: center;">
+			<span style="position: absolute;color: gray;font-size: 14px;">2018-03-24 21:21:59</span>
+		</div>
+		<div class="mui-table-view ter">
+			<div class="mui-table-view-cell mui-media">
+		        <a href="javascript:;">
+		            <img class="mui-media-object mui-pull-left" src="img/ova.png" style="width: 20%;">
+		            <div class="mui-media-body" style="color: #8f8f94;margin-top: 2px;">
+		            	我
+		                <p class='mui-ellipsis' style="margin-top: 5px;">平台公众号是多少</p>
+		            </div>
+		        </a>
+		    </div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>应用</title>
+    {include file="layout/head" /}
+
+</head>
+<body class="tgzp-page">
+<div class="fl-page">
+    <div class="swiper-container fl_header">
+        <div class="swiper-wrapper">
+            {foreach  $sl_list as $sl_item }
+                <div class="swiper-slide">
+                    <a href="{$sl_item->url}" target="_blank"><img src="{$sl_item->img|default='/static/img/newimg/fl_bgk1.jpg'}"/></a>
+                </div>
+            {/foreach}
+        </div>
+        <!--<div class="swiper-pagination"></div>-->
+    </div>
+    <input type="hidden" name="mui-tab-item" value="4">
+    <div class="fl_content">
+        <ul class="flexbox wrap">
+                <li>
+                    <span class="item" onclick="sub()" is_sign= "0" >
+                        <img src="/static/img/newimg/task.png" alt="">
+                        <span>每日签到</span>
+                        <span class="subtitle">最高得88糖果</span>
+                    </span>
+                </li>
+            <li>
+                <a  class="item" href="{:url('rebate/index')}">
+                    <img src="/static/img/newimg/gouwu.png" alt="">
+                    <span>淘宝返利</span>
+                    <span class="subtitle">全网最高返利</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('candy_turntable')}">
+                    <img src="/static/img/newimg/zhuanpan.gif" alt="">
+                    <span>糖果转盘</span>
+                    <span class="subtitle">超级大奖等你拿</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('flash_exchange')}">
+                    <img src="/static/img/newimg/duihuan.png" alt="">
+                    <span>闪兑</span>
+                    <span class="subtitle">极速兑换USDT</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('borrow')}">
+                    <img src="/static/img/newimg/daikuan.png" alt="">
+                    <span>借的到</span>
+                    <span class="subtitle">大额小贷</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('flash_pay_card')}">
+                    <img src="/static/img/newimg/shanfuka.png" alt="">
+                    <span>闪付卡</span>
+                    <span class="subtitle">免息闪付</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('collect')}">
+                    <img src="/static/img/newimg/shoukuan.png" alt="">
+                    <span>收款</span>
+                    <span class="subtitle">实时收款</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('pay')}">
+                    <img src="/static/img/newimg/fukuan.png" alt="">
+                    <span>付款</span>
+                    <span class="subtitle">实时付款</span>
+                </a>
+            </li>
+            <!--<li>-->
+            <!--    <a href="{:url('candy_luckdraw')}">-->
+            <!--        <img src="/static/img/newimg/zysc.png" alt="">-->
+            <!--        <span>自营商城</span>-->
+            <!--        <span class="subtitle">只卖优质商品</span>-->
+            <!--    </a>-->
+            <!--</li>-->
+            <li>
+                <a  class="item" href="https://m.tb.cn/h.Vom4N8a">
+                    <img src="/static/img/newimg/elm.png" alt="">
+                    <span>饿了么</span>
+                    <span class="subtitle">先领券后吃喝</span>
+                </a>
+            </li>
+            <li>
+                <a  class="item" href="{:url('train_station')}">
+                    <img src="/static/img/newimg/hcp.png" alt="">
+                    <span>火车票</span>
+                    <span class="subtitle">快捷购买</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="receive_reward" style="display: none;">
+    <h2>恭喜你</h2>
+    <i class="close_icon"></i>
+    <p class="candy">获得<em>0.2</em>糖果</p>
+    <p><a href="{$adv_info.ad_url|default=''}" target="_blank"><img src="{$adv_info.ad_logo|default='/static/img/newimg/t1.png'}" alt=""></a></p>
+    <p>已发放至 “糖果余额”</p>
+    <p><i class="go_back"></i></p>
+</div>
+<div class="zhezhao_h"></div>
+
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+</html>
+<script>
+    var mySwiper = new Swiper('.fl_header',{
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        autoplay:true,
+    })
+    $(".close_icon,.go_back").click(function () {
+        $(".receive_reward").hide();
+        $(".zhezhao_h").removeClass('zhezhao');
+    });
+    function sub() {
+        var self = $(this);
+        var is_sign = self.attr('is_sign');
+        if(is_sign == '1'){
+            return;
+        }
+        self.attr('is_sign','1');
+        $.post("{:url('welfare/do_task')}",{
+        },function(d){
+            var data = d.data,
+                code = d.code;
+            self.attr('is_sign',"0");
+            if(code == 0) {
+                var reward_num = data.reward_num;
+                $(".receive_reward .candy em").html(reward_num);
+                $(".receive_reward").show();
+                $(".zhezhao_h").attr('class','zhezhao_h zhezhao');
+            }else{
+
+                mui.alert(d.message,'');
+                return false;
+            }
+        });
+    }
+</script>

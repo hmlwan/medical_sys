@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>购物</title>
+    {include file="layout/head" /}
+
+</head>
+<body class="tgzp-page">
+<!--http://tbk.tgwapi.com/index.php/m-->
+<input type="hidden" name="mui-tab-item" value="1">
+<div class="shop-page" style="height: 15rem">
+    <iframe src="https://tbk.dayuli.cn/index.php/m" frameBorder="0" width="100%"  height="100%"></iframe>
+</div>
+<input type="hidden" name="cur_reward_rate" value="{$task_list.cur_reward_rate}">
+<input type="hidden" name="cur_complete_num" value="{$task_list.cur_reward_rate}">
+<div class="receive_reward" style="display: none;">
+    <h2>恭喜你</h2>
+    <i class="close_icon"></i>
+    <p class="candy">获得<em>0.2</em>糖果</p>
+    <p><img src="/static/img/newimg/qipao.png" alt=""></p>
+    <p>已发放至 “糖果余额”</p>
+    <p><i class="go_back"></i></p>
+</div>
+<div class="sign_page" is_sign="0" style="display: {if $task_list['is_receive'] == '1'}inline_block{else /}none{/if}" onclick="sub({$task_list.is_receive})">
+    <p><img src="/static/img/newimg/tgg.gif" alt=""></p>
+</div>
+<div class="zhezhao_h {if $task_list['is_receive'] == '1'}zhezhao{/if}"></div>
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+<script>
+    $(".close_icon,.go_back").click(function () {
+        $(".receive_reward").hide();
+        $(".zhezhao_h").removeClass('zhezhao');
+    });
+    function sub(task_id) {
+        var self = $(this);
+        var cur_reward_rate = $("input[name='cur_reward_rate']").val();
+        var cur_complete_num = $("input[name='cur_complete_num']").val();
+        var is_sign = self.attr('is_sign');
+        if(is_sign == 1){
+            return;
+        }
+        self.attr('is_sign',1);
+        $.post("{:url('welfare/do_task')}",{
+            task_id:task_id,
+            cur_reward_rate:cur_reward_rate,
+            cur_complete_num:cur_complete_num,
+        },function(d){
+
+            var data = d.data,
+                code = d.code;
+            if(code == 0) {
+                var reward_num = data.reward_num;
+                $(".receive_reward .candy em").html(reward_num);
+                $(".receive_reward").show();
+                $(".zhezhao_h").attr('class','zhezhao_h zhezhao');
+                $(".sign_page").hide();
+            }else{
+                self.attr('is_sign',0);
+                mui.alert(d.message,'');
+                return false;
+            }
+        });
+    }
+</script>
+
+</html>

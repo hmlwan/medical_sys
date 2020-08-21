@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>我的</title>
+    {include file="layout/head" /}
+</head>
+<body class="tgzp-page" style="background-color: #f7f7f7">
+
+<div  class="wd-page">
+    <input type="hidden" name="mui-tab-item" value="5">
+    <div class="wd-header">
+       <div class="header_l flexbox wrap">
+       	<input type="hidden" name="mui-tab-item" value="5">
+           {if $list->avatar}
+           <img class="header" src="{$list->avatar}"  id="avatar" >
+           {else /}
+           <img class="header" src="/static/img/newimg/touxiang.png"  id="avatar"  >
+           {/if}
+              <input type="file" id="file" name="image" style="display: none;">
+           <div class="flexbox column wd_info spacearound">
+               <span>{$list->show_mobile}</span>
+               {if $list->invite_code}
+                <span>邀请码:{$list->invite_code} <i class="copy_r" data-clipboard-text="{$list->invite_code}"></i></span>
+               {/if}
+           </div>
+       </div>
+       <!--<i class="arrow_r"  id="wd_header_url" style="margin-right: .1rem;"></i>-->
+    </div>
+    <div class="wd-middle">
+        <div class="middle-l" id="show_magic">
+            <img src="/static/img/newimg/tg88.png" alt="">
+            <p class="title">总资产(糖果)</p>
+            <!--<p>{$list->show_magic} <em> ≈ ¥{$list->show_magic}</em></p>-->
+            <p class="show_magic" >≈ {$market_money_num} <em style="font-weight: normal;font-size: .26rem">CNY</em></p>
+            <p>查看详情 ></p>
+        </div>
+    </div>
+    <div class="wd-content">
+       <ul class="flexbox column">
+           <a href="{:url('index/invite/index','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon1.png" alt="">
+                       <span>邀请好友</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/invite/invite_star','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon2.png" alt="">
+                       <span>邀请扶持</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/magicloglist','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon3.png" alt="">
+                       <span>收益总计</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/post?category=2','','',true)}">
+               <li>
+
+                   <div>
+                       <img src="/static/img/newimg/wd_icon4.png" alt="">
+                       <span>攻略教程
+                       {if $no_read_post1 == 1}
+                       <em></em>
+                       {/if}
+                           </span>
+                   </div>
+                   <i class="arrow_r"></i>
+
+               </li>
+           </a>
+           <a href="{:url('index/member/post?category=1','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon5.png" alt="">
+                       <span>官方公告
+                       {if $no_read_post == 1}
+                       <em></em>
+                       {/if}
+                           </span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/message','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon6.png" alt="">
+                       <span>问题反馈
+                       {if count($is_read_list)>0}
+                           <em></em>
+                       {/if}
+                       </span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/set','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon7.png" alt="">
+                       <span>个人设置</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           {if $parent_info->mobile}
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wx.png" style="width: .36rem;height: .36rem" alt="">
+                       <span>上级微信</span>&nbsp;
+                       <span class="copy1" style="font-size: .26rem">{$parent_info->mobile}</span>
+                   </div>
+                   <i class="copy_r"  data-clipboard-text="{$parent_info->mobile}"></i>
+               </li>
+           {/if}
+       </ul>
+    </div>
+</div>
+<div class="is_cert" id="is_cert" style="display: {if $list->is_certification != 1 }inline_block {else /}none {/if}">
+    <img src="/static/img/newimg/sm_icon.png" alt="">
+</div>
+<div class="receive_reward" style="display: {if $is_jump_ad != 1 }inline_block{else /}none{/if}">
+    <h2>待领取</h2>
+    <i class="close_icon"></i>
+    <p class="candy">获得<em>{$condy_sum_num|default="0.00"}</em>糖果</p>
+    <p><a href="{$adv_info.ad_url|default=''}" target="_blank"><img src="{$adv_info.ad_logo|default='/static/img/newimg/t1.png'}" alt=""></a></p>
+    <p>已发放至 “糖果余额”</p>
+    <p><i class="go_back"></i></p>
+</div>
+
+<div class="{if ($list->is_certification != 1) || $is_jump_ad != 1 }zhezhao{/if}"></div>
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+
+<script>
+    var clipboard = new Clipboard('.copy_r');
+    clipboard.on('success', function(e) {
+        console.log(e);
+        mui.alert('复制成功', '');
+        e.clearSelection();
+    });
+    document.getElementById('is_cert').addEventListener('tap', function () {
+        mui.openWindow({
+            url: "{:url('/index/publics/cert')}",
+            id: 'is_cert',
+        })
+    });
+    document.getElementById('show_magic').addEventListener('tap', function () {
+        mui.openWindow({
+            url: "{:url('assets')}",
+            id: 'show_magic',
+        })
+    });
+    $(".close_icon,.go_back").click(function () {
+        $(".receive_reward").hide();
+        $(".zhezhao_h").removeClass('zhezhao');
+        window.location.href = '/index/product/index';
+    });
+
+</script>
+<script>
+    function logout(){
+        window.location.href = "{:url('member/logout')}";
+    }
+    $("#avatar").click(function(){
+        $("#file").click();
+    });
+    $("#file").change(function(){
+        var $this = $(this);
+        var file = this.files[0];
+        if(file.length == 0)
+        {
+            mui.alert("请选择要上传的图片");
+            return false;
+        }
+        var data = new FormData();
+        data.append('image',file);
+        // console.log(data);return false;
+        mui.showLoading("正在上传头像...");
+        $.ajax({
+            url:"/index/upload/uploadEditor",
+            type:"post",
+            data:data,
+            processData:false,
+            contentType:false,
+            dataType:'json',
+            success:function(data){
+                var url = data.data[0];
+                if(data.errno == 0)
+                {
+                    mui.showLoading("头像上传成功，正在保存...");
+                    $.ajax({
+                        url:"/index/member/updateUser",
+                        type:"post",
+                        data:{'avatar' : data.data[0]},
+                        dataType:'json',
+                        success:function(data){
+                            mui.alert(data.message);
+                            if(data.code == 0)
+                            {
+                                mui.hideLoading();
+                                $("#avatar").attr("src", url);
+                            }
+                        }
+                    })
+                }
+                else
+                {
+                    mui.alert(data.fail);
+                }
+            }
+        })
+    })
+</script>
+</body>
+
+</html>

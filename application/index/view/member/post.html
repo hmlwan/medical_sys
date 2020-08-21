@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>公告</title>
+    {include file="layout/head" /}
+</head>
+<body style="background-color: #f5f5f5">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">
+            {if $category == '1' }
+                公告
+            {else /}
+                新手攻略
+            {/if}
+        </div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<input type="hidden" name="mui-tab-item" value="5">
+{if $total>0}
+<div class="post-page">
+    <ul class="flexbox column">
+        {foreach $list as $item}
+        <a href="/index/index/articleinfo?articleId={$item->article_id}">
+            <li>
+                <img src="{$item->img}" alt="">
+                <p class="center">{$item->title}</p>
+            </li>
+        </a>
+        {/foreach}
+    </ul>
+</div>
+{else / }
+<div class="show_on_content">
+    <p><img src="/static/img/newimg/no_data_icon.png" alt=""></p>
+    <p class="show_text">暂无内容</p>
+</div>
+
+{/if}
+
+
+</body>
+{include file="layout/footer" /}
+</html>
+

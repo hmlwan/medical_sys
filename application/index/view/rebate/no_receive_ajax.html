@@ -1,0 +1,24 @@
+{foreach $list as $key=>$item}
+<form id="receive-form{$key}" action="{:url('do_receive')}" method="post" onsubmit="return false">
+    <input type="hidden" name="id" value="{$item.id}">
+    <input type="hidden" name="re_candy_num" value="{$item.re_candy_num}">
+    <div class="order_item">
+        <p class="top">
+            <span class="float_l">进行中</span>
+            <span class="float_r">付款金额 <em>{$item.order_price}</em>元</span>
+        </p>
+        <div class="mid flexbox wrap">
+            <img src="{$item.img|default='/static/img/newimg/hw1.jpg'}" alt="">
+            <div class="mid_con">
+                <p class="title">{$item.title}</p>
+                <p class="bh">订单编号：{$item.order_no}</p>
+                <p>付款时间：{$item.create_time}</p>
+            </div>
+        </div>
+        <div class="bot">
+            <span class="bot_l float_l">返{$item.re_candy_num}糖果</span>
+            <span class="bot_r float_r active" data-form="receive-form{$key}" onclick="ajaxRebateReceive(this)">领取</span>
+        </div>
+    </div>
+</form>
+{/foreach}

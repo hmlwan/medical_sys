@@ -1,0 +1,18 @@
+{foreach $list as $item}
+<li>
+    <img src="{if $item.avatar}{$item.avatar}{else /}/static/img/newimg/touxiang.png{/if}" alt="">
+    <div class="float_l">
+        <p>{$item.pay_mobile}</p>
+        <p>{$item.show_type}</p>
+        <p class="times">{$item.add_time|date="m-d H:i:s"}</p>
+    </div>
+    <span>
+        {if $item['types'] == '1'}
+            -{$item.num}
+        {else  /}
+         +{$item.num}
+        {/if}
+    </span>
+</li>
+{/foreach}
+

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style type="text/css">
+			.mui-input-group .mui-input-row:after {
+			    position: absolute;
+			    right: 0;
+			    bottom: 0;
+			    left: 15px;
+			    height: 1px;
+			    content: '';
+			    -webkit-transform: scaleY(.5);
+			    transform: scaleY(.5);
+			     background-color: white !important; 
+			}
+			.mui-input-group:after {
+			    position: absolute;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    height: 1px;
+			    content: '';
+			    -webkit-transform: scaleY(.5);
+			    transform: scaleY(.5);
+			     background-color: #efeff4; 
+			}
+			.mui-input-group {
+			    position: relative;
+			    padding: 0;
+			    border: 0;
+			    background-color: #efeff4;
+			}
+			.m-btn{
+				width: 80%;
+				height: 40px;
+				background: #ffd21f;
+				border: none;
+				margin-top: 395px;
+			}
+		</style>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #ffd21f;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			<h1 id="title" class="mui-title">修改密码</h1>
+		</header>
+		<div class="mui-content">
+			<form class="mui-input-group">
+				<div class="mui-input-row" style="margin-top: 10px;background: white;">
+					<label style="padding: 11px 31px; color: #8f8f94;">原密码</label>
+					<input type="text" placeholder="请输入原密码">
+				</div>
+				<div class="mui-input-row" style="margin-top: 10px;background: white;">
+					<label style="padding: 11px 31px; color: #8f8f94;">新密码</label>
+					<input type="text" class="mui-input-clear" placeholder="请输入新密码">
+				</div>
+				<div class="mui-input-row" style="margin-top: 10px;background: white;">
+					<label style="padding: 11px 31px; color: #8f8f94;">确认密码</label>
+					<input type="text" class="mui-input-clear" placeholder="请重复输入新密码">
+				</div>
+				<div class="mui-button-row">
+					<button type="submit" class="mui-btn mui-btn-primary m-btn" onclick="return false;">确认</button>&nbsp;&nbsp;
+				</div>
+			</form>
+		</div>
+	</body>
+
+</html>

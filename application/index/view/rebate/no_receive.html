@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>我的订单</title>
+    {include file="layout/head" /}
+
+</head>
+<body style="background-color: #f6f6f6">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="{:url('rebate/index')}" class="header_fh"></a></div>
+        <div class="header_c">我的订单</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<div class="tbfl-page tgzp-page" >
+    <input type="hidden" name="mui-tab-item" value="4">
+    <div class="tag_line">
+    <ul class="flexbox wrap spacearound">
+        <a href="{:url('index')}" >
+            <li>绑定订单</li>
+        </a>
+        <a href="{:url('deal')}">
+            <li>进行中</li>
+        </a>
+        <a href="javascript:;">
+            <li class="active">待领取</li>
+        </a>
+        <a href="{:url('alreadly_receive')}">
+            <li>已领取</li>
+        </a>
+        <a href="{:url('expired')}">
+            <li>已无效</li>
+        </a>
+    </ul>
+        </div>
+    <div class="mid"><img src="/static/img/newimg/banner23.png" alt=""></div>
+    <div style="margin-bottom: .8rem" class="flow_load">
+
+    </div>
+    <div class="receive_reward" style="display: none">
+        <h2>恭喜你</h2>
+        <i class="close_icon"></i>
+        <p class="candy">获得<em>0.2</em>糖果</p>
+        <p><a href="{$adv_info.ad_url|default=''}" target="_blank"><img src="{$adv_info.ad_logo|default='/static/img/newimg/t1.png'}" alt=""></a></p>
+        <p>已发放至 “糖果余额”</p>
+        <p><i class="go_back"></i></p>
+    </div>
+</div>
+<div class="deal_bot_tips">
+    订单同步可能有5~15分钟延迟，请耐心等待！
+</div>
+
+<div class="zhezhao_h"></div>
+
+
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+<script>
+    lazy_loading('no_receive');
+    $(".close_icon,.go_back").click(function () {
+        $(".receive_reward").hide();
+        $(".zhezhao_h").removeClass('zhezhao');
+//        window.location.href = "alreadly_receive";
+        window.location.reload();
+    });
+    function ajaxRebateReceive(target) {
+
+        var form = $(target).attr('data-form');
+
+        var data = $("#" + form).serialize();
+        var url = $("#" + form).attr('action');
+        mui.showLoading("处理中..", "div");
+        $.post(url, data, function (data) {
+            mui.hideLoading();
+            if (data.code == 0) {
+                $(".receive_reward .candy em").html(data.magic);
+                $(".receive_reward").show();
+                $(".zhezhao_h").attr('class','zhezhao_h zhezhao');
+            } else {
+                mui.alert(data.message, '');
+                return false;
+            }
+        }, 'json')
+    }
+
+
+
+</script>
+</html>

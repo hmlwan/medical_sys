@@ -1,0 +1,9 @@
+{foreach $list as $item}
+<a href="javascript:;">
+    <li>
+        <p> <span>糖果矿场</span><span>{$item.add_time|date="Y-m-d H:i:s"} </span>  </p>
+        <p class="inc_blue">+{$item.show_num}</p>
+    </li>
+</a>
+
+{/foreach}

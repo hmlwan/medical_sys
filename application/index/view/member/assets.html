@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>公告</title>
+    {include file="layout/head" /}
+</head>
+<body class="assets-body" style="background-color: #f4f4f4">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="{:url('index')}" class="header_fwh"></a></div>
+        <div class="header_c">资产</div>
+        <div class="header_r"><a href="{:url('assets_exp')}" class="">说明</a></div>
+    </div>
+    <div style="height: 2rem;clear: both;"></div>
+</header>
+<div class="assets_head">
+    <p>总资产</p>
+    <p>≈ {$market_money_num} <em>CNY</em></p>
+</div>
+<div class="assets_page">
+    <div class="assets_item">
+        <p class="title">
+            <span class="float_l"><i></i>糖果</span>
+            <span class="float_r">{$user_info->show_magic}</span>
+        </p>
+        <table>
+            <thead class="flexbox column">
+                <tr>
+                    <th>{$user_info->show_magic}</th>
+                    <th>0</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <td>可用</td>
+                    <td>抵押</td>
+                    <td>锁仓</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="assets_item">
+        <p class="title">
+            <span class="float_l"><i></i>可售</span>
+            <span class="float_r">{$ks}</span>
+        </p>
+        <table>
+            <thead class="flexbox column">
+            <tr>
+                <th>{$user_statistics->buy_nums|round=###,0}</th>
+                <th>{$user_statistics->sale_nums|round=###,0}</th>
+                <th>{$user_statistics->buy_machine_num|round=###,0}</th>
+            </tr>
+            <tr>
+                <td>流入金</td>
+                <td>流出金</td>
+                <td>消费金</td>
+            </tr>
+            </thead>
+        </table>
+    </div>
+    <p class="tips">市场买入糖果可以增加流入金额度</p>
+</div>
+
+
+
+</body>
+{include file="layout/footer" /}
+</html>
+

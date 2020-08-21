@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>每日任务</title>
+    {include file="layout/head" /}
+</head>
+<body style="background-color:#fbfbfb ">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="{:url('index')}" class="header_fh"></a></div>
+        <div class="header_c">每日任务</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<input type="hidden" name="mui-tab-item" value="4">
+<div class="mrrw-page">
+    <div class="mrrw_header flexbox spacebetween">
+        <span>做任务 赚糖果</span>
+        <span>今日已挂单<i class="tguo">{$trade_nums|default='0'}</i>次邀请<i class="tguo">{$td_cert_nums|default='0'}</i>人</span>
+    </div>
+    <div class="mrrw_content flexbox column">
+        {foreach $task_list as $k=>$item}
+
+            <div class="mrrw_content_item">
+                <form action="{:url('do_task')}" onsubmit="return false"  id="task-form{$k}" method="post">
+                    <input type="hidden" name="task_id" value="{$item->id}">
+                    <input type="hidden" name="cur_reward_rate" value="{$item->cur_reward_rate}">
+                    <input type="hidden" name="cur_complete_num" value="{$item->cur_complete_num}">
+                    <div class="over_hidden">
+                        <img src="{$item->img|default='/static/img/newimg/daren.png'}" alt="">
+                        <div class="flexbox column float_l">
+                            <p>{$item->task_name}</p>
+                            <p class="tang">{$item->cur_reward_remark}</p>
+                        </div>
+                        {if $item->is_all_receive == '1'}
+                            <span>已领取</span>
+                        {elseif $item->is_receive=='1' /}
+
+                            <span class="active" data-form="task-form{$k}" onclick="ajaxPost(this)">领取</span>
+                        {else /}
+                            <a href="{$item->url}"><span>做任务</span></a>
+                        {/if}
+                    </div>
+                </form>
+            </div>
+
+        {/foreach}
+
+        <!--<div class="mrrw_content_item">-->
+            <!--<div class="over_hidden">-->
+                <!--<img src="/static/img/newimg/daren.png" alt="">-->
+                <!--<div class="flexbox column float_l">-->
+                    <!--<p>挂一次买单</p>-->
+                    <!--<p class="tang">+0.1~10糖果</p>-->
+                <!--</div>-->
+                <!--<span class="active">领取</span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="mrrw_content_item">-->
+            <!--<div class="over_hidden">-->
+                <!--<img src="/static/img/newimg/daren.png" alt="">-->
+                <!--<div class="flexbox column float_l">-->
+                    <!--<p>退广5个有效下线</p>-->
+                    <!--<p class="tang">+0.6~100糖果</p>-->
+                <!--</div>-->
+                <!--<span class="active">领取</span>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+</html>

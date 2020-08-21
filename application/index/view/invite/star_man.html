@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>星级达人</title>
+    {include file="layout/head" /}
+</head>
+<body class="ztxx-body yq-body">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c blod">星级达人</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+{if count($list)>0}
+<div class="ztxx-page">
+    <table>
+        <tbody class="flexbox column">
+
+            <tr>
+                <th>星级成就</th>
+                <th>状态</th>
+                <th>领取时间</th>
+            </tr>
+            {foreach $list as $item }
+            <tr>
+                <td>{$item->star_k}星成就</td>
+                <td>已领取</td>
+                <td>{$item->add_time|date="Y/m/d"}</td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+</div>
+{else /}
+<div class="show_on_content">
+    <p class="show_text" style="color: #fff">暂无内容</p>
+</div>
+{/if}
+{include file="layout/footer" /}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{foreach $list as $k=>$item}
+<li>
+    <a href="magiclogdetail?times={$k}">
+        <p class="first_child">
+            <i class="task_icon"></i>
+            <span>今日收支</span>
+            {if $item<0}
+                <span>{$item}糖果 ></span>
+            {else /}
+                <span>{$item}糖果 ></span>
+            {/if}
+        </p>
+        <p>{$k}</p>
+    </a>
+</li>
+{/foreach}

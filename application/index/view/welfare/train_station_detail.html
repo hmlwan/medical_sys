@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>车次列表</title>
+    {include file="layout/head" /}
+</head>
+<body>
+<header>
+    <div class="header_bt">
+        <!--<div class="header_f"><a href="{:url('train_station')}" class="header_fh"></a></div>-->
+        <div class="header_c" style="margin-left:.8rem;">{$start}-{$end}</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<div class="cclb-page">
+    <input type="hidden" name="mui-tab-item" value="4">
+    <input type="hidden" value="{$start}" name="start">
+    <input type="hidden" value="{$end}" name="end">
+    <div class="cclb_nav_con">
+        <div class="cclb_nav flexbox wrap spacebetween">
+            {if $is_back == 1}
+                <span class="text_left">
+                    <a href="{:url('train_station_detail',array('date'=>$back_date,'date_str'=>$back_date_str,'week'=>$back_week,'start'=>$start,'end'=>$end))}"><i class="arrow_l_icon"></i>前一天</a>
+                </span>
+            {else /}
+                <span style="color:#9E9E9E" class="text_left"><i class="arrow_l_icon"></i>前一天</span>
+            {/if}
+            <span class="text_center select_pop"><i  class="rrqi_icon"></i><em class="select_date">{$date}</em> <em class="week">{$week}</em></span>
+            <span class="text_right">
+                <a href="{:url('train_station_detail',array('date'=>$go_date,'date_str'=>$go_date_str,'week'=>$go_week,'start'=>$start,'end'=>$end))}">后一天<i  class="arrow_r_icon"></i></a>
+            </span>
+        </div>
+    </div>
+    {if count($list)>0}
+        <div class="cclb_con">
+            {foreach $list as $item }
+            <div class="cclb_item">
+                <div class="cclb_item_top flexbox wrap spacebetween">
+                    <div>
+                        <p class="frist_line">{$item.departuretime}</p>
+                        <p class="second_line">{$item.station}</p>
+                    </div>
+                    <div class="flexbox column">
+                        <span>{$item.trainno}</span>
+                        <i class="fgx_icon"></i>
+                        <span>{$item.costtime}</span>
+                    </div>
+                    <div>
+                        <p class="frist_line">{$item.arrivaltime}</p>
+                        <p class="second_line">{$item.endstation}</p>
+                    </div>
+                    <div class="price">
+                        <span>￥<em>
+                            {if $item.priceed>0}
+                                {$item.priceed}
+                            {else /}
+                                {$item.priceyz}
+                            {/if}
+                        </em></span>起
+                    </div>
+                </div>
+                <div class="flexbox wrap zw_num spacebetween select_train">
+                    <span>二等座<em>{$item.numed}</em></span>
+                    <span>一等座<em>{$item.numyd}</em></span>
+                    <span>商务座<em>{$item.numsw}</em></span>
+                </div>
+            </div>
+            {/foreach}
+        </div>
+    {else /}
+        <div class="show_on_content">
+            <p><img src="/static/img/newimg/no_data_icon.png" alt=""></p>
+            <p class="show_text">暂无内容</p>
+        </div>
+    {/if}
+    <!--<div class="cclb_con">-->
+        <!--<div class="cclb_item">-->
+            <!--<div class="cclb_item_top flexbox wrap spacebetween">-->
+                <!--<div>-->
+                    <!--<p class="frist_line">06:13</p>-->
+                    <!--<p class="second_line">成都</p>-->
+                <!--</div>-->
+                <!--<div class="flexbox column">-->
+                    <!--<span>G295</span>-->
+                    <!--<i class="fgx_icon"></i>-->
+                    <!--<span>12时3分</span>-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--<p class="frist_line">18:13</p>-->
+                    <!--<p class="second_line">杭州东</p>-->
+                <!--</div>-->
+                <!--<div class="price">-->
+                    <!--<span>￥<em>9256.5</em></span>起-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="flexbox wrap zw_num spacebetween">-->
+                <!--<span>二等座<em>有</em></span>-->
+                <!--<span>一等座<em>无</em></span>-->
+                <!--<span>商务座<em>有</em></span>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+</div>
+
+
+<script src="/static/js/laydate/laydate.js"></script>
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+<script>
+    $(".select_train").click(function () {
+        mui.alert("暂未开通糖果购票支付", '');
+        return false;
+    });
+    lay('.select_pop').on('click', function(e){
+        laydate.render({
+            elem: '.select_date', //指定元素
+            format:"MM月dd日",
+            calendar: true,
+            max:29,
+            min:0,
+            showBottom: false,
+            show: true,
+            closeStop: '.',
+            theme:"#5fa2fd",
+            done: function(date,e,i) {
+                console.log(e);
+                var date_str = e.month+'/'+e.date+'/'+e.year;
+                console.log(date_str);
+                var week = getWeek(date_str);
+                $(".week").html(week);
+                var start = $("input[name='start']").val();
+                var end = $("input[name='end']").val();
+                window.location.href = 'train_station_detail?date='+date+'&start='+start+'&end='+end+'&date_str='+date_str+'&week='+week;
+            }
+        });
+    });
+    function getWeek(date) {
+
+//        var date = "07/17/2014";    //此处也可以写成 17/07/2014 一样识别    也可以写成 07-17-2014  但需要正则转换
+        var day = new Date(Date.parse(date));   //需要正则转换的则 此处为 ： var day = new Date(Date.parse(date.replace(/-/g, '/')));
+        var today = new Array('星期日','星期一','星期二','星期三','星期四','星期五','星期六');
+        var week = today[day.getDay()];
+        return  week;
+    }
+
+</script>
+
+</html>
+

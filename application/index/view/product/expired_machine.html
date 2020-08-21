@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>云空间</title>
+    {include file="layout/head" /}
+</head>
+<body>
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">云空间</div>
+        <div class="header_r"><a href="{:url('newcomer_intro')}">说明</a></div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<input type="hidden" name="mui-tab-item" value="2">
+<div class="dhkj-page">
+    <div class="dhkj_tips">
+        <p><i class="laba_icon"></i><span>当云空间到期后，可持有数量将会相对应恢复。</span></p>
+    </div>
+    <div class="dhkj_header flexbox wrap spacebetween">
+        <span><a href="{:url('machine_hire')}">租云空间</a></span>
+        <span><a href="{:url('running_machine')}">运行中</a></span>
+        <span  class="active_l">已到期</span>
+    </div>
+    {if count($list)>0}
+    <div class="dhkj_content">
+        {foreach name='list' item='item'}
+        <div class="dhkj_item flexbox column expire_bgk">
+            <i class="gc">
+                <img src="{$item.logo_url|default='/static/img/newimg/gc1.png'}" alt="">
+            </i>
+            <div class="first_item">
+                <span class="title">{$item.product_name}</span>
+                <span>算力：{$item.energy_num|default='0'}T</span>
+            </div>
+            <div>
+                <span>兑换数量：{$item.candy_num|default='0'}糖果</span>
+                <span>可持有：{$item.hold_num|default='0'}台</span>
+            </div>
+            <div class="last_item flexbox wrap spacebetween">
+
+                <p class="flexbox column">
+                	<em>周期产量：{$item.energy_num*$item.period}糖果</em>
+                    <!--<em>周期产量：{$item.return_candy_num|default='0'}糖果</em>-->
+                    <em>运行周期：{$item.period|default='0'}天</em>
+                </p>
+                <p>
+                    <span class="op_data">已到期</span>
+                </p>
+            </div>
+        </div>
+        {/foreach}
+        <!--<div class="dhkj_item flexbox column  gc2_bgk">-->
+            <!--<i class="gc gc2"></i>-->
+            <!--<div class="first_item">-->
+                <!--<span class="title">二级空间</span>-->
+                <!--<span>贡献值:3G</span>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<span>兑换数量：100糖果</span>-->
+                <!--<span>可持有：1家</span>-->
+            <!--</div>-->
+            <!--<div class="last_item flexbox wrap spacebetween">-->
+
+                <!--<p class="flexbox column">-->
+                    <!--<em>周期产量：120糖果</em>-->
+                    <!--<em>运行周期：30天</em>-->
+                <!--</p>-->
+                <!--<p>-->
+                    <!--<a href="">立即租用</a>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="dhkj_item flexbox column  gc3_bgk">-->
+            <!--<i class="gc gc3"></i>-->
+            <!--<div class="first_item">-->
+                <!--<span class="title">三级空间</span>-->
+                <!--<span>贡献值:3G</span>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<span>兑换数量：100糖果</span>-->
+                <!--<span>可持有：1家</span>-->
+            <!--</div>-->
+            <!--<div class="last_item flexbox wrap spacebetween">-->
+
+                <!--<p class="flexbox column">-->
+                    <!--<em>周期产量：120糖果</em>-->
+                    <!--<em>运行周期：30天</em>-->
+                <!--</p>-->
+                <!--<p>-->
+                    <!--<a href="">立即租用</a>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="dhkj_item flexbox column  gc4_bgk">-->
+            <!--<i class="gc gc4"></i>-->
+            <!--<div class="first_item">-->
+                <!--<span class="title">四级空间</span>-->
+                <!--<span>贡献值:3G</span>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<span>兑换数量：100糖果</span>-->
+                <!--<span>可持有：1家</span>-->
+            <!--</div>-->
+            <!--<div class="last_item flexbox wrap spacebetween">-->
+
+                <!--<p class="flexbox column">-->
+                    <!--<em>周期产量：120糖果</em>-->
+                    <!--<em>运行周期：30天</em>-->
+                <!--</p>-->
+                <!--<p>-->
+                    <!--<a href="">立即租用</a>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="dhkj_item flexbox column  expire_bgk ">-->
+            <!--<i class="gc gc4"></i>-->
+            <!--<div class="first_item">-->
+                <!--<span class="title">四级空间</span>-->
+                <!--<span>贡献值:3G</span>-->
+            <!--</div>-->
+            <!--<div>-->
+                <!--<span>兑换数量：100糖果</span>-->
+                <!--<span>可持有：1家</span>-->
+            <!--</div>-->
+            <!--<div class="last_item flexbox wrap spacebetween">-->
+
+                <!--<p class="flexbox column">-->
+                    <!--<em>周期产量：120糖果</em>-->
+                    <!--<em>运行周期：30天</em>-->
+                <!--</p>-->
+                <!--<p>-->
+                    <!--<a href="">已到期</a>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    {else /}
+        <div class="show_on_content">
+            <p><img src="/static/img/newimg/no_data_icon.png" alt=""></p>
+            <p class="show_text">暂无内容</p>
+        </div>
+    {/if}
+</div>
+
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+</body>
+</html>

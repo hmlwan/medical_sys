@@ -1,0 +1,561 @@
+---------------------------------------------------------------
+[ 2020-08-21T15:37:26+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.138014s][吞吐率：7.25req/s] [内存消耗：2,451.34kb] [文件加载：83]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004000s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.056006s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:37:26+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.104011s][吞吐率：9.61req/s] [内存消耗：2,559.41kb] [文件加载：82]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:44:58+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.212021s][吞吐率：4.72req/s] [内存消耗：2,434.58kb] [文件加载：80]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:45:02+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.093010s][吞吐率：10.75req/s] [内存消耗：2,451.23kb] [文件加载：83]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.015001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:45:02+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.069007s][吞吐率：14.49req/s] [内存消耗：2,434.52kb] [文件加载：80]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004001s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.014001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:46:49+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.074007s][吞吐率：13.51req/s] [内存消耗：2,434.58kb] [文件加载：80]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002001s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.018001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001001s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:46:52+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.102010s][吞吐率：9.80req/s] [内存消耗：2,451.23kb] [文件加载：83]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013001s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.023002s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:46:52+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.078008s][吞吐率：12.82req/s] [内存消耗：2,434.52kb] [文件加载：80]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.017002s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:47:23+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.092009s][吞吐率：10.87req/s] [内存消耗：2,451.29kb] [文件加载：83]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008001s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.017002s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:47:23+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.086008s][吞吐率：11.63req/s] [内存消耗：2,434.57kb] [文件加载：80]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013002s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.016001s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:50:25+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.104011s][吞吐率：9.61req/s] [内存消耗：2,451.29kb] [文件加载：83]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.029003s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.018002s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:50:25+08:00 ] 127.0.0.1 GET /index/publics/index.html
+[ info ] www.medical_sys.com/index/publics/index.html [运行时间：0.080008s][吞吐率：12.50req/s] [内存消耗：2,434.57kb] [文件加载：80]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\index\view\publics\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003000s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.014002s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+---------------------------------------------------------------
+[ 2020-08-21T15:52:14+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.054006s][吞吐率：18.52req/s] [内存消耗：1,001.27kb] [文件加载：54]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'purpose' => 'prefetch',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-08-21T15:52:21+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.060006s][吞吐率：16.66req/s] [内存消耗：1,314.95kb] [文件加载：62]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-08-21T15:52:21+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] www.medical_sys.com/admin/login/index.html [运行时间：0.031003s][吞吐率：32.25req/s] [内存消耗：1,403.66kb] [文件加载：62]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-08-21T16:27:05+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] www.medical_sys.com/admin/login/index.html [运行时间：0.122012s][吞吐率：8.20req/s] [内存消耗：1,750.32kb] [文件加载：63]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]"continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"?[D:\WWW\medical_sys\thinkphp\library\think\Template.php:1047]
+---------------------------------------------------------------
+[ 2020-08-21T16:55:17+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] www.medical_sys.com/admin/login/index.html [运行时间：0.096000s][吞吐率：10.42req/s] [内存消耗：1,750.32kb] [文件加载：63]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ha8o7ii192pt2utgag87vf8ra4',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [2]"continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"?[D:\WWW\medical_sys\thinkphp\library\think\Template.php:1047]
+---------------------------------------------------------------
+[ 2020-08-21T20:15:48+08:00 ] 127.0.0.1 GET /
+[ info ] www.medical_sys.com/ [运行时间：0.113011s][吞吐率：8.85req/s] [内存消耗：1,314.98kb] [文件加载：62]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-08-21T20:15:48+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] www.medical_sys.com/admin/login/index.html [运行时间：0.044005s][吞吐率：22.72req/s] [内存消耗：1,286.48kb] [文件加载：60]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ruoae9kkc36vk93kv7bb333fm5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-08-21T20:25:33+08:00 ] 127.0.0.1 GET /admin/login/index.html
+[ info ] www.medical_sys.com/admin/login/index.html [运行时间：0.243829s][吞吐率：4.10req/s] [内存消耗：1,286.54kb] [文件加载：60]
+[ info ] [ LANG ] D:\WWW\medical_sys\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'PHPSESSID=ruoae9kkc36vk93kv7bb333fm5',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.medical_sys.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ VIEW ] D:\WWW\medical_sys\application\admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File

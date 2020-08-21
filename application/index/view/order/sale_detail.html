@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题 卖家订单详情-->
+    <title>订单详情</title>
+    {include file="layout/head" /}
+</head>
+<body style="background-color: #f7f7f5">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">订单详情</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<style>
+    .ddxq-page .times {
+        display: flex;
+        line-height: 16px;
+        height: 16px;
+        overflow: hidden;
+        margin-top: 3px;
+        font-size: .26rem;
+    }
+</style>
+<div class="ddxq-page">
+    <input type="hidden" name="mui-tab-item" value="3">
+    <input type="hidden" name="order_id" value="{$info.id}">
+    <input type="hidden" name="left_time" value="{$left_time}">
+    <ul class="flexbox column">
+    	  <li class="item">
+            <span>单号</span>
+            <span>{$info.order_number}</span>
+        </li>
+        <li class="item">
+            <span>数量</span>
+            <span>{$info.number}糖果</span>
+        </li>
+        <li class="item">
+            <span>单价</span>
+            <span>1 CNY</span>
+        </li>
+        <li class="item">
+            <span>总价</span>
+            <span>{$info.number} CNY</span>
+        </li>
+        <li class="item">
+            <span>换算人民币</span>
+            <span>{$info.number}元</span>
+        </li>
+
+        {if $info.status == '2' }
+            <li class="item">
+                <span>买家付款倒计时</span>
+                <span class="times">00小时00分钟00秒</span>
+            </li>
+        {elseif $info.status == '3'}
+            <li  class="item">
+                <span>卖家确认倒计时</span>
+                <span class="times">00小时00分钟00秒</span>
+            </li>
+        {elseif $info.status == '6'}
+            <li  class="item">
+                <span>双方举证倒计时</span>
+                <span class="times">00小时00分钟00秒</span>
+            </li>
+        {/if}
+
+        <li class="item">
+            <span>买家姓名</span>
+            <span>{$buy_info.real_name}</span>
+        </li>
+        <li class="item" >
+            <span>买家手机</span>
+            <span>
+              <a href="tel:{$buy_info.mobile}">联系对方</a>
+            </span>
+        </li>
+    </ul>
+    <div class="fd_img" style="display: none">
+        <p><img src="{$info.image|default=''}" alt=""></p>
+        <i class="gb_icon"></i>
+    </div>
+    <div class="zhezhao_h"></div>
+
+    <div class="order_tips_pop fx_pop" style="display: none">
+        <div class="order_tips_pop_view">
+            <p class="title">提示</p>
+            <p>请确认您已收到买家的打款，确认之后
+                将无法提起申诉</p>
+            <p class="btn">
+                <span class="confirm float_l">确定</span>
+                <span class="cancel float_r">取消</span>
+            </p>
+        </div>
+    </div>
+    <div class="order_tips_pop jb_pop" style="display: none">
+        <div class="order_tips_pop_view">
+            <p class="title">提示</p>
+            <p>请确认您未收到买家的打款，恶意举报
+                将直接冻结账号不可解冻</p>
+            <p class="btn">
+                <span class="confirm float_l">确定</span>
+                <span class="cancel float_r">取消</span>
+            </p>
+        </div>
+    </div>
+    {if $info.status == 2} <!--等待付款-->
+        <!--<p class="tips"></p>-->
+        <p class="tips wx_tips">请及时和买家取得联系。如若买家两个小时内未支付，订单将自动退回，请耐心等待。</p>
+        <div class="upload_page flexbox wrap spacearound">
+            <div class="upload_show no_pay no_pay_l" id="img">
+                <!--<input type="file" id="file" class="input_line">-->
+                <div class="file_text">
+                    <i></i>
+                    <p>等待截图</p>
+                </div>
+                <a href="javascript:;" class="upload_img" style="display: none">
+                    <img src="{$info.image|default=''}" alt="">
+                </a>
+                <em class="fd_icon"></em>
+            </div>
+            <div class="upload_show no_pay_r no_pay" >
+               等待付款
+            </div>
+        </div>
+    {elseif $info.status == 3 /} <!--等待收款-->
+        <p class="tips">我未收到款，这个图是假的。<em style="color: #05b793" class="blod" id="jubao">点击举报！</em></p>
+        <div class="upload_page flexbox wrap spacearound">
+            <div class="upload_show pay no_pay_l" id="img">
+                <!--<input type="file" id="file" class="input_line">-->
+                <a href="javascript:;" class="upload_img"><img src="{$info.image|default=''}" alt=""></a>
+                <em class="fd_icon" style="display: inline-block"></em>
+            </div>
+            <div class="upload_show pay_r pay fx_btn" style="background-color: #d2d2d2">
+                确认放行
+            </div>
+        </div>
+    {elseif $info.status == 6 /}
+        <p class="tips">等待买家提供支付凭据</p>
+        <div class="upload_page flexbox wrap spacearound">
+            <div class="upload_show pay no_pay_l" id="img">
+                <!--<input type="file" id="file" class="input_line">-->
+                <a href="javascript:;" class="upload_img"><img src="{$info.image|default=''}" alt=""></a>
+                <em class="fd_icon" style="display: inline-block"></em>
+            </div>
+            <div class="upload_show pay_r pay" style="background-color: #d2d2d2">
+                等待判定
+            </div>
+        </div>
+    {else /}
+        <p class="tips wx_tips">温馨提示：核实对方账户按时打款，未打款将会影响信誉降低匹配速度，多次未打款将永久冻结账号</p>
+        <div class="upload_page flexbox wrap spacearound">
+            <div class="upload_show pay no_pay_l" id="img">
+                <!--<input type="file" id="file" class="input_line">-->
+                <a href="javascript:;" class="upload_img"><img src="{$info.image|default=''}" alt=""></a>
+                <em class="fd_icon" style="display: inline-block"></em>
+            </div>
+            <div class="upload_show pay_r pay">
+                交易完成
+            </div>
+        </div>
+    {/if}
+</div>
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+<script>
+    $(".fd_icon").click(function () {
+        $(".zhezhao_h").addClass('zhezhao');
+        $(".fd_img").show();
+    });
+    $(".fd_img .gb_icon").click(function () {
+        $(".zhezhao_h").removeClass('zhezhao');
+        $(".fd_img").hide();
+    });
+
+    $(".order_tips_pop .cancel").click(function () {
+        $(".order_tips_pop").hide();
+        $(".zhezhao_h").removeClass('zhezhao');
+    });
+
+    /*确认收款*/
+    $(".ddxq-page").on('click','.fx_btn',function () {
+        $(".fx_pop").show();
+        $(".zhezhao_h").addClass('zhezhao');
+    });
+    $(".fx_pop .confirm").click(function () {
+        var order_id = $("input[name='order_id']").val();
+        mui.showLoading("处理中..", "div");
+        $.ajax({
+            url:"confirm",
+            type:"post",
+            data:{
+                'order_id' : order_id,
+            },
+            dataType:'json',
+            success:function(data){
+                mui.hideLoading();
+                if(data.code == 0)
+                {
+                    if (data.toUrl) {
+                        mui.alert(data.message, '', function () {
+                            window.location.href = data.toUrl;
+                        })
+                    } else {
+                        mui.alert(data.message, '');
+                    }
+                }else{
+                    mui.alert(data.message);
+                    return false;
+                }
+            }
+        })
+
+    });
+    /*我要举报*/
+    $(".ddxq-page").on('click','#jubao',function () {
+        $(".jb_pop").show();
+        $(".zhezhao_h").addClass('zhezhao');
+    });
+    $(".jb_pop .confirm").click(function () {
+        var order_id = $("input[name='order_id']").val();
+        mui.showLoading("处理中..", "div");
+        $.ajax({
+            url:"report",
+            type:"post",
+            data:{
+                'order_id' : order_id,
+            },
+            dataType:'json',
+            success:function(data){
+                mui.hideLoading();
+                if(data.code == 0)
+                {
+                    mui.alert(data.message,function () {
+                        window.location.reload();
+                    });
+                }else{
+                    mui.alert(data.message);
+                    return false;
+                }
+            }
+        })
+
+    });
+
+    function scrollTime($time, time) {
+         var left_time = $("input[name='left_time']").val();
+        var baseArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        var baseLiStr = ''
+        baseArr.forEach(function(ele) {
+            baseLiStr += '<li>' + ele + '</li>'
+        })
+        var lineHeight = $time.height();
+        var domStr = '';
+        for (var i = 0; i < time.length; i++) {
+            if (+time[i] !== +time[i]) {
+                domStr += '<ul>'+ time[i] +'</ul>';
+                continue
+            }
+            var scrollHeight = baseArr.indexOf(time[i]) * lineHeight;
+            domStr += '<ul style="transition: transform .3s ease-in;transform: translate3d(0, -'+ scrollHeight +'px, 0)">' + baseLiStr + '</ul>'
+        }
+        $time.html(domStr)
+
+        let timeArr = time.split(/\D/g).filter(item => item !== '')
+        var hour = +timeArr[0]
+        var minute = +timeArr [1]
+        var second = +timeArr[2]
+        console.log(hour, minute, second)
+        var timer = setInterval(function() {
+            if(second<=0){
+                clearInterval(timer);
+                return;
+            }
+            if (second - 1 <= 0) {
+                second = 60
+                if (minute - 1 <= 0) {
+                    minute = 60;
+                    hour--
+                }
+                minute--
+            }
+            second--
+            var timeStr = addZero(hour) + '小时' + addZero(minute) + '分钟' + addZero(second)+'秒';
+            if (timeStr.length > time.length) {
+                $time.prepend('<ul style="transition: transform .3s ease-in;transform: translate3d(0, 0, 0)">' + baseLiStr + '</ul>')
+            }
+            for(var j = timeStr.length - 1; j >= 0; j--) {
+                if (timeStr[j] !== time[j]) {
+                    var scrollHeight = baseArr.indexOf(timeStr[j]) * lineHeight;
+                    $time.find('ul').eq(j)[0].style.transform = 'translate3d(0, -' + scrollHeight + 'px , 0)'
+                }
+            }
+            time = timeStr;
+             left_time--;
+        }, 1000)
+    }
+    var $time = $('.ddxq-page .times');
+    scrollTime($time, {$show_left_time_str});
+    //时间滚动
+    function addZero(num) {
+        return num < 10 ? ('0' + +num) : +num;
+    }
+</script>
+
+</body>
+</html>
+

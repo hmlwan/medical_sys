@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper-4.2.0.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+</head>
+<body>
+<!--<header class="mui-bar mui-bar-nav  my-header">
+    <h1 id="title" class="mui-title">流量魔盒</h1>
+</header>-->
+<div class="mui-content" style="padding-bottom: 100px">
+    <div class="white-box mui-row product-top">
+        <div class="mui-col-xs-4 mui-col-xs-4 text">
+            当前缓存
+        </div>
+        <div class="mui-col-xs-4 mui-col-xs-4 product-img">
+            789
+        </div>
+        <div class="mui-col-xs-4 mui-col-xs-4 text">
+            kb/s
+        </div>
+    </div>
+    <p style="padding: 20px">
+        您的每kb流量缓存都可以通过流量魔盒传输到云端，并可采集魔石，此举并不消耗实际手机流量，流量魔盒团队会将缓存
+        积累并积极用于慈善事业，保护资源，从我做起
+    </p>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide product-list">
+                <div class="product-item white-box left">
+                    <img class="product-img" src="img/mh1.png">
+                    <h4 class="text-center product-name">迷你魔盒</h4>
+
+                    <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">电池周期：25 天</p>
+
+                    <div class="mui-row product-price">
+                        <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                        <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide product-list">
+                <div class="product-item white-box left">
+                    <img class="product-img" src="img/mh1.png">
+                    <h4 class="text-center product-name">迷你魔盒</h4>
+
+                    <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">电池周期：25 天</p>
+
+                    <div class="mui-row product-price">
+                        <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                        <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide product-list">
+                <div class="product-item white-box left">
+                    <img class="product-img" src="img/mh1.png">
+                    <h4 class="text-center product-name">迷你魔盒</h4>
+
+                    <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">电池周期：25 天</p>
+
+                    <div class="mui-row product-price">
+                        <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                        <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide product-list">
+                <div class="product-item white-box left">
+                    <img class="product-img" src="img/mh1.png">
+                    <h4 class="text-center product-name">迷你魔盒</h4>
+
+                    <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+
+                    <p class="text-center">电池周期：25 天</p>
+
+                    <div class="mui-row product-price">
+                        <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                        <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="product-list">
+        <div class="product-item white-box left">
+            <img class="product-img" src="img/mh1.png">
+            <h4 class="text-center product-name">迷你魔盒</h4>
+            <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">电池周期：25 天</p>
+            <div class="mui-row product-price">
+                <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+            </div>
+        </div>
+        <div class="product-item white-box left">
+            <img class="product-img" src="img/mh1.png">
+            <h4 class="text-center product-name">迷你魔盒</h4>
+            <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">电池周期：25 天</p>
+            <div class="mui-row product-price">
+                <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+            </div>
+        </div>
+        <div class="product-item white-box left">
+            <img class="product-img" src="img/mh1.png">
+            <h4 class="text-center product-name">迷你魔盒</h4>
+            <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">电池周期：25 天</p>
+            <div class="mui-row product-price">
+                <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+            </div>
+        </div>
+        <div class="product-item white-box left">
+            <img class="product-img" src="img/mh1.png">
+            <h4 class="text-center product-name">迷你魔盒</h4>
+            <p class="text-center">魔石开采率：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">24小时产量：0.01kb/s-0.011kb/s</p>
+            <p class="text-center">电池周期：25 天</p>
+            <div class="mui-row product-price">
+                <div class="mui-col-xs-6 mui-col-sm-6">10魔石</div>
+                <div class="mui-col-xs-6 mui-col-sm-6">购买</div>
+            </div>
+        </div>
+    </div>-->
+</div>
+<nav class="mui-bar mui-bar-tab my-nav">
+    <a class="mui-tab-item mui-active">
+        <!--<span class="mui-icon mui-icon-home"></span>-->
+        <img src="img/dbsy.png">
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="mui-tab-item">
+        <img src="img/dbmo.png">
+        <span class="mui-tab-label">魔盒</span>
+    </a>
+    <a class="mui-tab-item">
+        <img src="img/dbjy.png">
+        <span class="mui-tab-label">交易</span>
+    </a>
+    <a class="mui-tab-item">
+        <img src="img/dbwd.png">
+        <span class="mui-tab-label">我的</span>
+    </a>
+</nav>
+</body>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/swiper-4.2.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+    mui.init()
+
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1.2,
+        spaceBetween: 0,
+        centeredSlides: true,
+        speed: 300,
+    });
+
+</script>
+
+</html>

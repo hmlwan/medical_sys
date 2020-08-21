@@ -1,0 +1,1965 @@
+---------------------------------------------------------------
+[ 2020-07-12T00:38:48+08:00 ] 127.0.0.1 GET /index/member/index.html
+[ info ] www.candyworld.com/index/member/index.html [运行时间：0.343607s][吞吐率：2.91req/s] [内存消耗：3,173.37kb] [文件加载：94]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/invite/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005094s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.008788s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001114s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.004948s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.003420s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005076s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001150s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001400s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003631s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.012103s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.001144s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.000793s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.003913s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000737s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.003404s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.012410s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.009521s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001500s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.005645s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.002965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.007075s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594481928 LIMIT 1 [ RunTime:0.045861s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001903s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000944s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001109s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000908s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.002597s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000834s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.006181s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.023949s ]
+[ sql ] [ SQL ] INSERT INTO `user_jump_ad` (`user_id` , `add_time`) VALUES (1 , 1594485528) [ RunTime:0.002227s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:59]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:61]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:99]
+[ error ] [8]Trying to get property of non-object[/Applications/MAMP/htdocs/project/candyworld/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php:130]
+---------------------------------------------------------------
+[ 2020-07-12T00:38:49+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.042773s][吞吐率：23.38req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T00:38:50+08:00 ] 127.0.0.1 GET /index/product/index
+[ info ] www.candyworld.com/index/product/index [运行时间：0.179257s][吞吐率：5.58req/s] [内存消耗：3,180.72kb] [文件加载：92]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/product/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'energy',
+  2 => 'magic',
+  3 => 'condy_sum_num',
+  4 => 'left_second',
+  5 => 'is_receive',
+  6 => 'decimal_num',
+  7 => 'reward_num',
+  8 => 'show_during_second_str',
+  9 => 'time_rate',
+  10 => 'p_num',
+  11 => 'bj_k',
+  12 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001937s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.007085s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001124s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.002743s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001304s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000618s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003099s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001239s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000897s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000918s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000980s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.002758s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.017449s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_record` [ RunTime:0.003368s ]
+[ sql ] [ SQL ] SELECT * FROM `product_record` WHERE  `user_id` = 1  AND `is_receive` = 0 ORDER BY add_time desc [ RunTime:0.004866s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product` [ RunTime:0.003088s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000829s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.003888s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000886s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:23]
+[ error ] [8192]Non-static method app\common\entity\Product::getProductRecord() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:106]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+---------------------------------------------------------------
+[ 2020-07-12T00:38:51+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.058613s][吞吐率：17.06req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T00:38:53+08:00 ] 127.0.0.1 GET /index/member/index
+[ info ] www.candyworld.com/index/member/index [运行时间：0.224880s][吞吐率：4.45req/s] [内存消耗：3,191.45kb] [文件加载：93]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/product/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000801s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.006928s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001184s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003251s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.003293s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000748s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003391s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001024s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003573s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000911s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.001266s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.000766s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.002408s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.002693s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.009650s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.006520s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000752s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.004347s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000702s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.002623s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594481933 LIMIT 1 [ RunTime:0.036012s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:59]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:61]
+[ error ] [8]未定义变量: condy_sum_num[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:163]
+[ error ] [8]Trying to get property of non-object[/Applications/MAMP/htdocs/project/candyworld/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php:130]
+---------------------------------------------------------------
+[ 2020-07-12T00:38:53+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.050431s][吞吐率：19.83req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T00:38:55+08:00 ] 127.0.0.1 GET /index/invite/index
+[ info ] www.candyworld.com/index/invite/index [运行时间：0.141562s][吞吐率：7.06req/s] [内存消耗：3,102.34kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/invite/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_url',
+  2 => 'invite_code',
+  3 => 'td_commission_num',
+  4 => 'invite_levels_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001606s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003236s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000959s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.002823s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000875s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004329s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000706s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_statistics` [ RunTime:0.003176s ]
+[ sql ] [ SQL ] SELECT `total_sub_nums` FROM `user_statistics` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000797s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `invite_record` [ RunTime:0.003848s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `invite_record` WHERE  `user_id` = 1  AND `is_cert` = 2  AND `add_time` BETWEEN 1594483200 AND 1594569599 LIMIT 1 [ RunTime:0.050349s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003446s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000719s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserInviteCode::getCodeByUserId() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Invite.php:37]
+---------------------------------------------------------------
+[ 2020-07-12T00:38:55+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.047418s][吞吐率：21.09req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T00:38:57+08:00 ] 127.0.0.1 GET /index/member/spread
+[ info ] www.candyworld.com/index/member/spread [运行时间：0.116850s][吞吐率：8.56req/s] [内存消耗：3,136.19kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/invite/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/spread.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_code',
+  2 => 'bg_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003409s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003118s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.005085s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001197s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001241s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005977s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001143s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003690s ]
+[ sql ] [ SQL ] SELECT `invite_code` FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.001054s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.003441s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 3 [ RunTime:0.000724s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T00:38:57+08:00 ] 127.0.0.1 GET /index/member/qrcode_img.html
+[ info ] www.candyworld.com/index/member/qrcode_img.html [运行时间：0.206059s][吞吐率：4.85req/s] [内存消耗：3,628.24kb] [文件加载：88]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.candyworld.com/index/member/spread',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002708s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.004504s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003380s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000772s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003400s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003246s ]
+[ sql ] [ SQL ] SELECT `invite_code` FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000587s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T00:38:57+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.048699s][吞吐率：20.53req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T10:40:05+08:00 ] 127.0.0.1 GET /index/invite/index.html
+[ info ] www.candyworld.com/index/invite/index.html [运行时间：0.208401s][吞吐率：4.80req/s] [内存消耗：3,102.42kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/spread',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/invite/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_url',
+  2 => 'invite_code',
+  3 => 'td_commission_num',
+  4 => 'invite_levels_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004683s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.011613s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001073s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.005598s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.002090s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004736s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001253s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_statistics` [ RunTime:0.003099s ]
+[ sql ] [ SQL ] SELECT `total_sub_nums` FROM `user_statistics` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000844s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `invite_record` [ RunTime:0.002709s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `invite_record` WHERE  `user_id` = 1  AND `is_cert` = 2  AND `add_time` BETWEEN 1594483200 AND 1594569599 LIMIT 1 [ RunTime:0.057533s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.002708s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000670s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserInviteCode::getCodeByUserId() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Invite.php:37]
+---------------------------------------------------------------
+[ 2020-07-12T10:40:05+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.045959s][吞吐率：21.76req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T12:34:21+08:00 ] 127.0.0.1 GET /index/member/spread
+[ info ] www.candyworld.com/index/member/spread [运行时间：0.127294s][吞吐率：7.86req/s] [内存消耗：3,136.19kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/invite/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/spread.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_code',
+  2 => 'bg_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003790s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.007124s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001110s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003503s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001031s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003900s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000965s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003406s ]
+[ sql ] [ SQL ] SELECT `invite_code` FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.006560s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 3 [ RunTime:0.000640s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T12:34:21+08:00 ] 127.0.0.1 GET /index/member/qrcode_img.html
+[ info ] www.candyworld.com/index/member/qrcode_img.html [运行时间：0.229527s][吞吐率：4.36req/s] [内存消耗：3,628.24kb] [文件加载：88]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.candyworld.com/index/member/spread',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000803s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.004654s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000878s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003533s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001187s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003415s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000896s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.002444s ]
+[ sql ] [ SQL ] SELECT `invite_code` FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000615s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T12:34:21+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.052161s][吞吐率：19.17req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T12:34:24+08:00 ] 127.0.0.1 GET /index/invite/index.html
+[ info ] www.candyworld.com/index/invite/index.html [运行时间：0.137887s][吞吐率：7.25req/s] [内存消耗：3,102.42kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/spread',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/invite/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_url',
+  2 => 'invite_code',
+  3 => 'td_commission_num',
+  4 => 'invite_levels_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002785s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.005599s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.002733s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.002608s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_statistics` [ RunTime:0.002877s ]
+[ sql ] [ SQL ] SELECT `total_sub_nums` FROM `user_statistics` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `invite_record` [ RunTime:0.002576s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `invite_record` WHERE  `user_id` = 1  AND `is_cert` = 2  AND `add_time` BETWEEN 1594483200 AND 1594569599 LIMIT 1 [ RunTime:0.049546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003144s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000631s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserInviteCode::getCodeByUserId() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Invite.php:37]
+---------------------------------------------------------------
+[ 2020-07-12T12:34:24+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.034794s][吞吐率：28.74req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T12:34:26+08:00 ] 127.0.0.1 GET /index/member/index.html
+[ info ] www.candyworld.com/index/member/index.html [运行时间：0.212490s][吞吐率：4.71req/s] [内存消耗：3,173.30kb] [文件加载：94]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/invite/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000762s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.007329s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003384s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001123s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003885s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001020s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003638s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.000776s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.002661s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000716s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.002732s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.009820s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.006819s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000664s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.002567s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.003095s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594524866 LIMIT 1 [ RunTime:0.033524s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000925s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000694s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.003110s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.015648s ]
+[ sql ] [ SQL ] INSERT INTO `user_jump_ad` (`user_id` , `add_time`) VALUES (1 , 1594528466) [ RunTime:0.002057s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:59]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:61]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:99]
+[ error ] [8]Trying to get property of non-object[/Applications/MAMP/htdocs/project/candyworld/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php:130]
+---------------------------------------------------------------
+[ 2020-07-12T12:34:26+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.033802s][吞吐率：29.58req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T12:34:27+08:00 ] 127.0.0.1 GET /index/product/index
+[ info ] www.candyworld.com/index/product/index [运行时间：0.133043s][吞吐率：7.52req/s] [内存消耗：3,180.72kb] [文件加载：92]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/index.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/product/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'energy',
+  2 => 'magic',
+  3 => 'condy_sum_num',
+  4 => 'left_second',
+  5 => 'is_receive',
+  6 => 'decimal_num',
+  7 => 'reward_num',
+  8 => 'show_during_second_str',
+  9 => 'time_rate',
+  10 => 'p_num',
+  11 => 'bj_k',
+  12 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000909s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.004159s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.002773s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001115s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003472s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000748s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001012s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000719s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000737s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000941s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.003065s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.014906s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_record` [ RunTime:0.002958s ]
+[ sql ] [ SQL ] SELECT * FROM `product_record` WHERE  `user_id` = 1  AND `is_receive` = 0 ORDER BY add_time desc [ RunTime:0.003096s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product` [ RunTime:0.003564s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000879s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.003168s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000576s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:23]
+[ error ] [8192]Non-static method app\common\entity\Product::getProductRecord() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:106]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+---------------------------------------------------------------
+[ 2020-07-12T12:34:28+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.056361s][吞吐率：17.74req/s] [内存消耗：1,230.04kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T16:06:53+08:00 ] 127.0.0.1 GET /index/member/index
+[ info ] www.candyworld.com/index/member/index [运行时间：0.333686s][吞吐率：3.00req/s] [内存消耗：3,173.31kb] [文件加载：94]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/product/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006720s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.009687s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001413s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.005104s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001709s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000761s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005240s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001118s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001216s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.005068s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.001019s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.001853s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.001853s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.002940s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000668s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.003596s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.012991s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.008877s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.004263s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.001764s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.003893s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594537613 LIMIT 1 [ RunTime:0.037552s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000872s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000754s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001136s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000825s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001061s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.004530s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.021310s ]
+[ sql ] [ SQL ] INSERT INTO `user_jump_ad` (`user_id` , `add_time`) VALUES (1 , 1594541213) [ RunTime:0.002421s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:59]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:61]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:99]
+[ error ] [8]Trying to get property of non-object[/Applications/MAMP/htdocs/project/candyworld/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php:130]
+---------------------------------------------------------------
+[ 2020-07-12T16:06:54+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.068751s][吞吐率：14.55req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T16:06:57+08:00 ] 127.0.0.1 GET /index/product/index
+[ info ] www.candyworld.com/index/product/index [运行时间：0.211791s][吞吐率：4.72req/s] [内存消耗：3,180.80kb] [文件加载：92]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/product/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'energy',
+  2 => 'magic',
+  3 => 'condy_sum_num',
+  4 => 'left_second',
+  5 => 'is_receive',
+  6 => 'decimal_num',
+  7 => 'reward_num',
+  8 => 'show_during_second_str',
+  9 => 'time_rate',
+  10 => 'p_num',
+  11 => 'bj_k',
+  12 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002036s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.005125s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003685s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001305s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000792s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003088s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000940s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001192s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000765s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001758s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.002304s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.003344s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.018149s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_record` [ RunTime:0.002771s ]
+[ sql ] [ SQL ] SELECT * FROM `product_record` WHERE  `user_id` = 1  AND `is_receive` = 0 ORDER BY add_time desc [ RunTime:0.003183s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product` [ RunTime:0.003092s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000993s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001141s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.003200s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000725s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:23]
+[ error ] [8192]Non-static method app\common\entity\Product::getProductRecord() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:106]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+---------------------------------------------------------------
+[ 2020-07-12T16:06:57+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.037416s][吞吐率：26.73req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T16:06:58+08:00 ] 127.0.0.1 GET /index/welfare/index
+[ info ] www.candyworld.com/index/welfare/index [运行时间：0.111404s][吞吐率：8.98req/s] [内存消耗：3,151.03kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/product/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/welfare/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'sl_list',
+  2 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001319s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003086s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001099s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.004475s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001344s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003087s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.002506s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 1 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.003993s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000704s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T16:06:59+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.078929s][吞吐率：12.67req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:05+08:00 ] 127.0.0.1 GET /index/welfare/index
+[ info ] www.candyworld.com/index/welfare/index [运行时间：0.162529s][吞吐率：6.15req/s] [内存消耗：3,151.03kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/welfare/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/welfare/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'sl_list',
+  2 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003921s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.006411s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001611s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.004396s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001371s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004177s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.002652s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 1 [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.002654s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000788s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:06+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.042859s][吞吐率：23.33req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:12+08:00 ] 127.0.0.1 POST /admin/config/deletes.html?id=22
+[ info ] www.candyworld.com/admin/config/deletes.html?id=22 [运行时间：0.095749s][吞吐率：10.44req/s] [内存消耗：2,757.63kb] [文件加载：81]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'content-length' => '0',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.candyworld.com',
+  'referer' => 'http://www.candyworld.com/admin/config/sl.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'id' => '22',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002803s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `manage_user_group` [ RunTime:0.004539s ]
+[ sql ] [ SQL ] SELECT `group_id` FROM `manage_user_group` WHERE  `user_id` = 1 [ RunTime:0.001605s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `manage_group` [ RunTime:0.004832s ]
+[ sql ] [ SQL ] SELECT * FROM `manage_group` WHERE  `id` IN (1) [ RunTime:0.000715s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.002752s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `id` = 22 LIMIT 1 [ RunTime:0.004962s ]
+[ sql ] [ SQL ] DELETE FROM `sl` WHERE  `id` = 22 [ RunTime:0.002756s ]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:12+08:00 ] 127.0.0.1 GET /admin/config/sl.html
+[ info ] www.candyworld.com/admin/config/sl.html [运行时间：0.085902s][吞吐率：11.64req/s] [内存消耗：3,125.05kb] [文件加载：87]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/admin/config/sl.html',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/admin/view/config/sl.html [ array (
+  0 => 'list',
+  1 => 'manage',
+  2 => 'menus',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001495s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `manage_user_group` [ RunTime:0.004905s ]
+[ sql ] [ SQL ] SELECT `group_id` FROM `manage_user_group` WHERE  `user_id` = 1 [ RunTime:0.000647s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `manage_group` [ RunTime:0.004709s ]
+[ sql ] [ SQL ] SELECT * FROM `manage_group` WHERE  `id` IN (1) [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.002514s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` [ RunTime:0.000536s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` [ RunTime:0.000916s ]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:15+08:00 ] 127.0.0.1 GET /index/welfare/index
+[ info ] www.candyworld.com/index/welfare/index [运行时间：0.097580s][吞吐率：10.25req/s] [内存消耗：3,149.49kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/welfare/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/welfare/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'sl_list',
+  2 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001011s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.004615s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000876s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003917s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000843s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003430s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.003078s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 1 [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.004006s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000788s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:15+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.072873s][吞吐率：13.72req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:40+08:00 ] 127.0.0.1 GET /index/welfare/index
+[ info ] www.candyworld.com/index/welfare/index [运行时间：0.165163s][吞吐率：6.05req/s] [内存消耗：3,303.33kb] [文件加载：93]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/welfare/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/welfare/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'sl_list',
+  2 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001665s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003285s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001019s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003755s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000623s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.004635s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.003327s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 1 [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.003830s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000686s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:41+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.037296s][吞吐率：26.81req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:49+08:00 ] 127.0.0.1 GET /index/member/index
+[ info ] www.candyworld.com/index/member/index [运行时间：0.237954s][吞吐率：4.20req/s] [内存消耗：3,173.31kb] [文件加载：94]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/welfare/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002316s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003977s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.004177s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000883s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003657s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000692s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.002084s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.004005s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.000892s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.003181s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.002725s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.011794s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.006746s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.002409s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000655s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.006586s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594546009 LIMIT 1 [ RunTime:0.037064s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001486s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000860s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.004522s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.016300s ]
+[ sql ] [ SQL ] INSERT INTO `user_jump_ad` (`user_id` , `add_time`) VALUES (1 , 1594549609) [ RunTime:0.002897s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:59]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:61]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:99]
+[ error ] [8]Trying to get property of non-object[/Applications/MAMP/htdocs/project/candyworld/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php:130]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:49+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.038946s][吞吐率：25.68req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:52+08:00 ] 127.0.0.1 GET /index/product/index
+[ info ] www.candyworld.com/index/product/index [运行时间：0.143803s][吞吐率：6.95req/s] [内存消耗：3,180.80kb] [文件加载：92]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/product/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'energy',
+  2 => 'magic',
+  3 => 'condy_sum_num',
+  4 => 'left_second',
+  5 => 'is_receive',
+  6 => 'decimal_num',
+  7 => 'reward_num',
+  8 => 'show_during_second_str',
+  9 => 'time_rate',
+  10 => 'p_num',
+  11 => 'bj_k',
+  12 => 'adv_info',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002652s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003126s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.002924s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000791s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000535s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003091s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000634s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001258s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000660s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000904s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000956s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.003544s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.015437s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_record` [ RunTime:0.002503s ]
+[ sql ] [ SQL ] SELECT * FROM `product_record` WHERE  `user_id` = 1  AND `is_receive` = 0 ORDER BY add_time desc [ RunTime:0.003416s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product` [ RunTime:0.003246s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 2 LIMIT 1 [ RunTime:0.000692s ]
+[ sql ] [ SQL ] SELECT * FROM `product` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.003565s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.000615s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:23]
+[ error ] [8192]Non-static method app\common\entity\Product::getProductRecord() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Product.php:106]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+[ error ] [8192]Non-static method app\common\entity\Product::getOneProduct() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/common/entity/Product.php:63]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:52+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.049975s][吞吐率：20.01req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:53+08:00 ] 127.0.0.1 GET /index/member/index
+[ info ] www.candyworld.com/index/member/index [运行时间：0.177015s][吞吐率：5.65req/s] [内存消耗：3,191.54kb] [文件加载：93]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/product/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001528s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.004360s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001594s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.004943s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001564s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000782s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003425s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000972s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.002900s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.000746s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.002600s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.004047s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000614s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.003235s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.009294s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.006483s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000695s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.005057s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.001043s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.005924s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594546013 LIMIT 1 [ RunTime:0.033788s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:59]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:61]
+[ error ] [8]未定义变量: condy_sum_num[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Member.php:163]
+[ error ] [8]Trying to get property of non-object[/Applications/MAMP/htdocs/project/candyworld/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php:130]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:54+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.038371s][吞吐率：26.06req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:26:57+08:00 ] 127.0.0.1 GET /index/invite/index
+[ info ] www.candyworld.com/index/invite/index [运行时间：0.166692s][吞吐率：6.00req/s] [内存消耗：3,102.43kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/member/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/invite/index.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_url',
+  2 => 'invite_code',
+  3 => 'td_commission_num',
+  4 => 'invite_levels_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002088s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003237s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.002700s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000692s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000541s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003857s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000902s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_statistics` [ RunTime:0.003597s ]
+[ sql ] [ SQL ] SELECT `total_sub_nums` FROM `user_statistics` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `invite_record` [ RunTime:0.003362s ]
+[ sql ] [ SQL ] SELECT SUM(`num`) AS tp_sum FROM `invite_record` WHERE  `user_id` = 1  AND `is_cert` = 2  AND `add_time` BETWEEN 1594483200 AND 1594569599 LIMIT 1 [ RunTime:0.054106s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003483s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000653s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+[ error ] [8192]Non-static method app\common\entity\UserInviteCode::getCodeByUserId() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Invite.php:37]
+---------------------------------------------------------------
+[ 2020-07-12T18:26:58+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.051438s][吞吐率：19.44req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-12T18:27:01+08:00 ] 127.0.0.1 GET /index/member/spread
+[ info ] www.candyworld.com/index/member/spread [运行时间：0.086654s][吞吐率：11.54req/s] [内存消耗：3,136.27kb] [文件加载：91]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'referer' => 'http://www.candyworld.com/index/invite/index',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] /Applications/MAMP/htdocs/project/candyworld/application/index/view/member/spread.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'invite_code',
+  2 => 'bg_img',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000639s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003494s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001107s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.003366s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.003306s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000858s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.003386s ]
+[ sql ] [ SQL ] SELECT `invite_code` FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `sl` [ RunTime:0.003330s ]
+[ sql ] [ SQL ] SELECT * FROM `sl` WHERE  `types` = 3 [ RunTime:0.000598s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T18:27:01+08:00 ] 127.0.0.1 GET /index/member/qrcode_img.html
+[ info ] www.candyworld.com/index/member/qrcode_img.html [运行时间：0.153401s][吞吐率：6.52req/s] [内存消耗：3,628.64kb] [文件加载：88]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://www.candyworld.com/index/member/spread',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001840s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.003590s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001210s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.004074s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.000962s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001130s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.005358s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001165s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.002871s ]
+[ sql ] [ SQL ] SELECT `invite_code` FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.000668s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[/Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php:72]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in /Applications/MAMP/htdocs/project/candyworld/application/index/controller/Base.php on line 72 and defined[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:193]
+[ error ] [8]未定义变量: target_user_id[/Applications/MAMP/htdocs/project/candyworld/application/index/model/Market.php:199]
+---------------------------------------------------------------
+[ 2020-07-12T18:27:01+08:00 ] 127.0.0.1 GET /static/js/swiper.min.js.map
+[ info ] www.candyworld.com/static/js/swiper.min.js.map [运行时间：0.054865s][吞吐率：18.23req/s] [内存消耗：1,231.44kb] [文件加载：52]
+[ info ] [ LANG ] /Applications/MAMP/htdocs/project/candyworld/thinkphp/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.candyworld.com',
+  'proxy-connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=de6f963356b13ded9aaffb3063ad5004',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File

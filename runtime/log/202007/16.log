@@ -1,0 +1,114 @@
+---------------------------------------------------------------
+[ 2020-07-16T14:51:20+08:00 ] 127.0.0.1 GET /
+[ info ] www.candyworld.com/ [运行时间：0.746000s][吞吐率：1.34req/s] [内存消耗：2,622.55kb] [文件加载：94]
+[ info ] [ LANG ] D:\WWW\candyworld\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'logglytrackingsession=4ba2bdb4-8f96-43c2-99c6-755670630cae; PHPSESSID=4nu41ohcgf2fvr57v480lsr9n3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'purpose' => 'prefetch',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.candyworld.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+  'httponly' => true,
+  'secure' => false,
+)
+[ info ] [ VIEW ] D:\WWW\candyworld\application\index\view\member\memberinfo.html [ array (
+  0 => 'is_finish_trade',
+  1 => 'list',
+  2 => 'freeze',
+  3 => 'market_money_num',
+  4 => 'is_read_list',
+  5 => 'parent_info',
+  6 => 'no_read_post',
+  7 => 'no_read_post1',
+  8 => 'adv_info',
+  9 => 'is_jump_ad',
+  10 => 'condy_sum_num',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007000s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user` [ RunTime:0.036000s ]
+[ sql ] [ SQL ] SELECT `id` FROM `user` WHERE  `mobile` IN ('18888888888','13333333333','15959035171') [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `orders` [ RunTime:0.027000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` = 1 OR `target_user_id` = 1 )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.004000s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `orders` WHERE  ( `user_id` IS NULL OR `target_user_id` IS NULL )  AND `status` IN (2,3,6) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `is_certification`,`status`,`session_id` FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_invite_code` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_invite_code` WHERE  `user_id` = 1 LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE user_id=1 AND types = 2 AND status IN (1,2,3) LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT sum(`number`) as numbers, sum(`charge_number`) as charge_number FROM orders WHERE target_user_id=1 AND types = 1  AND status IN (2,3) LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `message` [ RunTime:0.014000s ]
+[ sql ] [ SQL ] SELECT * FROM `message` WHERE  `user_id` = 1  AND `is_read` = 0 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_article_record` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 1  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_article_record` WHERE  `user_id` = 1  AND `cate_id` = 2  AND `is_read` = 0 LIMIT 1 [ RunTime:0.003000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `ad_config` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `ad_config` ORDER BY rand() LIMIT 1 [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `user_jump_ad` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] SELECT * FROM `user_jump_ad` WHERE  `user_id` = 1  AND `add_time` > 1594878680 LIMIT 1 [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT * FROM `user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.000000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_income_record` [ RunTime:0.021000s ]
+[ sql ] [ SQL ] SELECT * FROM `product_income_record` WHERE  `user_id` = 1 ORDER BY add_time desc LIMIT 1 [ RunTime:0.044000s ]
+[ sql ] [ SQL ] INSERT INTO `user_jump_ad` (`user_id` , `add_time`) VALUES (1 , 1594882280) [ RunTime:0.025000s ]
+[ error ] [8192]Non-static method app\index\model\Market::checkOrder() should not be called statically[D:\WWW\candyworld\application\index\controller\Base.php:73]
+[ error ] [2]Missing argument 2 for app\index\model\Market::checkOrder(), called in D:\WWW\candyworld\application\index\controller\Base.php on line 73 and defined[D:\WWW\candyworld\application\index\model\Market.php:195]
+[ error ] [8]未定义变量: target_user_id[D:\WWW\candyworld\application\index\model\Market.php:212]
+[ error ] [8]未定义变量: target_user_id[D:\WWW\candyworld\application\index\model\Market.php:215]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[D:\WWW\candyworld\application\index\controller\Member.php:60]
+[ error ] [8192]Non-static method app\common\entity\UserArticleRecord::is_exist() should not be called statically[D:\WWW\candyworld\application\index\controller\Member.php:62]
+[ error ] [8192]Non-static method app\common\entity\User::getUserInfo() should not be called statically[D:\WWW\candyworld\application\index\controller\Member.php:100]
+[ error ] [8]Trying to get property of non-object[D:\WWW\candyworld\runtime\temp\849870cf8cea06e955dd038fd6375d5f.php:133]
+---------------------------------------------------------------
+[ 2020-07-16T14:51:34+08:00 ] 127.0.0.1 GET /index/publics/reward_consumption
+[ info ] www.candyworld.com/index/publics/reward_consumption [运行时间：0.146000s][吞吐率：6.85req/s] [内存消耗：2,344.82kb] [文件加载：77]
+[ info ] [ LANG ] D:\WWW\candyworld\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+)
+[ info ] [ HEADER ] array (
+  'connection' => 'close',
+  'cookie' => 'logglytrackingsession=4ba2bdb4-8f96-43c2-99c6-755670630cae; PHPSESSID=4nu41ohcgf2fvr57v480lsr9n3',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'proxy-connection' => 'keep-alive',
+  'host' => 'www.candyworld.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002000s ] mysql:host=127.0.0.1;port=3306;dbname=candyworld;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `config` [ RunTime:0.012000s ]
+[ sql ] [ SQL ] SELECT `key`,`value` FROM `config` [ RunTime:0.001000s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `product_record` [ RunTime:0.011000s ]
+[ sql ] [ SQL ] UPDATE `product_record`  SET `period` = `period` + 5  WHERE  `is_receive` = 0 [ RunTime:0.074000s ]

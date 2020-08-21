@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* reset */
+html { font-family: 微软雅黑; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased;}
+*{margin:0;padding:0;}
+header,footer,section,article,aside,nav,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;}
+textarea{resize:none;outline: none;overflow: auto}
+label,summary{cursor:default;}
+del,ins,u,s,a,a:hover{color: #333333;text-decoration:none;outline:none;-webkit-tap-highlight-color:transparent;border:0}
+a{  color: #333333;text-decoration:none;outline:none;-webkit-tap-highlight-color:transparent;border:0}
+body, textarea, input, button, select, keygen, legend {padding: 0;margin:0;color: rgb(51, 51, 51);  font-family: 微软雅黑; font-size: .20rem;outline: 0;outline: none;border-radius: 0;}
+input,textarea,button{-webkit-appearance: none;-webkit-tap-highlight-color:rgba(0,0,0,0)}/*去除苹果默认样式*/
+html{font-size: 62.5%;height: 100%; min-width: 320px; /*min-height: 568px;*/}
+body{font-size: .32rem; min-width: 320px; max-width: 7.5rem; height: auto;margin: 0 auto;padding: 0;  background-color: #fff;position: relative; }
+.fl{float: left}
+.fr{float: right;}
+.clear{clear: both;}
+.viewport{ width:6.4rem; margin:0 auto; overflow-x:hidden;position: relative;}/*容器*/
+header{width: 100%;}
+section{width: 100%;}
+footer{width: 100%;}
+.inline-flex{display: inline-flex;}
+.flex1{flex: 1;}
+select{background: none;border: 0;}
+
+
+.zjmm-page li.qh .input_line {
+    padding-left: .1rem;
+}
+.zjmm-page input.input_line {
+    float: left;
+    height: .8rem;
+    /*line-height: .8rem;*/
+    width: 3rem;
+    background-color: #f4f5f5;
+    font-size: .25rem;
+    padding-left: .2rem;
+}
+input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+
+    -webkit-user-select: text;
+    border: none; /*去除边框*/
+    outline: 0;
+    -webkit-appearance: none;
+}
+input{
+    box-shadow:none; /*去除阴影*/
+    outline: none;/*聚焦input的蓝色边框*/
+    resize: none; /*textarea 禁止拖拽*/
+    border: none; /*去除边框*/
+    -webkit-appearance: none;/*常用于IOS下移除原生样式*/
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /*点击高亮的颜色*/
+    border: 0;
+}
+.flexbox{
+    display: flex;
+}
+.spacebetween {
+    justify-content: space-between;
+}
+.spacearound {
+    justify-content: space-around;
+}
+button{
+    border: 0;
+}
+.wrap {
+    flex-wrap:wrap
+}
+.float_l{
+    float: left;
+}
+.float_r{
+    float: right;
+}
+.over_hidden{
+    overflow: hidden;
+}
+.text_center{
+    text-align: center;
+}
+.text_left{
+    text-align: left;
+}
+.text_right{
+    text-align: right;
+}
+.column{
+    flex-direction:column;
+}
+.default-bor-bottom{
+    border-bottom: 1px solid #f6f7f9;
+}
+.relative{
+    position: relative;
+}
+.blod{
+    font-weight: bold;
+}
+button.button_btn{
+    width: 80%;
+    height: .75rem;
+    line-height: .75rem;
+    text-align: center;
+    background-color: #10c1a5;
+    border-radius: 50px;
+    margin: 0 auto;
+    display: inherit;
+    color: #ffffff;
+    font-size: .26rem;
+    font-weight: bold;
+}

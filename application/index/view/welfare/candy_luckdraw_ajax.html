@@ -1,0 +1,12 @@
+{foreach $list as $item}
+<li class="item" data-price="{$item->price}">
+    <p><img src="{$item->img|default='/static/img/newimg/hw1.jpg'}" alt=""></p>
+    <p class="title">
+        {if $item->is_zy == '1'}
+            <i>自营</i>
+        {/if}
+        <span>{$item->title}</span></p>
+    <p class="price"><em>￥</em>{$item->price}</p>
+</li>
+{/foreach}
+

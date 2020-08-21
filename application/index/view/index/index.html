@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>我的</title>
+    {include file="layout/head" /}
+</head>
+<body style="background-color: #f7f7f7">
+
+<div class="wd-page">
+    <input type="hidden" name="mui-tab-item" value="5">
+    <div class="wd-header">
+       <div class="header_l flexbox wrap">
+           {if $list->avatar}
+           <img class="header" src="{$list->avatar}" >
+           {else /}
+           <img class="header" src="/static/img/newimg/touxiang.png" >
+           {/if}
+           <div class="flexbox column wd_info spacearound">
+               <span>{$list->show_mobile}</span>
+               {if $list->invite_code}
+                <span>邀请码:{$list->invite_code} <i class="copy_r" data-clipboard-text="{$list->invite_code}"></i></span>
+               {/if}
+           </div>
+       </div>
+       <!--<i class="arrow_r"  id="wd_header_url" style="margin-right: .1rem;"></i>-->
+    </div>
+    <div class="wd-middle">
+        <div class="middle-l">
+            <p>总资产(糖果)</p>
+            <p>{$list->show_magic} <em> ≈ ¥{$market_money_num}</em></p>
+        </div>
+    </div>
+    <div class="wd-content">
+       <ul class="flexbox column">
+           <a href="{:url('index/invite/index','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon1.png" alt="">
+                       <span>邀请好友</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/invite/invite_star','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon2.png" alt="">
+                       <span>邀请扶持</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/magicloglist','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon3.png" alt="">
+                       <span>收益总计</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/post?category=2','','',true)}">
+               <li>
+
+                   <div>
+                       <img src="/static/img/newimg/wd_icon4.png" alt="">
+                       <span>攻略教程
+                       {if $no_read_post1 == 1}
+                       <em></em>
+                       {/if}
+                           </span>
+                   </div>
+                   <i class="arrow_r"></i>
+
+               </li>
+           </a>
+           <a href="{:url('index/member/post?category=1','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon5.png" alt="">
+                       <span>官方公告
+                       {if $no_read_post == 1}
+                       <em></em>
+                       {/if}
+                           </span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/message','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon6.png" alt="">
+                       <span>问题反馈
+                       {if count($is_read_list)>0}
+                           <em></em>
+                       {/if}
+                       </span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           <a href="{:url('index/member/set','','',true)}">
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wd_icon7.png" alt="">
+                       <span>个人设置</span>
+                   </div>
+                   <i class="arrow_r"></i>
+               </li>
+           </a>
+           {if $parent_info->mobile}
+               <li>
+                   <div>
+                       <img src="/static/img/newimg/wx.png" style="width: .36rem;height: .36rem" alt="">
+                       <span>上级微信</span>&nbsp;
+                       <span class="copy1" style="font-size: .26rem">{$parent_info->mobile}</span>
+                   </div>
+                   <i class="copy_r"  data-clipboard-text="{$parent_info->mobile}"></i>
+               </li>
+           {/if}
+       </ul>
+    </div>
+</div>
+<div class="is_cert" id="is_cert" style="display: {if $list->is_certification != 1 }inline_block {else /}none {/if}">
+    <img src="/static/img/newimg/sm_icon.png" alt="">
+</div>
+<div class="{if $list->is_certification != 1 }zhezhao{/if}"></div>
+{include file="layout/footer" /}
+{include file="layout/nav" /}
+
+<script>
+    var clipboard = new Clipboard('.copy_r');
+    clipboard.on('success', function(e) {
+        console.log(e);
+        mui.alert('复制成功', '');
+        e.clearSelection();
+    });
+    document.getElementById('is_cert').addEventListener('tap', function () {
+        mui.openWindow({
+            url: "{:url('/index/publics/cert')}",
+            id: 'is_cert',
+        })
+    });
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+{extend name="layout/main" /}
+
+{block name="header"}
+
+{/block}
+
+{block name="content"}
+<section class="panel">
+    <header class="panel-heading">
+        <h4>能源发生器列表</h4>
+    </header>
+    <div class="panel-body" style="padding-bottom: 50px">
+        <!-- <form class="form-horizontal" action="">
+            <div class="form-group">
+                <div class="col-xs-3">
+                    <input type="text" value="{$Request.get.keyword}" name="keyword" class="form-control" placeholder="请输入会员昵称/电话号码搜索">
+                </div>
+                <button type="submit" class="btn btn-color">搜索</button>
+                <a type="button" href="/admin/user/create" class="btn btn-info">添加会员</a>
+            </div>
+        </form> -->
+        <table class="table table-bordered table-striped no-margin">
+            <thead>
+            <tr>
+                <th class="text-center">id</th>
+                <th class="text-center">logo</th>
+                <th class="text-center">能源发生器名</th>
+                <th class="text-center">开采率</th>
+                <th class="text-center">日产</th>
+                <th class="text-center">周期</th>
+                <!-- <th class="text-center">最后登录时间</th> -->
+                <th class="text-center">价格</th>
+                <th class="text-center">状态</th>
+                <th class="text-center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            {if !empty($list)}
+                {foreach $list as $entity}
+                <tr>
+                <form class="form-horizontal" method="post" onsubmit="return false" role="form">
+                    <td class="text-center">{$entity->id}</td>
+                    <td class="text-center"><img src="{$entity->image_url}" style="width: 80px;height: 80px;"></td>
+                    <td class="text-center">{$entity->product_name}</td>
+                    <td class="text-center">{$entity->rate_min}kb/s-{$entity->rate_max}kb/s</td>
+                    <td class="text-center">{$entity->yield_min}-{$entity->yield_max}能量</td>
+                    <td class="text-center">{$entity->period}天</td>
+                    <td class="text-center">{$entity->price}能量</td>
+                    {if $entity->status == 1}
+                        <td class="text-center">上架</td>
+                        {else /}
+                        <td class="text-center">下架</td>
+                    {/if}
+                    <td class="text-center">
+                        <a href="{:url('product/edit',['id'=>$entity->id])}" class="btn btn-xs btn-info">编辑</a>
+                        {if $entity->status == 1}
+                            <a data-url="{:url('product/shelve',['id'=>$entity->id])}" onclick="main.ajaxDelete(this)" data-msg="确定要下架此能源发生器吗？" class="btn btn-xs btn-danger">下架</a>
+                        {else /}
+                            <a data-url="{:url('product/downShelve',['id'=>$entity->id])}" onclick="main.ajaxDelete(this)" data-msg="确定要上架此能源发生器吗？" class="btn btn-xs btn-success">上架</a>
+                        {/if}
+                    </td>
+                    </form>
+                </tr>
+                {/foreach}
+            {else /}
+            <tr class="text-center">
+                <td colspan="5">暂无数据</td>
+            </tr>
+            {/if}
+            </tbody>
+        </table>
+        <div class="page">
+            {$list->render()}
+        </div>
+    </div>
+</section>
+{/block}
+
+
+{block name="footer"}
+
+{/block}

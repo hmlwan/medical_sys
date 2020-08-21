@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/public.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav my-header">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+
+    <h1 id="title" class="mui-title">实名认证</h1>
+</header>
+<div class="mui-content container">
+    <div class="mui-scroll-wrapper" style="top:44px">
+        <div class="mui-scroll">
+            <form class="mui-input-group">
+                <div class="mui-input-row my-input-row">
+                    <label>身份证正面照</label>
+                    <button type="button" class="mui-btn mui-btn-warning send-code" >上传图片</button>
+                </div>
+                <div class="mui-row">
+                    <img style="width: 80%; margin: 10px auto;display: block;">
+                </div>
+                <div class="mui-input-row my-input-row">
+                    <label>身份证反面照</label>
+                    <button type="button" class="mui-btn mui-btn-warning send-code" >上传图片</button>
+                </div>
+                <div class="mui-row">
+                    <img style="width: 80%; margin: 10px auto;display: block;">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<button type="button" style="z-index:100" class="mui-btn mui-btn-warning my-btn">确定</button>
+</body>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script src="js/mui.zoom.js"></script>
+<script src="js/mui.previewimage.js"></script>
+<script type="text/javascript">
+    mui.init()
+    mui.previewImage();
+    mui('.mui-scroll-wrapper').scroll({
+        deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
+</script>
+</html>

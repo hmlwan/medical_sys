@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>收益记录</title>
+    {include file="layout/head" /}
+</head>
+<body class="zzlqjr-body" style="background-color: #f1f2f4">
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">收益记录</div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+{if count($list)>0}
+<div class="zzlqjr-page">
+    <ul class="flexbox column flow_load">
+
+
+    </ul>
+</div>
+{else /}
+<div class="show_on_content">
+    <p><img src="/static/img/newimg/no_data_icon.png" alt=""></p>
+    <p class="show_text">暂无内容</p>
+</div>
+{/if}
+{include file="layout/footer" /}
+
+</body>
+<script>
+    lazy_loading('commission_record');
+</script>
+</html>

@@ -1,0 +1,76 @@
+{extend name="layout/main" /}
+
+{block name="header"}
+
+{/block}
+
+{block name="content"}
+<section class="panel">
+    <header class="panel-heading">
+        <h4>编辑签到</h4>
+    </header>
+    <div class="panel-body" style="padding-bottom: 50px" >
+        <form class="form-horizontal" method="post" action="/admin/Task/taskddss2" role="form" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{$info->id}">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">签到名称</label>
+
+                <div class="col-sm-5">
+                    <input type="text" value="{$info->task_name}" name="task_name" class="form-control"
+                           placeholder="签到名称">
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label">任务链接</label>-->
+
+                <!--<div class="col-sm-5">-->
+                    <!--<input type="text" value="{$info->url}" name="url" class="form-control"-->
+                           <!--placeholder="任务链接加http://">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <label class="col-sm-2 control-label">奖励范围</label>
+
+                <div class="col-sm-5">
+                    <input type="text" value="{$info->reward_remark}" name="reward_remark" class="form-control"
+                           placeholder="奖励范围:@隔开">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">完成次数/个数</label>
+
+                <div class="col-sm-5">
+                    <input type="text" readonly value="{$info->complete_num}" name="complete_num" class="form-control"
+                           placeholder="完成次数/个数：@隔开">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">奖励倍数</label>
+
+                <div class="col-sm-5">
+                    <input type="text" readonly value="{$info->reward_rate}" name="reward_rate" class="form-control"
+                           placeholder="奖励倍数：@隔开">
+                </div>
+            </div>
+            <!--<div class="form-group">-->
+                <!--<label class="col-sm-2 control-label">任务图标</label>-->
+
+                <!--<div class="col-sm-5">-->
+                     <!--<input type="file" name="img" id="">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" name="sub"  class="btn btn-primary">确定增加
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{/block}
+
+
+{block name="footer"}
+    <script src="/admin/vendor/fuelux/checkbox.js"></script>
+{/block}

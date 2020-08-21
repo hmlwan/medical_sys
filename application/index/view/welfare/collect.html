@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>糖果收款</title>
+    {include file="layout/head" /}
+</head>
+<body>
+<header>
+    <div class="header_bt">
+        <div class="header_f"><a href="javascript:history.back()" class="header_fh"></a></div>
+        <div class="header_c">糖果收款</div>
+        <div class="header_r"><a href="{:url('collect_record')}" class="header_fr"></a></div>
+    </div>
+    <div style="height: .74rem;clear: both;"></div>
+</header>
+<div class="tgsk-page">
+    <p class="title">以下地址仅能接受糖果转账</p>
+    <p>
+        <img src="{:url('qrcode_img')}" alt="">
+    </p>
+    <p class="phone copy1">{$phone}</p>
+    <p class="copy_skh">
+        <span data-clipboard-text="{$phone}" data-clipboard-target=".copy1" class="copy_btn">复制收款号</span>
+    </p>
+
+</div>
+<div class="bot_tips">
+    <p>1.请勿向上述地址转账除糖果之外的资产,否则任何非糖果以外产将不可找回;</p>
+    <p>2.转账是即时到账;</p>
+</div>
+{include file="layout/footer" /}
+<script>
+    var clipboard = new Clipboard('.copy_btn');
+    clipboard.on('success', function(e) {
+        mui.alert('复制成功', '');
+        e.clearSelection();
+    });
+</script>
+</body>
+
+</html>
+

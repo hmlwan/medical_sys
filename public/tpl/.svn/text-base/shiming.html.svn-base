@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style type="text/css">
+			.mui-input-group .mui-input-row:after {
+			    position: absolute;
+			    right: 0;
+			    bottom: 0;
+			    left: 15px;
+			    height: 1px;
+			    content: '';
+			    -webkit-transform: scaleY(.5);
+			    transform: scaleY(.5);
+			     background-color: white !important; 
+			}
+			.mui-input-group:after {
+			    position: absolute;
+			    right: 0;
+			    bottom: 0;
+			    left: 0;
+			    height: 1px;
+			    content: '';
+			    -webkit-transform: scaleY(.5);
+			    transform: scaleY(.5);
+			     background-color: #efeff4; 
+			}
+			.mui-input-group {
+			    position: relative;
+			    padding: 0;
+			    border: 0;
+			    background-color: #efeff4;
+			}
+			.m-btn{
+				width: 80%;
+				height: 40px;
+				background: #ffd21f;
+				border: none;
+				margin-top: 395px;
+			}
+		</style>
+	<body>
+		<header class="mui-bar mui-bar-nav" style="background: #ffd21f;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: black;"></a>
+			<h1 id="title" class="mui-title">实名认证</h1>
+		</header>
+		<div class="mui-content">
+		<!--	<form class="mui-input-group">-->
+				<div class="mui-input-row" style="margin-top: 10px;background: white;">
+					<label style="padding: 11px 31px; color: #8f8f94;">姓名</label>
+					<p style="color: gainsboro;margin-top: 10px;">冀*亮</p>
+				</div>
+				<div class="mui-input-row" style="margin-top: 10px;background: white;">
+					<label style="padding: 11px 31px; color: #8f8f94;">身份证</label>
+					<p style="color: gainsboro;margin-top: 10px;">150********0211</p>
+				</div>
+				<div class="mui-button-row" style="text-align: left;">
+					<div class="font" style="width: 90%;margin: 5px auto;">
+						<p style="font-size: 12px;">
+							注:流量魔盒团队重视保障用户的个人信息，用户的个<br>人信息将被严格保密。<br>
+							此实名认证系统仅限于流量魔盒团队认证身份信息，保<br>
+							证不对外公开或向第三方提供用户个人信息。
+						</p>
+					</div>
+				</div>
+			<!--</form>-->
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--申明当前页面的编码集-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--网页标题-->
+    <title>闪付卡</title>
+    {include file="layout/head" /}
+</head>
+<body class="sfk_body">
+
+<a href="javascript:history.back()" class="arrow_wl"></a>
+<div  class="sfk-page">
+    <input type="hidden" name="energy" value="{$energy}">
+    <div class="sfk_bot">
+       <p>点击按钮即代表同意开通闪付卡</p>
+       <button class="mskt_btn">马上开通</button>
+    </div>
+</div>
+</body>
+{include file="layout/footer" /}
+<script>
+    $(".mskt_btn").click(function () {
+        var energy = $("input[name='energy']").val();
+        if(energy>100){
+            mui.alert('多使用将有几率开通');
+        }else{
+            mui.alert('算力太少不足以抵押');
+        }
+    });
+
+
+</script>
+</html>
+

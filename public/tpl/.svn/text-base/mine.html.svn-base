@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+	</head>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<script src="js/test.js"></script>
+	<body>
+		<div class="mui-content cont">
+			<div class="white">
+				<p>小冷</p>
+				<div class="picture">
+					<div style="width: 40%;">
+						<img src="img/uhui.png" style="width: 30%;"/>
+						<img src="img/lianmeng.png" style="width: 30%;"/>
+					</div>
+					<div class="picture1"style="width: 30%;float: right;">
+						<img src="img/kb.png" style="width: 100%;"/>
+					</div>
+				</div>
+				<div style="background: white;">
+					<div id="segmentedControl" class="mui-segmented-control trol">	
+						<div style="margin-left:15px;font-size: 12px;">
+							<img src="img/moshi.png" style="width: 20px;margin: -5px 2px;"/>
+								钱包: <p>9.663</p>
+						</div>
+						<div style="font-size: 12px;">
+							<img src="img/dongjie.png" style="width: 20px;margin: -5px 2px;"/>
+								冻结: <p>0</p>
+						</div>
+						<div style="font-size: 12px;">
+							<img src="img/baoshi.png" style="width: 20px;margin: -5px 2px;"/>
+								宝石: <p>0.430</p>
+						</div>
+					</div>
+				</div>
+				<div style="background: white;margin-top: 2%;">
+					<div id="segmentedControl" class="mui-segmented-control trol">	
+						<div style="margin-left:15px;font-size: 12px;">
+							<img src="img/jiaoyi2.png" style="width: 20px;margin: -5px 2px;"/>
+								交易: <p>1</p>
+						</div>
+						<div style="font-size: 12px;">
+							<img src="img/haoping.png" style="width: 20px;margin: -5px 2px;"/>
+								好评: <p>100.00%</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="con">
+			<ul class="mui-table-view" style="margin-top: 15px;">
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/mohe.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/moe.png" style="width: 30px;margin: -4px 7px;"/>魔盒</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/jiaoyi.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/jiaoyi.png" style="width: 30px;margin: -4px 7px;"/>交易</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/zhangdan.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/zhangdan.png" style="width: 30px;margin: -4px 7px;"/>账单</a>
+			    </li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 15px;">
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/zhaomu.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/zhaomu.png" style="width: 30px;margin: -4px 7px;"/>招募</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/union.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/tuandui.png" style="width: 30px;margin: -4px 7px;"/>联盟</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/mine.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/shanghu.png" style="width: 30px;margin: -4px 7px;"/>商户</a>
+			    </li>
+			</ul>
+			<ul class="mui-table-view" style="margin-top: 15px;">
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/kefu.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/kefu.png" style="width: 30px;margin: -4px 7px;"/>客服</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/xshou.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/xsjd.png" style="width: 30px;margin: -4px 7px;"/>新手解答</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/guanyu.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/gywm.png" style="width: 30px;margin: -4px 7px;"/>关于我们</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a onclick="test('http://magic.yidh.cc/tpl/shezhi.html')" class="mui-navigate-right" style="margin: -12px -23px;"><img src="img/shzhi.png" style="width: 30px;margin: -4px 7px;"/>设置</a>
+			    </li>
+			</ul>
+		</div>
+	</body>
+</html>
