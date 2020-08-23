@@ -1,0 +1,89 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   '@vue/cli' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.2
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData @vue/cli
+8 silly fetchNamedPackageData @vue/cli
+9 silly mapToRegistry name @vue/cli
+10 silly mapToRegistry scope (from package name) @vue
+11 verbose mapToRegistry no registry URL found in name for scope @vue
+12 silly mapToRegistry using default registry
+13 silly mapToRegistry registry https://registry.npmjs.org/
+14 silly mapToRegistry data Result {
+14 silly mapToRegistry   raw: '@vue/cli',
+14 silly mapToRegistry   scope: '@vue',
+14 silly mapToRegistry   escapedName: '@vue%2fcli',
+14 silly mapToRegistry   name: '@vue/cli',
+14 silly mapToRegistry   rawSpec: '',
+14 silly mapToRegistry   spec: 'latest',
+14 silly mapToRegistry   type: 'tag' }
+15 silly mapToRegistry uri https://registry.npmjs.org/@vue%2fcli
+16 verbose request uri https://registry.npmjs.org/@vue%2fcli
+17 verbose request no auth needed
+18 info attempt registry request try #1 at 6:16:07 PM
+19 verbose request id 23e3e2d2beb2dbdc
+20 http request GET https://registry.npmjs.org/@vue%2fcli
+21 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:12759
+22 info attempt registry request try #2 at 6:16:17 PM
+23 http request GET https://registry.npmjs.org/@vue%2fcli
+24 info retry will retry, error on last attempt: Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:12759
+25 info attempt registry request try #3 at 6:17:17 PM
+26 http request GET https://registry.npmjs.org/@vue%2fcli
+27 silly fetchPackageMetaData Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:12759
+27 silly fetchPackageMetaData     at ClientRequest.onError (/usr/local/lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/index.js:176:17)
+27 silly fetchPackageMetaData     at ClientRequest.g (events.js:292:16)
+27 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+27 silly fetchPackageMetaData     at ClientRequest.emit (events.js:188:7)
+27 silly fetchPackageMetaData     at TLSSocket.socketErrorListener (_http_client.js:310:9)
+27 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+27 silly fetchPackageMetaData     at TLSSocket.emit (events.js:188:7)
+27 silly fetchPackageMetaData     at emitErrorNT (net.js:1277:8)
+27 silly fetchPackageMetaData     at _combinedTickCallback (internal/process/next_tick.js:80:11)
+27 silly fetchPackageMetaData     at process._tickCallback (internal/process/next_tick.js:104:9)
+27 silly fetchPackageMetaData  error for @vue/cli { Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:12759
+27 silly fetchPackageMetaData     at ClientRequest.onError (/usr/local/lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/index.js:176:17)
+27 silly fetchPackageMetaData     at ClientRequest.g (events.js:292:16)
+27 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+27 silly fetchPackageMetaData     at ClientRequest.emit (events.js:188:7)
+27 silly fetchPackageMetaData     at TLSSocket.socketErrorListener (_http_client.js:310:9)
+27 silly fetchPackageMetaData     at emitOne (events.js:96:13)
+27 silly fetchPackageMetaData     at TLSSocket.emit (events.js:188:7)
+27 silly fetchPackageMetaData     at emitErrorNT (net.js:1277:8)
+27 silly fetchPackageMetaData     at _combinedTickCallback (internal/process/next_tick.js:80:11)
+27 silly fetchPackageMetaData     at process._tickCallback (internal/process/next_tick.js:104:9) code: 'ECONNRESET' }
+28 silly rollbackFailedOptional Starting
+29 silly rollbackFailedOptional Finishing
+30 silly runTopLevelLifecycles Finishing
+31 silly install printInstalled
+32 verbose stack Error: tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:12759
+32 verbose stack     at ClientRequest.onError (/usr/local/lib/node_modules/npm/node_modules/request/node_modules/tunnel-agent/index.js:176:17)
+32 verbose stack     at ClientRequest.g (events.js:292:16)
+32 verbose stack     at emitOne (events.js:96:13)
+32 verbose stack     at ClientRequest.emit (events.js:188:7)
+32 verbose stack     at TLSSocket.socketErrorListener (_http_client.js:310:9)
+32 verbose stack     at emitOne (events.js:96:13)
+32 verbose stack     at TLSSocket.emit (events.js:188:7)
+32 verbose stack     at emitErrorNT (net.js:1277:8)
+32 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:80:11)
+32 verbose stack     at process._tickCallback (internal/process/next_tick.js:104:9)
+33 verbose cwd /Applications/MAMP/htdocs/project/medical_sys
+34 error Darwin 16.7.0
+35 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "-g" "@vue/cli"
+36 error node v6.11.2
+37 error npm  v3.10.10
+38 error code ECONNRESET
+39 error network tunneling socket could not be established, cause=connect ECONNREFUSED 127.0.0.1:12759
+40 error network This is most likely not a problem with npm itself
+40 error network and is related to network connectivity.
+40 error network In most cases you are behind a proxy or have bad network settings.
+40 error network
+40 error network If you are behind a proxy, please make sure that the
+40 error network 'proxy' config is set properly.  See: 'npm help config'
+41 verbose exit [ 1, true ]

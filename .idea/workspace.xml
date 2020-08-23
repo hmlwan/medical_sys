@@ -10,7 +10,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c7c4902-84e1-44ca-82cf-e7fa467fd6ab" name="Default" comment="" />
+    <list default="true" id="8c7c4902-84e1-44ca-82cf-e7fa467fd6ab" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/index/view/publics/register2.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/publics/register2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +37,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -80,18 +89,12 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vue_pro/me_sys" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpServers">
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
-  </component>
   <component name="ProjectId" id="1gOssigbenbC9TYa1fxCz7inHjx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -105,21 +108,28 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/WWW/candyworld/application/admin/controller/Rebate.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vue_learn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue_pro/me_sys/src/components" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/extend" />
-      <recent name="D:\WWW\candyworld\application\admin\view\task" />
-      <recent name="$PROJECT_DIR$/application/index/view/member" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vue_pro/me_sys/src/components" />
       <recent name="D:\WWW\candyworld\application\index\view\member" />
       <recent name="D:\WWW\candyworld\public\static\img\newimg" />
       <recent name="D:\WWW\candyworld\application\admin\view\user" />
       <recent name="D:\WWW\candyworld\application\admin\controller" />
-      <recent name="D:\WWW\candyworld\application\admin\view\exchange" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extend" />
+      <recent name="D:\WWW\candyworld\application\admin\view\task" />
+      <recent name="$PROJECT_DIR$/application/index/view/member" />
     </key>
   </component>
   <component name="RunManager">
@@ -213,6 +223,8 @@
       <workItem from="1598003109925" duration="111000" />
       <workItem from="1598003413528" duration="4000" />
       <workItem from="1598007046210" duration="1807000" />
+      <workItem from="1598087794222" duration="2662000" />
+      <workItem from="1598093138578" duration="8177000" />
     </task>
     <servers />
   </component>
@@ -249,6 +261,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="1007" y="357" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598106638760">
+      <screen x="32" y="23" width="1888" height="1057" />
+    </state>
+    <state x="1007" y="357" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/32.23.1888.1057@32.23.1888.1057" timestamp="1598106638760" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1598008359770">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

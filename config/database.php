@@ -14,7 +14,7 @@ return [
     'type'            => 'mysql',
     // 服务器地址
     'hostname'        => '127.0.0.1',
-     'database'        => 'candyworld',
+     'database'        => 'medical_sys',
      // 用户名
      'username'        => 'root',
      // 密码
