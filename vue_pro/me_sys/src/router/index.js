@@ -9,11 +9,11 @@ const routes = [
     {
         path:'/',
         component:()=>import('../views/Login/index.vue')
-
     },
     {
-        path:'/picdown',
-        component:()=>import('../components/login/index.vue')
+        path:'/home',
+        component:()=>import('../views/Home/index.vue')
+
     }
 ]
 const router = new VueRouter({

@@ -13,12 +13,16 @@ class Login extends Controller
         }
         return $this->fetch('index');
     }
-
+     public function test(Request $request){
+      return json()->data(['code' => 0, 'message' => '222']);
+     }
     /**
      * 登录处理
      */
     public function login(Request $request)
     {
+
+
         $service = new \app\admin\service\rbac\Users\Service();
         $result = $this->validate($request->post(), 'app\admin\validate\LoginForm');
 

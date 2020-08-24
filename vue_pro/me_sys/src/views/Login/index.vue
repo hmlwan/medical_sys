@@ -1,94 +1,72 @@
 <template>
-    <html>
     <div id="login">
-        <div class="login_item">
-            <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
-                <el-form-item label="密码2" prop="pass">
-                    <el-input type="password" v-model="ruleForm.pass" autocomplete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="确认密码" prop="checkPass">
-                    <el-input type="password" v-model="ruleForm.checkPass" autocomplete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="年龄" prop="age">
-                    <el-input v-model.number="ruleForm.age"></el-input>
-                </el-form-item>
-                <el-form-item>
-                    <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-                    <el-button @click="resetForm('ruleForm')">重置</el-button>
-                </el-form-item>
-            </el-form>
-        </div>
+        <el-container>
+            <div class="login_con">
+                <div class="login_item">
+                    <el-header >
+                        <h3>登录后台系统</h3>
+                    </el-header>
+                    <div class="login_form">
+                        <el-main>
+                            <el-form :model="ruleForm" status-icon  ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                                <div >
+                                    <el-input   v-model="ruleForm.username" placeholder="账号" autocomplete="off"></el-input>
+                                </div>
+                                <div style="margin-top: 15px;" >
+                                    <el-input type="password" v-model="ruleForm.pass" placeholder="密码" autocomplete="off"></el-input>
+                                </div>
+                                <div style="margin-top: 15px;  float: right;">
+                                    <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+                                </div>
+                            </el-form>
+                        </el-main>
+                    </div>
+                </div>
+                <p class="text-center">©2017 渝ICP备16002511号-1</p>
+            </div>
+        </el-container>
     </div>
-    </html>
 </template>
 
 <script>
+    import {ajax_post} from '../../assets/js/ajax'
     export default {
         name: "index",
         data() {
-            var checkAge = (rule, value, callback) => {
-                if (!value) {
-                    return callback(new Error('年龄不能为空'));
-                }
-                setTimeout(() => {
-                    if (!Number.isInteger(value)) {
-                        callback(new Error('请输入数字值'));
-                    } else {
-                        if (value < 18) {
-                            callback(new Error('必须年满18岁'));
-                        } else {
-                            callback();
-                        }
-                    }
-                }, 1000);
-            };
-            var validatePass = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('请输入密码'));
-                } else {
-                    if (this.ruleForm.checkPass !== '') {
-                        this.$refs.ruleForm.validateField('checkPass');
-                    }
-                    callback();
-                }
-            };
-            var validatePass2 = (rule, value, callback) => {
-                if (value === '') {
-                    callback(new Error('请再次输入密码'));
-                } else if (value !== this.ruleForm.pass) {
-                    callback(new Error('两次输入密码不一致!'));
-                } else {
-                    callback();
-                }
-            };
             return {
                 ruleForm: {
-                    pass: '',
-                    checkPass: '',
-                    age: ''
+                    username:"",
+                    pass: ''
                 },
-                rules: {
-                    pass: [
-                        { validator: validatePass, trigger: 'blur' }
-                    ],
-                    checkPass: [
-                        { validator: validatePass2, trigger: 'blur' }
-                    ],
-                    age: [
-                        { validator: checkAge, trigger: 'blur' }
-                    ]
-                }
+
             };
         },
         created() {
-
+            // this.$message('确认关闭？')
         },
-
         methods: {
             submitForm() {
-
-                this.$router.replace('/picdown')
-                // return 1;
+                ajax_post({
+                    'url':'login/test',
+                    'data':{
+                        'type' :'1'
+                    }
+                }).then(res=>{
+                    console.log(res);
+                    if(res.code == 0){
+                        this.$alert('登录成功','提示~').then(res=>{
+                            if(res == 'confirm'){
+                                this.$router.replace('/home')
+                            }
+                        })
+                    }else{
+                        this.$message.error(res.message)
+                    }
+                }).catch(err=>{
+                    console.log(err);
+                    this.$message.error('请求错误')
+                    return false
+                })
                 // this.$refs[formName].validate((valid) => {
                 //     if (valid) {
                 //         alert('submit!');
@@ -98,9 +76,6 @@
                 //     }
                 // });
             },
-            resetForm(formName) {
-                this.$refs[formName].resetFields();
-            }
         }
     }
 </script>
@@ -114,19 +89,36 @@
         left: 0;
         overflow-y: auto;
         background-color: #ededed;
+        border-color: #409EFF;
     }
-    .login_item{
-        width: 20%;
-        height: 500px;
+    .login_con{
+        width: 16%;
+        height: auto;
         text-align: center;
         margin: 10% auto 0;
+    }
+    .login_con .text-center{
+        color: #a7abb4;
+        margin-top: 10px;
+    }
+    .login_item{
+        border: 1px solid #409EFF;
+        background-color: #fff;
+    }
+    .login_item .el-header{
+        background-color: #409EFF;
+        border-color: #409EFF;
+
+    }
+    .login_item .el-header h3{
+        color: #fff;
+        font-size: 20px;
+        line-height: 2.6;
+        font-weight: normal;
+        padding: 5px 0;
+
+    }
+    .login_form{
 
     }
 </style>
-<!--<style lang="scss">-->
-<!--    html{-->
-<!--        background-color: #ededed;-->
-<!--        width: 100%;-->
-<!--        height: 100%;-->
-<!--    }-->
-<!--</style>-->

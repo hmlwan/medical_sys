@@ -1,10 +1,8 @@
 <template>
   <div id="app">
     <keep-alive>
-      <router-view>
-      </router-view>
+      <router-view></router-view>
     </keep-alive>
-
 <!--    <LoginPage/>-->
   </div>
 </template>
