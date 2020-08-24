@@ -16,7 +16,6 @@ const routes = [
         component:()=>import('../components/login/index.vue')
     }
 ]
-
 const router = new VueRouter({
     routes,
     mode:'history'

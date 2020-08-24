@@ -11,11 +11,131 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7c4902-84e1-44ca-82cf-e7fa467fd6ab" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/index/view/publics/register2.html" beforeDir="false" afterPath="$PROJECT_DIR$/application/index/view/publics/register2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/12.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/13.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/14.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/15.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429275-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429335-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429395-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429457-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429517-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429578-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429637-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429700-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429760-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/1594429820-11.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202007/16.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/log/202008/21.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/002aeb000475b77ac04e68a38e6d93bf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/00434383a029533edc4e08ba56d1d557.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/011846ebc48fdbf26f3dccca848bc65f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0415b47a1e165dc2b3394c18cbff0e3b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0428d40bd2d4dba373485921088e3fc8.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0834cda54776210fa7e6c0386af743a4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0a4ce23388d2fa2a1df9e75672d083f5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0c19a565a87f66fd65d6cfee412fc327.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0e097fa21840d7fab3781dd1eb6fc78f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/0fdf6336e51bb9c5d26286c7135d9622.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/12ce635a85624d203975127bff7cef28.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/12f324b3fc00c54503b2e418c6aa9756.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1b001c9daa469eb21a23a69b2dd277f4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1c2bd15888b89540e8afc075176ddf81.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1c466300d28648386d089bd628c87d75.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1cb2c8879ba87d8123bc0b8fdb1bb386.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1f5f6b0f37824dd4db825748cc52fe91.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/1fa0ff86dbdf59d9a8aae2808ad6a4e1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2176a5757b39d145f0ab34feca6cd42a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/243a966438b2a8237b18fa9da866f896.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2ad48ed7171b1536d8ecb9e26645b266.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2c26a3f6fa20c89c2874358b1daef5a1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2f64750f925c1aad602cb5c355e8dbd5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/2f6b190e6c8516c635726c26b9e97213.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/338263e977c0da1d28f85977cdd9aaf2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/368aa399ef5a766a5dd8e2b13e4c0032.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/3906ca61388928613faf0016cc8e0a1f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/3c379ba0c24f0766346affcb6128123d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/3e051e293f3b813652a6db53af15848d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/434f6b96bd766be24d97c8c86cb15d1f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/46a9ae6ca024c98cfd5bf0ae2a8c9a45.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4dc5675d065b5887d87cdd78068ab521.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4e096bf88e05b9bb33e33ebcc90f1141.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/4e60247a46de7d9685e516509b1f1081.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/54a9c15f0e82badebd431f59d1d3a472.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/552f2fa03c987575aa54b5df440ed6d7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/561e51b55b03abef2828210817bd4069.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/564df2e4406da5e126ec1186f61ec27a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/5860498d58e613e750d32a35b8d4faf4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/6835eda48a80bdce6e56aea84b6a4029.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/6a1d27cb9118e677a7a6fd533e287bc9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/71b402fe3b941b899d7e74a522f8d067.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/72bd55fd49284a9639160a50e2c0b711.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/73cbbea01765a0f2c1355fcb1a4c7603.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/7756a0c62d29fd29e45d4acd01d8aa67.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/79390361d10c0c4a5a85cc70e7dc0889.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/7f043882c6167fc0384441e36f9fb111.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8028e50efe7b48cae2866d37920a7ea3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/81058654469561fbbb7d91e850d165af.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8258035e4b30067e62ea46087d8998ee.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/849870cf8cea06e955dd038fd6375d5f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/86ac861ab49d5270338c4ec78db11aac.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/86db1529da31344a8582cfd51b8c04ca.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8752bd58178802de34bfd0f61eda4262.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/89c50b3ab8ad5392f5e8053a1d8d762d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/8c456e8a96768413e26bea6848d90e72.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/929d4037ea9752b1b42480dcd0378783.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/938d8960c706616689ae11ef741196b5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9408cbf3954e91cb8efd401f8f11da7c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/94d5d401776b3e97f7bbdef5d652cb6c.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9593755bd46267e10b6dab20a34c696f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/971ea0cac534029d7b797f2a37302d4d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/997ae94c0c962a5bf1d66a9f99a1a451.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9c0d6f019aaf142b06aed58e63f1a16b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/9cfc333321d7bc854ccf037587839c50.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a00860930fea1f6a02a9e04ba30cb2c0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a60a20ee77146bd3626cdc93fe615543.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a8a32899e6d5e2382c15cbe00446dc3f.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/a92c1d0806a223385083b9da00f66d22.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/aa78c9d367dfddbc84697b7a652a8f96.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ab8d63a98b0e475567e2f9f161ec1202.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/abcd3e42ddb37884305cff11f1f18310.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/acfb806fb4d62c187dd9108911318bf9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/af0df99a75a761c2f73a08d982cd5adf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b1f445a547751f943b930fb58d035ac0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b2bc1bbc89e29530153ace1c3788db20.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/b5519518d085286e52c14af9d7218059.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/bc404b5f3e0d0a90d2918ac6d8969b1d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c37eb611cfb79ca47850d46e77bcf9fd.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c4f56a78c9bcd8cfe310ca1bbd5a45a0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c8298a4aa8748e6ed05c03824712c05d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/c96fbc14db8c0f87c530dea93cbb0dec.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cb1978b56b9cbd3ce7425e8bc171f3a8.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cbf2a133bd79a6ad52a4b6f6e1686c8d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cd106e447ccd150bf87ef8fd51465e33.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/cd4202d39c677986ef28351e6fbe754e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/d06f2cd01b272ed23f8411c378dc5382.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/dd7dad3abc25e81ee687b20f2973fe1d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/de302375d362bb8a34ec4e1b7c05c2e0.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/dfffe86ed9a108141bd5000993c1f470.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e200be81aa4d860386ac5805e02342cb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e3a80db73e5f22f2c1c781a1fd3b5891.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e5dd73582a4666adb3cf6d1236ebb44b.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e6836312cc30f58c9b8240d385228e71.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e70741a1a63d1260bce3dcab1551aa0d.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e8ba6ee9362fefb56b9f0c50441f9dc7.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e9505b603df0539338a5bcdfaea737cf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/e9cf963e7e336fbd3c30c75a6ce4ced3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f29959e10247e470f6c8be6981c008d8.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f42a8698cab1186a268ecb063610aea1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f44d1ac4f45f269ce92382b2c9a7d396.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/f594cc2e7182007e1988dfc29f99a324.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/fa3e028670e2ef36428cef88f3960580.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/fa3f0ac867fa5fc13efcd1d7af746cb1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/fd254b2871871d76a1457c860b9e1619.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/runtime/temp/ff4586bb7a5ade3aa3f839f298a061ab.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,6 +345,7 @@
       <workItem from="1598007046210" duration="1807000" />
       <workItem from="1598087794222" duration="2662000" />
       <workItem from="1598093138578" duration="8177000" />
+      <workItem from="1598236777056" duration="3836000" />
     </task>
     <servers />
   </component>
