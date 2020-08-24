@@ -4,7 +4,6 @@
         <router-view></router-view>
     </keep-alive>
 </template>
-
 <script>
     import NavTop  from '../../components/Nav/top'
     export default {
@@ -14,7 +13,7 @@
         }
     }
 </script>
-
 <style scoped>
+
 
 </style>

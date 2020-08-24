@@ -9,10 +9,11 @@ namespace app\common\behavior;
 
 use think\Exception;
 use think\Response;
-
 class CronRun
 {
-    public function run(&$dispatch){
+
+    public   function run($dispatch){
+
         header("Access-Control-Allow-Origin:*");
         $host_name = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : "*";
         $headers = [
