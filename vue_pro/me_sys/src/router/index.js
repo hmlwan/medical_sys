@@ -12,9 +12,13 @@ const routes = [
     },
     {
         path:'/home',
-        component:()=>import('../views/Home/index.vue')
+        component:()=>import('../views/Home/index.vue'),
+        children:[{
+            path:'type_in',
+            component:()=>import('../views/Home/type_in.vue')
+        }]
+    },
 
-    }
 ]
 const router = new VueRouter({
     routes,
