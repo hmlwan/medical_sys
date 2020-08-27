@@ -1,16 +1,15 @@
 <template>
-    <keep-alive>
-<!--        <nav-top></nav-top>-->
+    <div>
+        <nav-top></nav-top>
         <router-view></router-view>
-    </keep-alive>
-
+    </div>
 </template>
 <script>
-    // import NavTop  from '../../components/Nav/top'
+    import NavTop  from '../../components/Nav/top'
     export default {
         name: "index",
         components:{
-            // NavTop
+            NavTop
         }
     }
 </script>

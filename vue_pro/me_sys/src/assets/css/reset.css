@@ -51,7 +51,21 @@ input, select, option {
     padding-top: 0;
     padding-bottom: 0;
 }
-
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+.float_l{
+    float: left;
+}
+.float_r{
+    float: right;
+}
 .el-table th.gutter{
     display: table-cell!important;
 }
