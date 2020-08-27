@@ -1,9 +1,8 @@
 <template>
-    <keep-alive>
+    <div>
         <nav-top></nav-top>
         <router-view></router-view>
-    </keep-alive>
-
+    </div>
 </template>
 <script>
     import NavTop  from '../../components/Nav/top'
