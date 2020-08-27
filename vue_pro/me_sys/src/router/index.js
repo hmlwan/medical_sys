@@ -13,8 +13,9 @@ const routes = [
     {
         path:'/home',
         component:()=>import('../views/Home/index.vue'),
+        hidden: true,
         children:[{
-            path:'type_in',
+            path:'/type_in',
             component:()=>import('../views/Home/type_in.vue')
         }]
     },

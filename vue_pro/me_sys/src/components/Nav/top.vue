@@ -39,12 +39,17 @@
                 activeIndex2: '1'
             };
         },
+        created() {
+            console.log('11');
+        },
         methods: {
 
             handleSelect(key, keyPath) {
                 console.log(key, keyPath);
                 if(key == 1){
-                    this.$router.replace('/home/type_in')
+                    this.$router.replace('/home/type_in').catch(err => {
+                        console.log(err)
+                    })
                 }
             }
         }

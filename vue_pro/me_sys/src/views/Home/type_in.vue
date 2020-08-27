@@ -9,7 +9,10 @@
 
 <script>
     export default {
-        name: "type_in"
+        name: "type_in",
+        created() {
+            console.log('ee');
+        }
     }
 </script>
 
