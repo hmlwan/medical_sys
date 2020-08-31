@@ -59,7 +59,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://D:/WWW/candyworld/application/admin/controller/Rebate.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../vue_learn/webpack使用" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vue_pro/me_sys/src/views/Home" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -68,21 +68,21 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.VCS" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="ts.external.directory.path" value="D:\webstorm\WebStorm 2020.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/vue_pro/me_sys/src/components" />
-      <recent name="D:\WWW\candyworld\application\index\view\member" />
-      <recent name="D:\WWW\candyworld\public\static\img\newimg" />
-      <recent name="D:\WWW\candyworld\application\admin\view\user" />
-      <recent name="D:\WWW\candyworld\application\admin\controller" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/extend" />
       <recent name="D:\WWW\candyworld\application\admin\view\task" />
       <recent name="$PROJECT_DIR$/application/index/view/member" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vue_pro/me_sys/src/views/Home" />
+      <recent name="$PROJECT_DIR$/vue_pro/me_sys/src/views" />
+      <recent name="$PROJECT_DIR$/vue_pro/me_sys/src/components" />
+      <recent name="D:\WWW\candyworld\application\index\view\member" />
+      <recent name="D:\WWW\candyworld\public\static\img\newimg" />
     </key>
   </component>
   <component name="RunManager">
@@ -181,6 +181,9 @@
       <workItem from="1598236777056" duration="16127000" />
       <workItem from="1598267726072" duration="662000" />
       <workItem from="1598271513393" duration="690000" />
+      <workItem from="1598545904615" duration="199000" />
+      <workItem from="1598546244152" duration="2082000" />
+      <workItem from="1598833743755" duration="10285000" />
     </task>
     <servers />
   </component>
@@ -192,6 +195,9 @@
       <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -222,10 +228,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598274113516" />
-    <state x="186" y="266" key="SettingsEditor" timestamp="1598500012247">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="215" y="293" key="SettingsEditor" timestamp="1598545302940">
+      <screen x="32" y="23" width="1888" height="1057" />
     </state>
     <state x="186" y="266" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598500012247" />
+    <state x="215" y="293" key="SettingsEditor/32.23.1888.1057@32.23.1888.1057" timestamp="1598545302939" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -248,6 +255,12 @@
           <url>file://$PROJECT_DIR$/vue_pro/me_sys/src/views/Home/type_in.vue</url>
           <line>4</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue_pro/me_sys/src/views/Home/agency.vue</url>
+          <line>87</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

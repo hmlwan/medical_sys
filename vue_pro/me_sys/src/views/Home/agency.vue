@@ -1,44 +1,46 @@
 <template>
     <el-container>
         <el-main>
-            <div class="text-left" style="margin-bottom: 10px">
-                <el-button type="primary" @click="centerDialogVisible=true" icon="el-icon-plus" title="添加">添加</el-button>
-            </div>
-            <el-table
-                    :data="tableData"
-                    border
-                    style="width: 100%">
-                <el-table-column
-                        prop="date"
-                        label="日期"
-                        width="180">
-                    <template slot-scope="scope">
-                        <span style="margin-left: 10px">{{ scope.row.date }}</span>
-                    </template>
-                </el-table-column>
+         <div class="agency_con">
+             <div class="text-left" style="margin-bottom: 15px">
+                 <el-button type="primary" @click="centerDialogVisible=true" icon="el-icon-plus" title="添加">添加</el-button>
+             </div>
+             <el-table
+                     :data="tableData"
+                     border
+                     style="width: 100%">
+                 <el-table-column
+                         prop="date"
+                         label="日期"
+                         width="180">
+                     <template slot-scope="scope">
+                         <span style="margin-left: 10px">{{ scope.row.date }}</span>
+                     </template>
+                 </el-table-column>
 
-                <el-table-column
-                        prop="name"
-                        label="姓名"
-                        width="180">
+                 <el-table-column
+                         prop="name"
+                         label="姓名"
+                         width="180">
 
-                </el-table-column>
-                <el-table-column
-                        prop="address"
-                        label="地址">
-                </el-table-column>
-                <el-table-column label="操作">
-                    <template slot-scope="scope">
-                        <el-button
-                                size="mini"
-                                @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-                        <el-button
-                                size="mini"
-                                type="danger"
-                                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-                    </template>
-                </el-table-column>
-            </el-table>
+                 </el-table-column>
+                 <el-table-column
+                         prop="address"
+                         label="地址">
+                 </el-table-column>
+                 <el-table-column label="操作">
+                     <template slot-scope="scope">
+                         <el-button
+                                 size="mini"
+                                 @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+                         <el-button
+                                 size="mini"
+                                 type="danger"
+                                 @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                     </template>
+                 </el-table-column>
+             </el-table>
+         </div>
             <el-pagination
                     style="margin-top: 20px"
                     background
@@ -120,10 +122,14 @@
         }
     }
 </script>
-
 <style scoped>
     .el-main {
         color: #333;
         text-align: center;
+
+    }
+    .agency_con{
+        width: 96%;
+        margin: 1% auto 0;
     }
 </style>

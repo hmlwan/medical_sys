@@ -54,40 +54,50 @@
                     center="false">
                 <span>
                     <el-form  label-width="80px" >
-                          <el-form-item label="用户名">
-                            <el-input ></el-input>
+                          <el-form-item  label="测值名称">
+                            <el-input  v-model="title"></el-input>
                           </el-form-item>
-                          <el-form-item label="真实姓名">
-                            <el-input ></el-input>
+                          <el-form-item label="原始标识">
+                            <el-input v-model="label"></el-input>
                           </el-form-item>
-                          <el-form-item label="手写签名">
-                              <el-upload
-                                      class="upload-demo"
-                                      action="https://jsonplaceholder.typicode.com/posts/"
-                                      :on-change="handleChange"
-                                      :file-list="fileList">
-                              <el-button size="small" type="primary">点击上传</el-button>
-                              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-                            </el-upload>
+                        <el-form-item label="字段名">
+                            <el-input v-model="fieldname"></el-input>
                           </el-form-item>
-                        <el-form-item label="权限" prop="resource">
-                            <el-radio-group v-model="resource">
-                              <el-radio label="管理员"  style="margin-bottom: 20px" value="1"></el-radio>
-                              <el-radio label="机构管理员" style="margin-bottom: 20px"  value="2"></el-radio>
-                              <el-radio label="录入医生" style="margin-bottom: 20px"  value="3"></el-radio>
-                              <el-radio label="心电医生" style="margin-bottom: 20px"  value="4"></el-radio>
-                              <el-radio label="普通用户" style="margin-bottom: 20px"  value="5"></el-radio>
-                            </el-radio-group>
-                        </el-form-item>
-
-                          <el-form-item label="密码">
-                            <el-input ></el-input>
+                        <el-form-item label="数据标识">
+                            <el-input v-model="litefield"></el-input>
                           </el-form-item>
-                          <el-form-item label="状态">
-                              <el-select v-model="status"  placeholder="请选择状态">
-                                  <el-option label="启用" value="1"></el-option>
-                                  <el-option label="禁用" value="0"></el-option>
+                          <el-form-item label="参考范围">
+                            <el-input v-model="ranges"></el-input>
+                          </el-form-item>
+                         <el-form-item label="测值单位">
+                            <el-input v-model="unit"></el-input>
+                          </el-form-item>
+                          <el-form-item label="项目">
+                              <el-select v-model="part_id"  placeholder="请选择项目">
+                                  <el-option label="血常规" value="1"></el-option>
+                                  <el-option label="尿常规" value="2"></el-option>
+                                  <el-option label="生化" value="3"></el-option>
                               </el-select>
+                          </el-form-item>
+                           <el-form-item label="科普说明">
+                              <el-input
+                                      type="textarea"
+                                      placeholder="请输入科普说明"
+                                      v-model="popularization"
+                                      show-word-limit
+                                      rows="3"
+                              >
+                                </el-input>
+                          </el-form-item>
+                        <el-form-item label="建议内容">
+                              <el-input
+                                      type="textarea"
+                                      placeholder="请输入建议内容"
+                                      v-model="propose"
+                                      show-word-limit
+                                      rows="3"
+                              >
+                                </el-input>
                           </el-form-item>
                     </el-form>
 
@@ -103,7 +113,7 @@
 
 <script>
     export default {
-        name: "user",
+        name: "measure",
         data(){
             return {
                 tableData:[{
@@ -124,15 +134,16 @@
                     address: '上海市普陀区金沙江路 1516 弄'
                 }],
                 centerDialogVisible:false,
-                status:'',
-                fileList: [{
-                    name: 'food.jpeg',
-                    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-                }, {
-                    name: 'food2.jpeg',
-                    url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-                }],
-                resource:""
+
+                title:"",
+                label:"",
+                fieldname:"",
+                ranges:"",
+                unit:"",
+                part_id:"",
+                litefield:"",
+                propose:"",
+                popularization:"",
             }
         },
         methods:{
@@ -145,7 +156,6 @@
 </script>
 
 <style scoped>
-
     .el-main {
         color: #333;
         text-align: center;

@@ -7,7 +7,6 @@ import './assets/css/reset.css'
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
-
 new Vue({
   router,
   render: h => h(App),

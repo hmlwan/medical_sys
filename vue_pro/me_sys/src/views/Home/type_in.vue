@@ -136,6 +136,29 @@
                                 </el-form-item>
                             </div>
                         </el-form>
+                        <div>
+                            <el-divider> <span>小结</span></el-divider>
+                            <el-input
+                                    type="textarea"
+                                    :rows="10"
+                                    placeholder="请输入内容"
+                            >
+                            </el-input>
+
+                        </div>
+                    </el-card>
+                </div>
+                <div class="xdt" style="margin-top: 10px"> <!--影像模版-->
+                    <el-card>
+                        <div slot="header" class="clearfix text-left">
+                            <span>超声检查</span>
+                        </div>
+                        <el-input
+                                type="textarea"
+                                :rows="10"
+                                placeholder="请输入内容"
+                        >
+                        </el-input>
                     </el-card>
                 </div>
                 <div class="xdt" style="margin-top: 10px"> <!--心电图-->
@@ -145,13 +168,23 @@
                         </div>
                         <div class="demo-image__preview">
                             <el-image
-                                    style="width: 500px"
-                                    :src="xdtUrl"
+                                      :src="xdtUrl"
                                     :preview-src-list="srcList">
                             </el-image>
                         </div>
+                        <div>
+                            <el-divider> <span>小结</span></el-divider>
+                            <el-input
+                                    type="textarea"
+                                    :rows="10"
+                                    placeholder="请输入内容"
+                            >
+                            </el-input>
+
+                        </div>
                     </el-card>
                 </div>
+
                 <div class="zjjl" style="margin-top: 10px"><!--总检结论-->
                     <el-card>
                         <div slot="header" class="clearfix text-left">

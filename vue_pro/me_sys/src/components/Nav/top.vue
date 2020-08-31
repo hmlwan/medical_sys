@@ -12,14 +12,14 @@
             <el-menu-item index="1" :route="{name:'type_in'}" style="margin-left: 10%">检索病人</el-menu-item>
             <el-menu-item index="2" :route="{name:'user'}" >用户管理</el-menu-item>
             <el-menu-item index="3" :route="{name:'agency'}" >机构管理</el-menu-item>
-            <el-menu-item index="4"  >超声模板</el-menu-item>
-            <el-menu-item index="5"  >影像模板</el-menu-item>
-            <el-menu-item index="8"  >测体管理</el-menu-item>
+            <el-menu-item index="4" :route="{name:'temp'}">超声模板</el-menu-item>
+            <el-menu-item index="5" :route="{name:'temp1'}">影像模板</el-menu-item>
+            <el-menu-item index="6" :route="{name:'measure'}">测体管理</el-menu-item>
             <el-submenu index="7"  >
                 <template slot="title">基本设置</template>
                 <el-menu-item index="7-1">基本内容</el-menu-item>
-                <el-menu-item index="7-2">超声病例</el-menu-item>
-                <el-menu-item index="7-3">影像病例</el-menu-item>
+                <el-menu-item index="7-2" :route="{name:'basic_conf'}">基本信息参数</el-menu-item>
+                <el-menu-item index="7-3" :route="{name:'eeg_conf'}">心电图参数</el-menu-item>
             </el-submenu>
             <el-submenu index="8"  class="el-menu-demo_five">
                 <template slot="title">admin</template>
@@ -30,8 +30,6 @@
         </el-menu>
         <div class="line"></div>
     </div>
-
-
 </template>
 
 <script>
