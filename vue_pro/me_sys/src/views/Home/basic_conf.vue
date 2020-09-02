@@ -9,30 +9,41 @@
                         :data="tableData"
                         style="width: 100%">
                     <el-table-column type="expand">
-                        <template slot-scope="props">
-                            <el-form label-position="left" inline class="demo-table-expand">
-                                <el-form-item label="商品名称">
-                                    <span>{{ props.row.name }}</span>
-                                </el-form-item>
-                                <el-form-item label="所属店铺">
-                                    <span>{{ props.row.shop }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品 ID">
-                                    <span>{{ props.row.id }}</span>
-                                </el-form-item>
-                                <el-form-item label="店铺 ID">
-                                    <span>{{ props.row.shopId }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品分类">
-                                    <span>{{ props.row.category }}</span>
-                                </el-form-item>
-                                <el-form-item label="店铺地址">
-                                    <span>{{ props.row.address }}</span>
-                                </el-form-item>
-                                <el-form-item label="商品描述">
-                                    <span>{{ props.row.desc }}</span>
-                                </el-form-item>
-                            </el-form>
+                        <template>
+                            <el-table
+                                    style="width: 100%; "
+                                    :data="tableData"
+                                    align="center">
+                                <el-table-column
+                                        style="width: 100%; background-color: red"
+                                        label="诊断名称"
+                                        >
+                                    <template slot-scope="scope">
+                                        <span>{{ scope.row.name }}</span>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column
+                                        label="原始标识"
+                                       >
+                                    <template slot-scope="scope">
+                                        <span>{{ scope.row.name }}</span>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column
+                                        label="建议内容"
+                                        >
+                                    <template slot-scope="scope">
+                                        <span>{{ scope.row.name }}</span>
+                                    </template>
+                                </el-table-column>
+                                <el-table-column
+                                        label="科普说明"
+                                       >
+                                    <template slot-scope="scope">
+                                        <span>{{ scope.row.name }}</span>
+                                    </template>
+                                </el-table-column>
+                            </el-table>
                         </template>
                     </el-table-column>
                     <el-table-column
@@ -41,7 +52,6 @@
                     </el-table-column>
                     <el-table-column
                             label="商品名称"
-
                            >
                         <template slot-scope="props">
                             <span>{{ props.row.name }}</span>
@@ -78,8 +88,7 @@
             <el-dialog
                     title=""
                     :visible.sync="centerDialogVisible"
-                    width="30%"
-                    center="false">
+                    width="30%">
                 <span>
                     <el-form  label-width="80px" >
                           <el-form-item  label="测值名称">
@@ -117,41 +126,30 @@
                                       v-model="propose"
                                       show-word-limit
                                       rows="3"
+                                      center
                               >
                                 </el-input>
                           </el-form-item>
                     </el-form>
                 </span>
                 <span slot="footer" class="dialog-footer">
-    <el-button @click="centerDialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
-  </span>
+                    <el-button @click="centerDialogVisible = false">取 消</el-button>
+                    <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
+               </span>
             </el-dialog>
             <el-dialog
                     title=""
                     :visible.sync="confDialogVisible"
-                    width="30%"
-                    center="false">
+                    width="30%">
                 <span>
                     <el-form  label-width="80px" >
-                          <el-form-item  label="测值名称">
+                          <el-form-item  label="诊断名称">
                             <el-input  v-model="title"></el-input>
                           </el-form-item>
                           <el-form-item label="原始标识">
                             <el-input v-model="label"></el-input>
                           </el-form-item>
-                        <el-form-item label="字段名">
-                            <el-input v-model="fieldname"></el-input>
-                          </el-form-item>
-                        <el-form-item label="数据标识">
-                            <el-input v-model="litefield"></el-input>
-                          </el-form-item>
-                          <el-form-item label="参考范围">
-                            <el-input v-model="ranges"></el-input>
-                          </el-form-item>
-                         <el-form-item label="测值单位">
-                            <el-input v-model="unit"></el-input>
-                          </el-form-item>
+
                            <el-form-item label="科普说明">
                               <el-input
                                       type="textarea"
@@ -176,7 +174,7 @@
                 </span>
                 <span slot="footer" class="dialog-footer">
     <el-button @click="confDialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="confDialogVisible = false">确 定1</el-button>
+    <el-button type="primary" @click="confDialogVisible = false">确 定</el-button>
   </span>
             </el-dialog>
 
@@ -234,6 +232,7 @@
                 litefield:"",
                 propose:"",
                 popularization:"",
+
             }
         },
         methods:{

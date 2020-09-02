@@ -9,7 +9,7 @@
                     </el-header>
                     <div class="login_form">
                         <el-main>
-                            <el-form :model="ruleForm" status-icon  ref="ruleForm" label-width="100px" class="demo-ruleForm">
+                            <el-form :model="ruleForm"   status-icon  ref="ruleForm" label-width="100px" class="demo-ruleForm">
                                 <div >
                                     <el-input   v-model="ruleForm.username" placeholder="账号" autocomplete="off"></el-input>
                                 </div>
@@ -17,7 +17,7 @@
                                     <el-input type="password" v-model="ruleForm.pass" placeholder="密码" autocomplete="off"></el-input>
                                 </div>
                                 <div style="margin-top: 15px;  float: right;">
-                                    <el-button type="primary" @click="submitForm('ruleForm')">登录</el-button>
+                                    <el-button type="primary" @click="submitForm()">登录</el-button>
                                 </div>
                             </el-form>
                         </el-main>
@@ -47,17 +47,33 @@
         },
         methods: {
             submitForm() {
+                console.log(this.ruleForm);
+                const pass = this.ruleForm.pass;
+                const username = this.ruleForm.username;
+                if(!username){
+                    this.$message.error('请求用户名');
+                    return;
+                }
+                if(!pass){
+                    this.$message.error('请输入密码');
+                    return;
+                }
+
                 ajax_post({
-                    'url':'login/test',
+                    'url':'/admin/login/login',
                     'data':{
-                        'type' :'1'
-                    }
+                        'password' :pass,
+                        'username' :username
+                    },
+                    'headers':{
+                        'X-Token':  "22"
+                    },
                 }).then(res=>{
                     console.log(res);
                     if(res.code == 0){
                         this.$alert('登录成功','提示~').then(res=>{
                             if(res == 'confirm'){
-                                this.$router.replace('/home')
+                                // this.$router.replace('/home')
                             }
                         })
                     }else{
@@ -68,14 +84,7 @@
                     this.$message.error('请求错误')
                     return false
                 })
-                // this.$refs[formName].validate((valid) => {
-                //     if (valid) {
-                //         alert('submit!');
-                //     } else {
-                //         console.log('error submit!!');
-                //         return false;
-                //     }
-                // });
+
             },
         }
     }

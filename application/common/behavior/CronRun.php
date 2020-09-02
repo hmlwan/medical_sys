@@ -19,7 +19,7 @@ class CronRun
         $headers = [
             "Access-Control-Allow-Origin" => $host_name,
             "Access-Control-Allow-Credentials" => 'true',
-            "Access-Control-Allow-Headers" => "x-token,x-uid,x-token-check,x-requested-with,content-type,Host"
+            "Access-Control-Allow-Headers" => "X-Token,x-uid,x-token-check,x-requested-with,content-type,Host"
         ];
         if($dispatch instanceof Response) {
             $dispatch->header($headers);

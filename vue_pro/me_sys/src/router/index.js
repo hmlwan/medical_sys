@@ -19,8 +19,13 @@ const EegConf = ()=>import('../views/Home/eeg_conf.vue')
 const BasicConf = ()=>import('../views/Home/basic_conf.vue')
 const routes = [
     {
-        path:'/',
-        component:Login
+        path:'',
+        component:Home,
+    },
+    {
+        path:'/login',
+        component:Login,
+        name:'login'
     },
     {
         path:'/home',
@@ -79,6 +84,27 @@ const router = new VueRouter({
     mode:'history'
     }
 )
+
+
+router.beforeEach(function (to, from, next) {
+   console.log(to);
+
+    const path = to.path.replace('/','');
+    console.log(path);
+
+    if(path === 'login'){
+        next()
+    }else{
+        let x_token = localStorage.getItem('X-Token')
+
+        if(!x_token){
+            next('/login')
+        }else{
+            next()
+        }
+    }
+})
+
 export default router
 
 

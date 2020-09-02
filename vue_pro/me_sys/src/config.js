@@ -1,8 +1,5 @@
 const config = {
-
-    domain:'http://www.medical_sys.com/admin/'
-    // host: '127.0.0.1',
-    // port: 80,
+    domain:process.env.VUE_APP_BASE_URL
 }
 
 //直接变量输出 区别export default

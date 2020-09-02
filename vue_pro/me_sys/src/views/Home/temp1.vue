@@ -3,12 +3,11 @@
         <el-container>
             <el-aside width="50%">
                 <div class="tree_left">
-                   <div style="text-align: left;margin-left: 15px;">
+                   <div style="text-align: left;margin-left: 15px;margin-bottom: 15px">
                        <el-button size="mini" icon="el-icon-plus" circle></el-button>
                    </div>
                     <el-tree
                             :data="data"
-
                             node-key="id"
                             :expand-on-click-node="false">
                     <span class="custom-tree-node" slot-scope="{ node, data }">
@@ -18,6 +17,12 @@
                                       type="text"
                                       size="mini"
                                       @click="() => append(data)">
+                                <i class="el-icon-plus"></i>
+                              </el-button>
+                             <el-button
+                                     type="text"
+                                     size="mini"
+                                     @click="() => edit(data)">
                                 <i class="el-icon-edit"></i>
                               </el-button>
                               <el-button
@@ -123,6 +128,7 @@
             onSubmit(){
                 return ;
             },
+
             append(data) {
                 const newChild = { id: id++, label: 'testtest', children: [] };
                 if (!data.children) {
@@ -130,7 +136,13 @@
                 }
                 data.children.push(newChild);
             },
-
+            edit(data) {
+                const newChild = { id: id++, label: 'testtest', children: [] };
+                if (!data.children) {
+                    this.$set(data, 'children', []);
+                }
+                data.children.push(newChild);
+            },
             remove(node, data) {
                 const parent = node.parent;
                 const children = parent.data.children || parent.data;
@@ -156,7 +168,7 @@
     }
     .tree_left{
         width: 60%;
-        margin: 10% auto 0;
+        margin: 8% auto 0;
         height: 800px;
         overflow-y: auto;
     }
