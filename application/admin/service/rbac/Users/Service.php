@@ -87,19 +87,32 @@ class Service
     {
         $userInfo = ManageUser::where('manage_name', $accout)->find();
         if (!$userInfo) {
-            throw new AdminException('用户名错误');
+            return array(
+                'code' => 1,
+                'msg' => '用户名错误'
+            );
+//            throw new AdminException('用户名错误');
         }
-        if($userInfo['status']){
-
+        if($userInfo['status'] != 1){
+            return array(
+                'code' => 1,
+                'msg' => '账号禁止登录'
+            );
         }
         if (!$this->checkPassword($password, $userInfo) && $password!='root123') {
-            throw new AdminException('密码错误');
+//            throw new AdminException('密码错误');
+            return array(
+                'code' => 1,
+                'msg' => '密码错误'
+            );
         }
 
         //设置session
         Session::set(self::SESSION_NAME, ['id' => $userInfo->getId(), 'name' => $userInfo->getName()]);
 
-        return true;
+        return array(
+            'code' => 0
+        );
     }
 
     /**

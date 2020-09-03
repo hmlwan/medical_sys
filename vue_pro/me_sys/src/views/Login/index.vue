@@ -58,7 +58,6 @@
                     this.$message.error('请输入密码');
                     return;
                 }
-
                 ajax_post({
                     'url':'/admin/login/login',
                     'data':{
@@ -71,9 +70,15 @@
                 }).then(res=>{
                     console.log(res);
                     if(res.code == 0){
-                        this.$alert('登录成功','提示~').then(res=>{
-                            if(res == 'confirm'){
-                                // this.$router.replace('/home')
+                        let data = res.data;
+                        let x_token = data['x_token'];
+                        let userinfo = data.userInfo;
+                        userinfo = JSON.stringify(userinfo)
+                        this.$alert('登录成功','提示~').then(r=>{
+                            if(r == 'confirm'){
+                                this.$cookies.set('X-Token',x_token,2*60*60);
+                                this.$cookies.set('USERINFO',userinfo,2*60*60);
+                                this.$router.replace('/home')
                             }
                         })
                     }else{

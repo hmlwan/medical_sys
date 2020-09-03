@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from "vue-router"
+import VueCookies from "vue-cookies"
 
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location, onResolve, onReject) {
@@ -7,6 +8,7 @@ VueRouter.prototype.push = function push(location, onResolve, onReject) {
     return originalPush.call(this, location).catch(err => err)
 }
 Vue.use(VueRouter)
+Vue.use(VueCookies)
 const Login = ()=>import('../views/Login/index.vue')
 const Home = ()=>import('../views/Home/index.vue')
 const HomeTypeIn = ()=>import('../views/Home/type_in.vue')
@@ -87,7 +89,7 @@ const router = new VueRouter({
 
 
 router.beforeEach(function (to, from, next) {
-   console.log(to);
+
 
     const path = to.path.replace('/','');
     console.log(path);
@@ -95,8 +97,8 @@ router.beforeEach(function (to, from, next) {
     if(path === 'login'){
         next()
     }else{
-        let x_token = localStorage.getItem('X-Token')
-
+        let x_token =  Vue.$cookies.get('X-Token')
+        console.log(x_token);
         if(!x_token){
             next('/login')
         }else{
