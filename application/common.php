@@ -1449,4 +1449,15 @@ function transToSecond($str) {
 function randPhone(){
     return '1'.rand(10000,99999).rand(10000,99999);
 }
+function ajaxmsg($msg = "", $status = 1, $data = '', $errcode = '')
+{
+    $json['msg'] = $msg;
+    $json['status'] = $status;
+    $json['data'] = $data;
+    if ($errcode) {
+        $json['errcode'] = $errcode;
+    }
+    echo json_encode($json, true);
+    exit;
+}
 ?>

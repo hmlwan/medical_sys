@@ -1,6 +1,7 @@
 import axios from 'axios'
 import config from '../../config.js'
 axios.defaults.withCredentials = true
+
 const domain = config.domain
 
 export function ajax_get(opts) {
