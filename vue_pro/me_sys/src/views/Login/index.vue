@@ -37,13 +37,15 @@
             return {
                 ruleForm: {
                     username:"",
-                    pass: ''
+                    pass: ""
                 },
 
             };
         },
         created() {
             // this.$message('确认关闭？')
+            this.ruleForm.username = ''
+            this.ruleForm.pass = ''
         },
         methods: {
             submitForm() {
@@ -51,7 +53,7 @@
                 const pass = this.ruleForm.pass;
                 const username = this.ruleForm.username;
                 if(!username){
-                    this.$message.error('请求用户名');
+                    this.$message.error('请输入用户名');
                     return;
                 }
                 if(!pass){
@@ -65,7 +67,7 @@
                         'username' :username
                     },
                     'headers':{
-                        'X-Token':  "22"
+                        'X-Token':  ""
                     },
                 }).then(res=>{
                     console.log(res);

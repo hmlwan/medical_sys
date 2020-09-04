@@ -11,7 +11,7 @@ class LoginForm extends Validate
     ];
 
     protected $message  =   [
-        'name.require' => '请输入用户名',
+        'username.require' => '请输入用户名',
         'password.require'     => '请输入密码'
     ];
 }

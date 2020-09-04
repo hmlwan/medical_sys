@@ -12,37 +12,30 @@ class Admin extends Controller
 
     protected function initialize()
     {
-//        if (php_sapi_name() != 'cli') {
-//            //判断用户是否登录
-//            $service = new \app\admin\service\rbac\Users\Service();
-//            if (!$service->getManageId()) {
-//                $this->redirect('login/index');
-//            }
-//
-//            //判断权限
-//            $service = new \app\admin\service\rbac\Users\Service();
-//            if (!$service->checkAuth()) {
-//                if (Request::isAjax()) {
-//                    throw new AdminException('没有权限操作，请联系管理员');
-//                } else {
-//                    $this->error('没有权限操作，请联系管理员');
-//                }
-//            }
-//        }
+        parent::initialize();
+        header("Access-Control-Allow-Origin:*");
+        $host_name = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : "*";
+        $headers = [
+            "Access-Control-Allow-Origin" => $host_name,
+            "Access-Control-Allow-Credentials" => 'true',
+            "Access-Control-Allow-Headers" => "X-Token,x-uid,x-token-check,x-requested-with,content-type,Host"
+        ];
         /*获取响应头参数*/
         $token = $_SERVER['HTTP_X_TOKEN'];
         $uid = Jwt::verifyToken($token);
-
-        if(!$uid ||$token ){
-            return json()->data(['code'=>100,'message'=> '请先登陆']);
+        if(!$uid || !$token ){
+            json(['code'=>100,'message'=> '请先登陆','token'=>$uid],200,$headers)->send();
+            exit;
+//            return json()->data(['code'=>100,'message'=> '请先登陆']);
         }
-        $service = new \app\admin\service\rbac\Users\Service();
-        $manage_info = $service->getManageInfo();
+        $login_mem_id = $uid['login_mem_id'];
         Session::set('USER_KEY_ID',$uid['login_mem_id']);
         Session::set('AUTH_TYPE',$uid['auth_type']);
 
-        if(!$manage_info){
-            return json()->data(['code'=>100,'message'=> '请先登陆']);
+        if(!$login_mem_id){
+//            return json()->data(['code'=>100,'message'=> '请先登陆']);
+            json(['code'=>100,'message'=> '请先登陆','login_mem_id'=>$login_mem_id],200,$headers)->send();
+            exit;
         }
     }
 

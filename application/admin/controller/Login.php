@@ -4,6 +4,8 @@ namespace app\admin\controller;
 use app\common\entity\ManageUser;
 use app\common\service\Users\Jwt;
 use think\Controller;
+use app\admin\service\rbac\Users\Service;
+use think\facade\Session;
 use think\Request;
 
 class Login extends Controller
@@ -15,9 +17,6 @@ class Login extends Controller
         }
         return $this->fetch('index');
     }
-     public function test(Request $request){
-      return json()->data(['code' => 0, 'message' => $_SERVER]);
-     }
     /**
      * 登录处理
      */
@@ -31,6 +30,7 @@ class Login extends Controller
             return json()->data(['code' => 1, 'message' => $result]);
         }
         $accout = $request->post('username');
+
         $r = $service->doLogin($accout, $request->post('password'));
         if ($r['code'] != 0) {
             return json()->data(['code' => 1,'message'=>$r['msg']]);
@@ -46,5 +46,14 @@ class Login extends Controller
             'userInfo' => $userInfo
         );
         return json()->data(['code' => 0,'data'=>$data]);
+    }
+    //退出系统
+    public function logout()
+    {
+        $service = new Service();
+        $service->logout();
+        Session::delete('USER_KEY_ID');
+        Session::delete('AUTH_TYPE');
+        return json()->data(['code' => 0,'message'=>'成功']);
     }
 }

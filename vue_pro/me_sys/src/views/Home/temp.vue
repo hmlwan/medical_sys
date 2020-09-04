@@ -5,16 +5,15 @@
             <el-aside width="50%">
                 <div class="tree_left">
                     <div style="text-align: left;margin-left: 15px;margin-bottom: 15px">
-                        <el-button size="mini" icon="el-icon-plus" circle></el-button>
+                        <el-button  type="primary" plain icon="el-icon-plus" @click="addTemplate()">添加一级菜单</el-button>
                     </div>
                     <el-tree
                             :data="data"
-
                             node-key="id"
                             :expand-on-click-node="false">
                     <span class="custom-tree-node" slot-scope="{ node, data }">
 
-                        <span>{{ node.label }}</span>
+                        <span>{{ node.title }}</span>
                         <span>
                               <el-button
                                       type="text"
@@ -86,40 +85,14 @@
 </template>
 
 <script>
+    import {ajax_post} from '../../assets/js/ajax'
+
     let id = 1000;
     export default {
         name: "temp",
         data() {
-            const data = [{
-                id: 1,
-                label: '一级 1',
-                children: [{
-                    id: 4,
-                    label: '二级 1-1',
-                }]
-            }, {
-                id: 2,
-                label: '一级 2',
-                children: [{
-                    id: 5,
-                    label: '二级 2-1'
-                }, {
-                    id: 6,
-                    label: '二级 2-2'
-                }]
-            }, {
-                id: 3,
-                label: '一级 3',
-                children: [{
-                    id: 7,
-                    label: '二级 3-1'
-                }, {
-                    id: 8,
-                    label: '二级 3-2'
-                }]
-            }];
             return {
-                data: JSON.parse(JSON.stringify(data)),
+                data: [],
                 title:"",
                 textarea1:"",
                 textarea2:"",
@@ -127,7 +100,75 @@
                 labelPosition: 'top',
             }
         },
+        created() {
+            let x_token = this.$cookies.get('X-Token');
+            ajax_post({
+                'url':'/admin/template/index',
+                'data':{
+                    'stype':1,
+                },
+                'headers':{
+                    'X-Token':  x_token
+                }
+            }).then(res=>{
+                console.log(res);
+                if(res.code == 0){
+                    let data = res.data;
+                    this.data = data;
+                }else if(res.code == 100){
+                    this.$router.push('/login');
+                }
+            }).catch(err=>{
+                console.log(err);
+                this.$message.error('请求错误')
+                return false
+            })
+        },
         methods: {
+            addTemplate(){
+                this.$prompt('','请输入名称',{
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+
+                }).then(({ value })=>{
+                    console.log(value);
+                    if(!value){
+                        this.$message.error('请输入名称');
+                        return false
+                    }
+                    let x_token = this.$cookies.get('X-Token');
+                    ajax_post({
+                        'url':"/admin/template/edit",
+                        'data':{
+                            'stype':1,
+                            'title':value,
+                            'pid':0,
+                            'id':''
+                        },
+                        'headers':{
+                            'X-Token':  x_token
+                        }
+                    }).then(res=>{
+                        console.log(res);
+                        if(res.code == 0){
+                            this.$message.success(res.message)
+                        }else if(res.code == 100){
+                            this.$router.push('/login');
+                        }else{
+                            this.$message.error(res.message)
+                        }
+                    }).catch(err=>{
+                        console.log(err);
+                        this.$message.error('请求错误')
+                        return false
+                    })
+                }).catch(()=>{
+                        this.$message({
+                            'type':"info",
+                            'message':"取消输入"
+                        })
+                })
+            },
             onSubmit(){
                 return ;
             },

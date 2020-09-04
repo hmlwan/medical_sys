@@ -22,12 +22,19 @@ const BasicConf = ()=>import('../views/Home/basic_conf.vue')
 const routes = [
     {
         path:'',
+        name:'HomeTypeIn',
         component:Home,
+        redirect:"/home"
     },
     {
         path:'/login',
         component:Login,
         name:'login'
+    },
+    {
+        path:'/outlog',
+        component:Login,
+        name:'outlogin'
     },
     {
         path:'/home',
@@ -98,7 +105,6 @@ router.beforeEach(function (to, from, next) {
         next()
     }else{
         let x_token =  Vue.$cookies.get('X-Token')
-        console.log(x_token);
         if(!x_token){
             next('/login')
         }else{
