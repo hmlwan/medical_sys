@@ -6,6 +6,7 @@ use app\common\entity\ManageGroup;
 use app\common\entity\ManageUser;
 use app\common\entity\ManageUserGroup;
 use think\Db;
+use think\facade\Session;
 use think\Request;
 
 
@@ -17,13 +18,25 @@ class Manage extends Admin
      */
     public function index(Request $request)
     {
-        $entity = ManageUser::field('*');
-        if ($keyword = $request->get('keyword')) {
-            $entity->where('manage_name', $keyword);
+
+        $p = $request->get('p',1);
+        $page_num = $request->get('page_num',10);
+        $offset = ($p-1) * $page_num;
+        $total =  Db::table('manage_user')->count();
+        $list = Db::table('manage_user')
+            ->limit($offset,$page_num)
+            ->field('id,manage_name,real_name,auth_type,forbidden_time,sign_img,status')
+            ->order('id desc')->select();
+        foreach ($list as &$value){
+
+            $value['auth_type_name'] = ManageUser::getType($value['auth_type']);
         }
-        return $this->render('index', [
-            'list' => $entity->paginate(15)
-        ]);
+        $data = array(
+            'total' => $total,
+            'list' => $list,
+        );
+        return json()->data(['code'=>0,'data'=>$data]);
+
     }
 
     /**
@@ -39,21 +52,63 @@ class Manage extends Admin
     /**
      * @power 权限管理|用户管理@编辑用户
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $entity = ManageUser::where('id', $id)->find();
-        if (!$entity) {
-            $this->error('用户对象不存在');
-        }
-        if ($entity->isDefault()) {
-            $this->error('默认用户不能编辑');
+        $id = $request->post('id');
+        $manage_name = $request->post('manage_name');
+        $real_name = $request->post('real_name');
+        $auth_type = $request->post('auth_type');
+        $password = $request->post('password');
+        $sign_img = $request->post('sign_img');
+        $forbidden_time = $request->post('forbidden_time');
+        $status = $request->post('status');
+        $AUTH_TYPE = $AUTH_TYPE = Session::get('AUTH_TYPE');
+        if($AUTH_TYPE != -1){
+            return json()->data(['code'=>1,'message'=>'无操作权限']);
         }
 
-        return $this->render('edit', [
-            'info' => $entity,
-            'groupIds' => ManageUserGroup::getGroupsByUserId($id),
-            'groups' => ManageGroup::all()
-        ]);
+        if(!$manage_name){
+            return json()->data(['code'=>1,'message'=>'请输入用户名']);
+        }
+        if($auth_type == 0){
+            return json()->data(['code'=>1,'message'=>'请选择权限']);
+        }
+        $service = new \app\admin\service\rbac\Users\Service();
+        $USER_KEY_ID = Session::get('USER_KEY_ID');
+
+
+        $add_data = array(
+            'manage_name' => $manage_name,
+            'auth_type' => $auth_type,
+            'real_name' => $real_name,
+            'sign_img' => $sign_img,
+            'forbidden_time' => $forbidden_time,
+            'status' => $status,
+            'update_time' => time(),
+        );
+        if($password){
+            $password_salt = $service->getPasswordSalt();
+            $password = $service->getPassword($request->post('password'), $password_salt);
+            $add_data['password'] = $password;
+            $add_data['password_salt'] = $password_salt;
+        }
+        if($id > 0){ //新增二级菜单
+            $r = Db::table('manage_user')
+                ->where('id','=',$id)
+                ->update($add_data);
+
+        }else{ //新增一级菜单
+            $add_data['create_time'] = time();
+            $add_data['pid'] = $USER_KEY_ID;
+            if(!$password){
+                return json()->data(['code'=>1,'message'=>'请输入密码']);
+            }
+            $r = Db::table('manage_user')->insert($add_data);
+        }
+        if(false === $r){
+            return json()->data(['code'=>1,'message'=>'失败']);
+        }
+        return json()->data(['code'=>0,'message'=>'成功']);
     }
 
     /**

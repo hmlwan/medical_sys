@@ -15,7 +15,7 @@ const HomeTypeIn = ()=>import('../views/Home/type_in.vue')
 const User = ()=>import('../views/Home/user.vue')
 const Agency = ()=>import('../views/Home/agency.vue')
 const Temp = ()=>import('../views/Home/temp.vue')
-const Temp1 = ()=>import('../views/Home/temp1.vue')
+// const Temp1 = ()=>import('../views/Home/temp1.vue')
 const Measure = ()=>import('../views/Home/measure.vue')
 const EegConf = ()=>import('../views/Home/eeg_conf.vue')
 const BasicConf = ()=>import('../views/Home/basic_conf.vue')
@@ -63,12 +63,12 @@ const routes = [
             {
                 path:'temp',
                 component:Temp,
-                name:"temp"
+                name:"temp",
             },
             {
                 path:'temp1',
-                component:Temp1,
-                name:"temp1"
+                component:Temp,
+                name:"temp1",
             },
             {
                 path:'measure',

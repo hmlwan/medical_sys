@@ -24,7 +24,7 @@ export function ajax_get(opts) {
             responseType:"json",
             url:url,
             method:'get',
-            data:params
+            params:params
         }).then(res=>{
             resolve(res)
         }).catch(err=>{

@@ -28,7 +28,7 @@ class Template extends Admin
     public function index(Request $request){
 
         $stype = $request->post('stype');
-        $list = Db::table('template')->where('stype','=',$stype)->select();
+        $list = Db::table('template')->where('stype','=',$stype)->order('id asc')->select();
         $arr = array();
         if($list){
             foreach ($list as $value){
@@ -38,15 +38,18 @@ class Template extends Admin
                     foreach ($list as $v){
                       if($v['level'] == 2 && $value['id'] == $v['pid']) {
                           $children[] = array(
-                              'title' => $v['title'],
-                              'id' => $v['id']
+                              'label' => $v['title'],
+                              'id' => $v['id'],
+                              'level' => 2,
+                              'pid'=>$v['pid']
                           );
                       }
                     }
                     $arr[] = array(
-                        'title' => $value['title'],
+                        'label' => $value['title'],
                         'id' => $value['id'],
-                        'children' => $children
+                        'children' => $children,
+                        'level' => 1
                     );
                 }
             }
@@ -67,7 +70,7 @@ class Template extends Admin
             return json()->data(['code'=>1,'message'=>'未知错误']);
         }
         $w = array(
-            'manage_id' => $USER_KEY_ID,
+            'manager_id' => $USER_KEY_ID,
             'template_id' => $id,
         ) ;
         $info = Db::table('template_agency')
@@ -88,15 +91,6 @@ class Template extends Admin
      */
     public function edit(Request $request){
 
-        $login_mem_id = Session::get('USER_KEY_ID');
-        $auth_type = Session::get('AUTH_TYPE');
-
-        return json()->data(['code'=>0,'message'=>'成功','data'=>array(
-
-            'auth_type' =>$auth_type,
-            'login_mem_id' =>$login_mem_id,
-
-        )]);
         $pid = $request->post('pid');
         $id = $request->post('id');
         $stype = $request->post('stype');
@@ -123,23 +117,48 @@ class Template extends Admin
                     ->insert(array(
                         'title' => $title,
                         'level' => 2,
-                        'pid' => $pid
-                        ));
+                        'pid' => $pid,
+                        'stype' => $stype,
+                 ));
             }
 
         }else{ //新增一级菜单
             $add_data = array(
                 'title' => $title,
-                'level' => 1
+                'level' => 1,
+                'stype' => $stype,
             );
             $r = Db::table('template')->insert($add_data);
         }
         if(false === $r){
             return json()->data(['code'=>1,'message'=>'失败']);
         }
+        $auto_id = Db::name('template')->getLastInsID();
+        return json()->data(['code'=>0,'message'=>'成功','data'=>$auto_id]);
+    }
+
+    /**
+     * @param Request $request
+     * @return $this
+     *  编辑名称
+     */
+    public function edit_name(Request $request){
+        $id = $request->post('id');
+        $title = $request->post('title');
+        if(!$id || !$title){
+            return json()->data(['code'=>1,'message'=>'缺少参数']);
+        }
+        $r = Db::table('template')->where('id','=',$id)->update(array(
+            'title' => $title
+        ));
+        if(false === $r){
+            return json()->data(['code'=>1,'message'=>'失败']);
+        }
+        Db::table('template_agency')->where('template_id','=',$id)->update(array(
+            'title' => $title
+        ));
 
         return json()->data(['code'=>0,'message'=>'成功']);
-
     }
     /**
      * 添加/编辑模板内容
@@ -201,17 +220,35 @@ class Template extends Admin
      */
     public function del(Request $request){
         $id = $request->post('id');
-        $info = Db::table('template')->where('id','=',$id)->find();
+        $level = $request->post('level');
 
-        if(!$id || $info){
-            return json()->data(['code'=>1,'message'=>'未知错误']);
+
+        if($level == 1){ //一级菜单
+
+            $r = Db::table('template')->where('id','=',$id)->delete();
+
+            if(false === $r){
+                return json()->data(['code'=>1,'message'=>'失败']);
+            }
+            Db::table('template')->where('pid','=',$id)->delete();
+            //删除机构创建的模版
+            Db::table('template_agency')->where('template_id','=',$id)->delete();
+            Db::table('template_agency')->where('pid','=',$id)->delete();
+
+        }else{  //二级菜单
+            $info = Db::table('template')->where('id','=',$id)->find();
+
+            if(!$id || !$info){
+                return json()->data(['code'=>1,'message'=>'未知错误']);
+            }
+            $r = Db::table('template')->where('id','=',$id)->delete();
+            if(false === $r){
+                return json()->data(['code'=>1,'message'=>'失败']);
+            }
+            Db::table('template_agency')->where('template_id','=',$id)->delete();
         }
-        $r = Db::table('template')->where('id','=',$id)->delete();
-        if(false === $r){
-            return json()->data(['code'=>1,'message'=>'失败']);
-        }
-        Db::table('template_agency')->where('template_id','=',$id)->delete();
-        return json()->data(['code'=>1,'message'=>'成功']);
+
+        return json()->data(['code'=>0,'message'=>'成功']);
     }
 
 

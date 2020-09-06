@@ -18,6 +18,24 @@ class ManageUser extends Model
     {
         return $this->id;
     }
+    public function getType($type)
+    {
+        switch ($type) {
+            case -1:
+                return '超级管理员';
+            case 1:
+                return '机构管理员';
+            case 2:
+                return '病人录入';
+            case 3:
+                return '心电图';
+            case 4:
+                return '超声';
+            case 5:
+                return '影像';
+
+        }
+    }
 
     /**
      * 获取用户名
