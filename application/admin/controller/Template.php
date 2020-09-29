@@ -47,14 +47,13 @@ class Template extends Admin
                     }
                     $arr[] = array(
                         'label' => $value['title'],
-                        'id' => $value['id'],
+                        'id' => $value  ['id'],
                         'children' => $children,
                         'level' => 1
                     );
                 }
             }
         }
-
         return json()->data(['code'=>0,'data'=>$arr]);
     }
 
@@ -191,7 +190,7 @@ class Template extends Admin
 
         }else{ //机构管理员
             $is_exist_w = array(
-                'manage_id' =>  $USER_KEY_ID,
+                'manager_id' =>  $USER_KEY_ID,
                 'template_id' =>  $id,
             ) ;
             $is_exist = Db::table('template_agency')->where($is_exist_w)->find();
@@ -199,11 +198,11 @@ class Template extends Admin
                 $r = Db::table('template_agency')->where($is_exist_w)->update($edit_data);
             }else{
                 $edit_data['template_id'] = $id;
-                $edit_data['manage_id'] = $USER_KEY_ID;
-                $edit_data['title'] = $is_exist['title'];
-                $edit_data['pid'] = $is_exist['pid'];
-                $edit_data['stype'] = $is_exist['stype'];
-                $edit_data['level'] = $is_exist['level'];
+                $edit_data['manager_id'] = $USER_KEY_ID;
+                $edit_data['title'] = $info['title'] ? $info['title'] : '';
+                $edit_data['pid'] = $info['pid'] ? $info['pid'] : "";
+                $edit_data['stype'] = $info['stype'] ? $info['stype'] : "";
+                $edit_data['level'] = $info['level'] ? $info['level'] : "";
                 $r = Db::table('template_agency')->insert($edit_data);
 
             }
@@ -222,11 +221,8 @@ class Template extends Admin
         $id = $request->post('id');
         $level = $request->post('level');
 
-
         if($level == 1){ //一级菜单
-
             $r = Db::table('template')->where('id','=',$id)->delete();
-
             if(false === $r){
                 return json()->data(['code'=>1,'message'=>'失败']);
             }
@@ -247,9 +243,43 @@ class Template extends Admin
             }
             Db::table('template_agency')->where('template_id','=',$id)->delete();
         }
-
         return json()->data(['code'=>0,'message'=>'成功']);
     }
+    public function get_template_data(Request $request){
+        $USER_KEY_ID = Session::get('USER_KEY_ID');
+        $manager_id = Db::table('manage_user')->where('id','=',$USER_KEY_ID)->value('pid');
 
+        $stype = $request->post('stype');
+        $where = array(
+            'stype' =>$stype,
+        );
+        $list = Db::table('template')->where($where)->order('id asc')->select();
+        foreach ($list as $key => $value){
+            $info = Db::table('template_agency')
+                ->where(array(
+                    'template_id'=>$value['id'],
+                    'stype' =>$stype,
+                    'manager_id'=>$manager_id)
+                )
+                ->find();
+            if($info){
+                unset($info['template_id']);
+                unset($info['manager_id']);
+                $list[$key] = $info;
+            }
+        }
+        $arr = [];
 
+        foreach ($list as $k => $v){
+            if($v['level'] == 1){
+                foreach($list as $k1=>$v1){
+                    if($v1['level'] == 2 && $v['id'] == $v1['pid']){
+                        $v['sub_temp'][] = $v1;
+                    }
+                }
+                $arr[] = $v;
+            }
+        }
+        return json()->data(['code'=>0,'message'=>'成功','data'=>$arr]);
+    }
 }

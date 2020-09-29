@@ -18,17 +18,26 @@ class Manage extends Admin
      */
     public function index(Request $request)
     {
+        $USER_KEY_ID = Session::get('USER_KEY_ID');
+        $AUTH_TYPE = Session::get('AUTH_TYPE');
 
         $p = $request->get('p',1);
         $page_num = $request->get('page_num',10);
         $offset = ($p-1) * $page_num;
-        $total =  Db::table('manage_user')->count();
+        $where = array();
+        if($AUTH_TYPE == 1){
+            $where['pid'] = $USER_KEY_ID;
+        }elseif ($AUTH_TYPE == -1){
+            $where['pid'] = $USER_KEY_ID;
+        }
+
+        $total =  Db::table('manage_user')->where($where)->count();
         $list = Db::table('manage_user')
             ->limit($offset,$page_num)
+            ->where($where)
             ->field('id,manage_name,real_name,auth_type,forbidden_time,sign_img,status')
             ->order('id desc')->select();
         foreach ($list as &$value){
-
             $value['auth_type_name'] = ManageUser::getType($value['auth_type']);
         }
         $data = array(
@@ -61,9 +70,9 @@ class Manage extends Admin
         $password = $request->post('password');
         $sign_img = $request->post('sign_img');
         $forbidden_time = $request->post('forbidden_time');
-        $status = $request->post('status');
+        $status = $request->post('status',1);
         $AUTH_TYPE = $AUTH_TYPE = Session::get('AUTH_TYPE');
-        if($AUTH_TYPE != -1){
+        if($AUTH_TYPE != -1  && $AUTH_TYPE != 1){
             return json()->data(['code'=>1,'message'=>'无操作权限']);
         }
 
@@ -92,12 +101,12 @@ class Manage extends Admin
             $add_data['password'] = $password;
             $add_data['password_salt'] = $password_salt;
         }
-        if($id > 0){ //新增二级菜单
+        if($id > 0){
             $r = Db::table('manage_user')
                 ->where('id','=',$id)
                 ->update($add_data);
 
-        }else{ //新增一级菜单
+        }else{
             $add_data['create_time'] = time();
             $add_data['pid'] = $USER_KEY_ID;
             if(!$password){
@@ -105,6 +114,36 @@ class Manage extends Admin
             }
             $r = Db::table('manage_user')->insert($add_data);
         }
+        if(false === $r){
+            return json()->data(['code'=>1,'message'=>'失败']);
+        }
+        return json()->data(['code'=>0,'message'=>'成功']);
+    }
+    public function edit_pass(Request $request){
+
+        $USER_KEY_ID = Session::get('USER_KEY_ID');
+        $oldpass = $request->post('oldpass');
+        $newpass = $request->post('newpass');
+        $repass = $request->post('repass');
+        $service = new \app\admin\service\rbac\Users\Service();
+        if(!$oldpass){
+            return json()->data(['code'=>1,'message'=>'请输入旧密码']);
+        }
+        if($newpass != $repass){
+            return json()->data(['code'=>1,'message'=>'密码不一致']);
+        }
+
+
+        $entity = ManageUser::get($USER_KEY_ID);
+
+        if(!$service->checkPassword($oldpass,$entity)){
+            return json()->data(['code'=>1,'message'=>'旧密码错误']);
+        }
+        $password_salt = $service->getPasswordSalt();
+        $password = $service->getPassword($newpass, $password_salt);
+        $add_data['password'] = $password;
+        $add_data['password_salt'] = $password_salt;
+        $r = $entity->where('id','=',$USER_KEY_ID)->update($add_data);
         if(false === $r){
             return json()->data(['code'=>1,'message'=>'失败']);
         }

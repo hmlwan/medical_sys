@@ -3,7 +3,7 @@
         <el-main>
             <div class="agency_con">
                 <div class="text-left" style="margin-bottom: 15px">
-                    <el-button type="primary" @click="handleEdit('')" icon="el-icon-plus" title="添加">添加</el-button>
+                    <el-button type="primary" size="small" @click="handleEdit('')" icon="el-icon-plus" title="添加">添加</el-button>
                 </div>
                 <el-table
                         :data="tableData"
@@ -34,7 +34,7 @@
                         <template slot-scope="scope">
                             <span style="margin-left: 10px">
                                 <el-image
-                                        style="width: 100px; height: 100px"
+                                        style="width: 80px; height: 80px"
                                         :src="signImg(scope.row.sign_img)"
                                          fit="fit"></el-image>
                                 </span>
@@ -53,6 +53,10 @@
                     <el-table-column
                             prop="forbidden_time"
                             label="过期时间">
+                        <template slot-scope="scope">
+                            <el-tag v-if="scope.row.forbidden_time" >{{scope.row.forbidden_time}}</el-tag>
+                            <el-tag v-else >永久</el-tag>
+                        </template>
                     </el-table-column>
                     <el-table-column label="操作">
                         <template slot-scope="scope">
@@ -109,15 +113,19 @@
                           </el-form-item>
                         <el-form-item label="权限" prop="resource">
                             <el-radio-group v-model="sub_data.auth_type">
-                              <el-radio  :label="1"  style="margin-bottom: 20px" >管理员</el-radio>
-                              <el-radio :label="2" style="margin-bottom: 20px"  >机构管理员</el-radio>
-                              <el-radio :label="3" style="margin-bottom: 20px"  >录入医生</el-radio>
-                              <el-radio :label="4" style="margin-bottom: 20px"  >心电医生</el-radio>
-                              <el-radio :label="5" style="margin-bottom: 20px"  >普通用户</el-radio>
+                              <el-radio  :label="-1" :disabled="auth_type.disabled_1" style="margin-bottom: 20px" >管理员</el-radio>
+                              <el-radio :label="1"   :disabled="auth_type.disabled1"	 style="margin-bottom: 20px"  >机构管理员</el-radio>
+                              <el-radio :label="2"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >录入医生</el-radio>
+                              <el-radio :label="3"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >一般检查 </el-radio>
+                              <el-radio :label="4"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >心电图</el-radio>
+                              <el-radio :label="5"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >超声</el-radio>
+                              <el-radio :label="6"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >放射</el-radio>
+                              <el-radio :label="7"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >检验</el-radio>
+                              <el-radio :label="10"   :disabled="auth_type.disabled" style="margin-bottom: 20px"  >总检</el-radio>
                             </el-radio-group>
                         </el-form-item>
                         <el-form-item label="到期时间">
-                              <el-date-picker type="date" value-format=“yyyy-MM-dd” placeholder="不选为永久" v-model="sub_data.forbidden_time" style="width: 100%;"></el-date-picker>
+                              <el-date-picker type="date" value-format="yyyy-MM-dd" placeholder="不选为永久" v-model="sub_data.forbidden_time" style="width: 100%;"></el-date-picker>
                           </el-form-item>
                           <el-form-item label="状态">
                               <el-select v-model="sub_data.status"  placeholder="请选择状态">
@@ -129,8 +137,8 @@
 
                 </span>
                 <span slot="footer" class="dialog-footer">
-    <el-button @click="centerDialogVisible = false">取 消</el-button>
-    <el-button type="primary" @click="onsubmit">确 定</el-button>
+    <el-button size="small" @click="centerDialogVisible = false">取 消</el-button>
+    <el-button size="small" type="primary" @click="onsubmit">确 定</el-button>
   </span>
             </el-dialog>
         </el-main>
@@ -152,7 +160,7 @@
                     password:"",
                     sign_img:"",
                     forbidden_time:"",
-                    status:"",
+                    status:1,
                 },
                 resource:"",
                 default_data:{},
@@ -165,11 +173,26 @@
                 action:"/admin/upload/uploadEditor",
                 fit:"fit",
                 label:"",
+                auth_type:{
+                    disabled_1:true,
+                    disabled1:true,
+                    disabled:true,
+
+                }
             }
         },
         created() {
             this.default_data = this.sub_data;
             this.getList(this,1);
+
+            let USERINFO = this.$cookies.get('USERINFO');
+            if(USERINFO.auth_type == -1){ //超级管理员
+                this.$set(this.auth_type,'disabled_1',false);
+                this.$set(this.auth_type,'disabled1',false);
+
+            }else if(USERINFO.auth_type == 1){ //机构管理员
+                this.$set(this.auth_type,'disabled',false);
+            }
         },
 
         computed:{
@@ -193,9 +216,7 @@
                 return config.domain + sign_img
             },
             handleEdit(item){
-                console.log(item);
                 if(item){
-                    console.log(item);
                     item.auth_type = parseInt(item.auth_type)
                     this.sub_data = item
                     if(item.sign_img){
@@ -211,6 +232,7 @@
                 }else{
                     this.sub_data = this.default_data
                     this.manager_id = ''
+                    this.fileList = []
                 }
                 this.centerDialogVisible = true
             },
@@ -253,6 +275,9 @@
                         if(res.data.total >0){
                             that.total = parseInt(res.data.total)
                             that.tableData = res.data.list
+                        }else{
+                            that.total = 0
+                            that.tableData = []
                         }
 
                     }else if(res.code == 100){
@@ -269,13 +294,21 @@
             onsubmit(){
                 let x_token = this.$cookies.get('X-Token');
                 console.log(this.fileList);
+                if(!this.sub_data.manage_name){
+                    this.$message.error('请输入用户名')
+                    return false
+                }
+                let sign_img = ''
+                if((this.fileList).length >0){
+                    sign_img =  this.fileList[0]['url']
+                }
                 const data = {
                     'id':this.manager_id,
                     'manage_name':this.sub_data.manage_name,
                     'real_name':this.sub_data.real_name,
                     'auth_type':this.sub_data.auth_type,
                     'password':this.sub_data.password,
-                    'sign_img':this.fileList[0]['url'],
+                    'sign_img':sign_img,
                     'forbidden_time':this.sub_data.forbidden_time,
                     'status':this.sub_data.status,
                 };

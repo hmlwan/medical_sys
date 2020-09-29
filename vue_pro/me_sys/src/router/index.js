@@ -11,13 +11,17 @@ Vue.use(VueRouter)
 Vue.use(VueCookies)
 const Login = ()=>import('../views/Login/index.vue')
 const Home = ()=>import('../views/Home/index.vue')
-const HomeTypeIn = ()=>import('../views/Home/type_in.vue')
+const HomeCheck = ()=>import('../views/Home/check.vue') //总检
+const HomeTypeIn = ()=>import('../views/Home/type_in.vue') //录入
+const HomeGeneralCheck = ()=>import('../views/Home/general_check.vue') //一般检查
+const HomeEcgCheck = ()=>import('../views/Home/ecg_check.vue') //心电图
+const HomeUsCheck = ()=>import('../views/Home/us_check.vue') //超声波
+const HomeRtCheck = ()=>import('../views/Home/rt_check.vue') //放射
+const HomeQcCheck = ()=>import('../views/Home/qc_check.vue') //检验
 const User = ()=>import('../views/Home/user.vue')
 const Agency = ()=>import('../views/Home/agency.vue')
 const Temp = ()=>import('../views/Home/temp.vue')
-// const Temp1 = ()=>import('../views/Home/temp1.vue')
 const Measure = ()=>import('../views/Home/measure.vue')
-const EegConf = ()=>import('../views/Home/eeg_conf.vue')
 const BasicConf = ()=>import('../views/Home/basic_conf.vue')
 const routes = [
     {
@@ -41,50 +45,116 @@ const routes = [
         component:Home,
         children:[
             {
-                path:'',
-                component:HomeTypeIn,
-                name:"type_in"
+                path:'check',
+                component:HomeCheck,
+                name:"check",
+                meta:{
+                    index_id:'1'
+                }
             },
             {
                 path:'type_in',
                 component:HomeTypeIn,
-                name:"type_in"
+                name:"type_in",
+                meta:{
+                    index_id:'1'
+                }
+            },
+            {
+                path:'general_check',
+                component:HomeGeneralCheck,
+                name:"general_check",
+                meta:{
+                    index_id:'1'
+                }
+            },{
+                path:'qc_check',
+                component:HomeQcCheck,
+                name:"qc_check",
+                meta:{
+                    index_id:'1'
+                }
+            },
+            {
+                path:'ecg_check',
+                component:HomeEcgCheck,
+                name:"ecg_check",
+                meta:{
+                    index_id:'1'
+                }
+            },
+            {
+                path:'us_check',
+                component:HomeUsCheck,
+                name:"us_check",
+                meta:{
+                    index_id:'1'
+                }
+            }, {
+                path:'rt_check',
+                component:HomeRtCheck,
+                name:"rt_check",
+                meta:{
+                    index_id:'1'
+                }
             },
             {
                 path:'user',
                 component:User,
-                name:"user"
+                name:"user",
+                meta:{
+                    index_id:'2'
+                }
             },
             {
                 path:'agency',
                 component:Agency,
-                name:"agency"
+                name:"agency",
+                meta:{
+                    index_id:'3'
+                }
             },
             {
                 path:'temp',
                 component:Temp,
                 name:"temp",
+                meta:{
+                    index_id:'4'
+                }
             },
             {
-                path:'temp1',
+                path:'portrait_temp',
                 component:Temp,
-                name:"temp1",
+                name:"portrait_temp",
+                meta:{
+                    index_id:'5'
+                }
             },
             {
                 path:'measure',
                 component:Measure,
-                name:"measure"
-            },
-            {
-                path:'eeg_conf',
-                component:EegConf,
-                name:"eeg_conf"
+                name:"measure",
+                meta:{
+                    index_id:'6'
+                }
             },
             {
                 path:'basic_conf',
                 component:BasicConf,
-                name:"basic_conf"
-            }
+                name:"basic_conf",
+                meta:{
+                    index_id:'7_2'
+                }
+            },
+            {
+                path:'ecg_conf',
+                component:Temp,
+                name:"ecg_conf",
+                meta:{
+                    index_id:'7_3'
+                }
+            },
+
         ]
     },
 ]
@@ -100,7 +170,6 @@ router.beforeEach(function (to, from, next) {
 
     const path = to.path.replace('/','');
     console.log(path);
-
     if(path === 'login'){
         next()
     }else{

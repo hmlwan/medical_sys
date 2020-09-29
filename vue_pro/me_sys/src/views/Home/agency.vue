@@ -74,7 +74,7 @@
                             <el-input placeholder="输入机构名称" v-model="sub_data.name" ></el-input>
                           </el-form-item>
                           <el-form-item label="标识">
-                            <el-input placeholder="唯一三位纯数字" v-model="sub_data.abridge" ></el-input>
+                            <el-input placeholder="唯一三位纯数字" :disabled="disabled" v-model="sub_data.abridge" ></el-input>
                           </el-form-item>
                         <el-form-item label="联系地址">
                             <el-input placeholder="输入联系地址" v-model="sub_data.address" ></el-input>
@@ -113,14 +113,15 @@
                     abridge:"",
                     address:"",
                     mobile:"",
-                    status:"",
+                    status:1,
                 },
                 default_data:{},
                 organ_id:'',
                 total:0,
                 pageSize:10,
                 loading:false,
-                centerDialogVisible:false
+                centerDialogVisible:false,
+                disabled:false
             }
         },
         created() {
@@ -137,9 +138,11 @@
                 if(item){
                     this.sub_data = item
                     this.organ_id = item.id
+                    this.disabled = true
                 }else{
                     this.sub_data = this.default_data
                     this.organ_id = ''
+                    this.disabled = false
                 }
                 this.centerDialogVisible = true
             },

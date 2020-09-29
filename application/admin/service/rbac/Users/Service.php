@@ -106,7 +106,27 @@ class Service
                 'msg' => '密码错误'
             );
         }
-
+        if($userInfo['auth_type'] == 1){
+            $forbidden_time = strtotime($userInfo['forbidden_time']);
+            if( $forbidden_time>0 && (time()>$forbidden_time)){
+                return array(
+                    'code' => 1,
+                    'msg' => '该账号已到期，禁止登陆'
+                );
+            }
+        }
+        if($userInfo['auth_type'] != -1 && $userInfo['auth_type'] != 1){
+            if($userInfo['pid'] >0 ){
+                $pidInfo = ManageUser::where('id', $userInfo['pid'])->find();
+                $forbidden_time = strtotime($pidInfo['forbidden_time']);
+                if( $forbidden_time >0 && (time() > $forbidden_time)){
+                    return array(
+                        'code' => 1,
+                        'msg' => '该账号已到期，禁止登陆'
+                    );
+                }
+            }
+        }
         //设置session
         Session::set(self::SESSION_NAME, ['id' => $userInfo->getId(), 'name' => $userInfo->getName()]);
 

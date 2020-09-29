@@ -26,14 +26,19 @@ class ManageUser extends Model
             case 1:
                 return '机构管理员';
             case 2:
-                return '病人录入';
+                return '录入医生';
             case 3:
-                return '心电图';
+                return '一般检查';
             case 4:
-                return '超声';
+                return '心电图';
             case 5:
+                return '超声';
+            case 6:
                 return '影像';
-
+            case 7:
+                return '检验';
+            case 10:
+                return '总检';
         }
     }
 

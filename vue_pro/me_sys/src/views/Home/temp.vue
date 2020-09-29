@@ -5,7 +5,7 @@
             <el-aside width="50%">
                 <div class="tree_left">
                     <div style="text-align: left;margin-left: 15px;margin-bottom: 15px">
-                        <el-button  type="primary" plain icon="el-icon-plus" @click="addTemplate()">添加一级菜单</el-button>
+                        <el-button  type="primary" size="medium" plain icon="el-icon-plus" @click="addTemplate()">添加一级菜单</el-button>
                     </div>
                     <el-tree
                             :data="data"
@@ -14,7 +14,7 @@
                     <span class="custom-tree-node" @click="getFormat(data)" slot-scope="{ node, data }">
 
                         <span><i v-if="node.level == 2" class="el-icon-folder" style="margin-right: 5px"></i>{{ node.label }}</span>
-                        <span>
+                        <span v-if="auth_type">
                               <el-button
                                       type="text"
                                       size="mini"
@@ -82,8 +82,8 @@
                         </el-form-item>
                     </el-form>
                 </div>
-                <el-button type="primary" @click="onSubmit">确定</el-button>
-                <el-button @click="reset">重置</el-button>
+                <el-button size="small" type="primary" @click="onSubmit">确定</el-button>
+                <el-button size="small" @click="reset">重置</el-button>
             </el-main>
         </el-container>
     </div>
@@ -108,7 +108,28 @@
                 },
                 labelPosition: 'top',
                 template_id:'',
-                stype:''
+                stype:'',
+                auth_type:false
+            }
+        },
+        created() {
+            if(this.$route.name == 'temp'){
+                this.stype = 1;
+            }else if(this.$route.name == 'ecg_conf'){
+                this.stype = 3;
+            } else{
+                this.stype = 2;
+            }
+            this.sub_data = {
+                imagingfindings:"",
+                diagnosis:"",
+                popularization:"",
+                propose:"",
+            }
+            this.getList();
+            let USERINFO = this.$cookies.get('USERINFO');
+            if(USERINFO.auth_type == -1){
+                this.auth_type = true
             }
         },
         watch: {
@@ -116,9 +137,26 @@
                 console.log(newVal+"---"+oldVal);
                 if(newVal == 'temp'){
                     this.stype = 1;
-                }else{
+                }else if(newVal == 'ecg_conf'){
+                    this.stype = 3;
+                } else{
                     this.stype = 2;
                 }
+                this.sub_data = {
+                    imagingfindings:"",
+                    diagnosis:"",
+                    popularization:"",
+                    propose:"",
+                }
+                this.getList();
+                let USERINFO = this.$cookies.get('USERINFO');
+                if(USERINFO.auth_type == -1){
+                    this.v = true
+                }
+            }
+        },
+        methods: {
+            getList(){
                 let x_token = this.$cookies.get('X-Token');
                 ajax_post({
                     'url':'/admin/template/index',
@@ -142,9 +180,7 @@
                     this.$message.error('请求错误')
                     return false
                 })
-            }
-        },
-        methods: {
+            },
             addTemplate(){
                 console.log( this.stype );
                 this.$prompt('','添加一级菜单',{
@@ -416,7 +452,9 @@
                 this.sub_data.propose = ""
             }
 
-        }
+        },
+
+
     }
 </script>
 <style scoped>
